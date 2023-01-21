@@ -1,0 +1,41 @@
+body {
+  font-family: --font-family;
+  background-color: --main-bg-color;
+  color: --dark-color;
+}
+
+h1,
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 320px;
+
+  @media screen and (min-width: --mobile) {
+    width: --mobile;
+  }
+
+  @media screen and (min-width: --tablet) {
+    width: --tablet;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: --desktop) {
+    width: --desktop;
+  }
+}

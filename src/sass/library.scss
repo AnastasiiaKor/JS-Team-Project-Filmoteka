@@ -1,1 +1,8 @@
-@import './common';
+@import './util/common';
+@import './util/utility';
+@import './util/variables';
+@import './util/mixins';
+@import './util/placeholders';
+@import './layout/header-library';
+@import './layout/footer';
+@import './components/modal-students';
