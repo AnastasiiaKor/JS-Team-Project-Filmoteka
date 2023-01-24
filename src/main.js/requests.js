@@ -36,12 +36,7 @@ async function getGenres() {
   return response.data;
 }
 
-////////////
-async function show() {
-  const data = await getGenres();
-  console.log(data);
-}
-show();
+export { getTrending, getMoviesByKeyword, getMovieById, getGenres };
 
 // 'https://www.youtube.com/watch?v=BdJKm16Co6M' -- ссылка на видео
 
