@@ -1,0 +1,90 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+:root {
+  --border-radius: 5px;
+  --main-bg-color: #e5e5e5;
+  --footer-bg-color: #f7f7f7;
+  --light-color: #ffffff;
+  --dark-color: #000000;
+  --modal-text: #8c8c8c;
+  --orange-color: #ff6b01;
+  --red-color: #ff001b;
+  --shadow: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
+  --animationTransition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --font-family: "Roboto", sans-serif;
+  --mobile: 480px;
+  --min-tablet: 767px;
+  --tablet: 768px;
+  --min-desktop: 1279px;
+  --desktop: 1280px;
+}
+
+body {
+  font-family: --font-family;
+  background-color: --main-bg-color;
+  color: --dark-color;
+}
+body.dark-theme {
+  background-color: --dark-color;
+  color: --light-color;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 320px;
+}
+@media screen and (min-width: --mobile) {
+  .container {
+    width: --mobile;
+  }
+}
+@media screen and (min-width: --tablet) {
+  .container {
+    width: --tablet;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media screen and (min-width: --desktop) {
+  .container {
+    width: --desktop;
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 16px;
+}
+.pagination .button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: var(--orange-color);
+}/*# sourceMappingURL=index.css.map */
