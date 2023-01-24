@@ -48,3 +48,14 @@ export { getTrending, getMoviesByKeyword, getMovieById, getGenres };
 //   "w780",
 //   "w1280",
 //   "original"
+
+
+
+function createEmptyLibraryMesage (){
+  const markup = 
+  `<div class = "wrapper__empty-library">
+  <h2 class="empty-library__header">Your library is empty</h2>
+  <img src="https://www.bu.edu/library/files/2017/12/Sorry.jpg" alt="sorry your library is empty" class="empty-library__image" width = "500px">
+  </div>`;
+(потрібнаЗмінна).innerHTML = markup;
+};
