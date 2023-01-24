@@ -1,29 +1,27 @@
-:root {
-  // BORDER RADIUS
-  --border-radius: 5px;
+// BORDER RADIUS
+$border-radius: 5px;
 
-  //  COLORS
-  --main-bg-color: #e5e5e5;
-  --footer-bg-color: #f7f7f7;
-  --light-color: #ffffff;
-  --dark-color: #000000;
-  --modal-text: #8c8c8c;
-  --orange-color: #ff6b01;
-  --red-color: #ff001b;
+//  COLORS
+$main-bg-color: #e5e5e5;
+$footer-bg-color: #f7f7f7;
+$light-color: #ffffff;
+$dark-color: #000000;
+$modal-text: #8c8c8c;
+$orange-color: #ff6b01;
+$red-color: #ff001b;
 
-  // BTN HOVER/FOCUS
-  --shadow: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
+// BTN HOVER/FOCUS
+$shadow: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
 
-  // ANIMATION
-  --animationTransition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+// ANIMATION
+$animationTransition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  // FONTS
-  --font-family: 'Roboto', sans-serif;
+// FONTS
+$primary-font-family: 'Roboto', sans-serif;
 
-  // WIDTH
-  --mobile: 480px;
-  --min-tablet: 767px;
-  --tablet: 768px;
-  --min-desktop: 1279px;
-  --desktop: 1280px;
-}
+// WIDTH
+$mobile: 480px;
+$min-tablet: 767px;
+$tablet: 768px;
+$min-desktop: 1279px;
+$desktop: 1280px;
