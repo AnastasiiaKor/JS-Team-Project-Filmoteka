@@ -1,25 +1,18 @@
 .header {
-  font-family: 'Roboto', sans-serif;
+  font-family: $primary-font-family;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
-
-  color: #ffffff;
+  color: $light-color;
 }
 
 .header__container {
-  max-width: 1200px;
+  max-width: 1600px;
   min-height: 230px;
-
   padding: 40px 20px;
   margin-left: auto;
   margin-right: auto;
-
-  @media screen and (min-width: 768px) {
-    padding-right: 33px;
-    padding-left: 33px;
-  }
 
   background-image: linear-gradient(
     to right,
@@ -27,64 +20,40 @@
     rgba(0, 0, 0, 0.56)
   );
 
-  //     ,url(../images/hesat_1.png);
-  background-size: 100% 100%;
+  background-size: cover;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  @media screen and (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    // background-image: linear-gradient(
-    //     to right,
-    //     rgba(0, 0, 0, 0.56),
-    //     rgba(0, 0, 0, 0.56)
-    //   ),
-    //   url(../images/hesat_1@2x.png);
-    // background-size: 100% 100%;
+  @media screen and (max-width: $min-tablet) {
+    background-image: url(../images/Group\ 86_home@x1_320min.jpg);
   }
 
-  @media screen and (min-device-pixel-ratio: 3),
-    (min-resolution: 288dpi),
-    (min-resolution: 3dppx) {
-    // background-image: linear-gradient(
-    //     to right,
-    //     rgba(0, 0, 0, 0.56),
-    //     rgba(0, 0, 0, 0.56)
-    //   ),
-    //   url(../images/hesat_1@3x.png);
+  @media screen and (min-device-pixel-ratio: 2) and (max-width: $min-tablet),
+    screen and (min-resolution: 192dpi) and (max-width: $min-tablet),
+    screen and (min-resolution: 2dppx) and (max-width: $min-tablet) {
+    background-image: url(../images/Group\ 86_home@x2_320min.jpg);
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     min-height: 216px;
+    padding-right: 32px;
+    padding-left: 32px;
+    background-image: url(../images/Group\ 86_home@x1_768min.jpg);
+  }
 
-    // background-image: linear-gradient(
-    //     to right,
-    //     rgba(0, 0, 0, 0.56),
-    //     rgba(0, 0, 0, 0.56)
-    //   ),
-    //   url(../images/hesat_2.png);
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: $tablet),
+    screen and (min-resolution: 192dpi) and (min-width: $tablet),
+    screen and (min-resolution: 2dppx) and (min-width: $tablet) {
+    background-image: url(../images/Group\ 86_home@x2_768min.jpg);
+  }
 
-    @media screen and (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      //   background-image: linear-gradient(
-      //       to right,
-      //       rgba(0, 0, 0, 0.56),
-      //       rgba(0, 0, 0, 0.56)
-      //     ),
-      //     url(../images/hesat_2@2x.png);
-    }
+  @media screen and (min-width: $desktop) {
+    background-image: url(../images/Group\ 87_home@x1_1280min.jpg);
+  }
 
-    @media screen and (min-device-pixel-ratio: 3),
-      (min-resolution: 288dpi),
-      (min-resolution: 3dppx) {
-      //   background-image: linear-gradient(
-      //       to right,
-      //       rgba(0, 0, 0, 0.56),
-      //       rgba(0, 0, 0, 0.56)
-      //     ),
-      //     url(../images/hesat_2@3x.png);
-    }
+  @media screen and (min-device-pixel-ratio: 2) and (min-width: $desktop),
+    screen and (min-resolution: 192dpi) and (min-width: $desktop),
+    screen and (min-resolution: 2dppx) and (min-width: $desktop) {
+    background-image: url(../images/Group\ 87_home@x2_1280min.jpg);
   }
 }
 
@@ -104,7 +73,7 @@
 
     font-size: 30px;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: $min-tablet) {
       position: absolute;
       white-space: nowrap;
       width: 1px;
@@ -116,6 +85,10 @@
       clip-path: inset(50%);
       margin: -1px;
     }
+
+    @media screen and (min-width: $desktop) {
+      margin-left: 10px;
+    }
   }
 }
 
@@ -126,7 +99,7 @@
   align-items: center;
   column-gap: 40px;
 
-  &__item {
+  &__link {
     display: inline-block;
 
     margin: 0;
@@ -142,17 +115,23 @@
 
     color: inherit;
   }
+
+  &__item {
+    position: relative;
+  }
 }
 
 .search-form {
   position: relative;
-  max-width: 336px;
+  max-width: 394px;
+  min-width: 280px;
 
   margin-top: 54px;
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
+    max-width: 336px;
     margin-top: 40px;
   }
 
@@ -165,17 +144,18 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.14;
-    color: #ffffff;
+    color: $light-color;
 
     background-color: inherit;
     border: none;
+    outline: none;
     border-bottom: 0.5px solid #ffffff;
 
     &::placeholder {
       font-weight: 400;
       font-size: 14px;
       line-height: 1.14;
-      color: #ffffff;
+      color: $light-color;
     }
   }
 
@@ -184,7 +164,16 @@
     top: 0;
     right: 0;
 
+    padding: 0 0 6px 6 px;
+
     border: 0;
     background-color: inherit;
   }
+}
+
+.search-result {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  color: $red-color;
 }

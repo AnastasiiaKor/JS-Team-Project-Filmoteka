@@ -1,3 +1,4 @@
 import './main.js/requests';
-import './main.js/trending';
-import './main.js/templates.js/gallery-markup';
+import './main.js/saveGenres';
+import './main.js/gallery';
+import './main.js/pagination';
