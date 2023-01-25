@@ -1,0 +1,31 @@
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 148px;
+  height: 42px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.56);
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #fec69e;
+    box-shadow: 0px 8px 43px rgba(254, 198, 158, 0.6);
+    border: none;
+    transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.btn-list:not(:last-child) {
+  margin-right: 16px;
+}
+
+.button.btn-add__active {
+  background-color: #ff6b01;
+  color: #ffffff;
+  border-color: #ff6b01;
+}
