@@ -1,57 +1,60 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+}
 .pagination {
-    display:inline-flex;
-    gap:16px;
-    align-items: center;
-    font-weight: 500;
-    font-size: 12px;
-    margin-left: auto;
-    margin-right: auto;
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pagination-numbers {
-    height:40px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    cursor: pointer;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 .pagination-button {
-    width:40px;
-    height:40px;
+  width: 40px;
+  height: 40px;
 
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: $footer-bg-color;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $footer-bg-color;
 
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
 
-    &.current {
-        background-color: $orange-color;
-        color:white;
-    }
-    &.unactive {
-        opacity: 0.3;
-        cursor: auto;
-    }
+  &.current {
+    background-color: $orange-color;
+    color: white;
+  }
+  &.unactive {
+    opacity: 0.3;
+    cursor: auto;
+  }
 
-    &.arrow-left {
-        background-image: url('/src/images/arrow-left.svg');
-    }
-    &.arrow-right {
-        background-image: url('/src/images/arrow-right.svg');
-    }
-
+  &.arrow-left {
+    background-image: url('/src/images/arrow-left.svg');
+  }
+  &.arrow-right {
+    background-image: url('/src/images/arrow-right.svg');
+  }
 }
