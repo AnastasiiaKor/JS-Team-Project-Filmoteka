@@ -1,11 +1,11 @@
 body {
-  font-family: --font-family;
-  background-color: --main-bg-color;
-  color: --dark-color;
+  font-family: $primary-font-family;
+  background-color: $main-bg-color;
+  color: $dark-color;
 
   &.dark-theme {
-    background-color: --dark-color;
-    color: --light-color;
+    background-color: $dark-color;
+    color: $light-color;
   }
 }
 
@@ -34,17 +34,17 @@ img {
   padding-right: 20px;
   min-width: 320px;
 
-  @media screen and (min-width: --mobile) {
-    width: --mobile;
+  @media screen and (min-width: #{$mobile}) {
+    width: $mobile;
   }
 
-  @media screen and (min-width: --tablet) {
-    width: --tablet;
+  @media screen and (min-width: #{$tablet}) {
+    width: $tablet;
     padding-left: 32px;
     padding-right: 32px;
   }
 
-  @media screen and (min-width: --desktop) {
-    width: --desktop;
+  @media screen and (min-width: #{$desktop}) {
+    width: $desktop;
   }
 }
