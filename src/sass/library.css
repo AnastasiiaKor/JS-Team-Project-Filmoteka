@@ -1,12 +1,12 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 body {
-  font-family: --font-family;
-  background-color: --main-bg-color;
-  color: --dark-color;
+  font-family: "Roboto", sans-serif;
+  background-color: #e5e5e5;
+  color: #000000;
 }
 body.dark-theme {
-  background-color: --dark-color;
-  color: --light-color;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 a {
@@ -38,39 +38,20 @@ img {
   padding-right: 20px;
   min-width: 320px;
 }
-@media screen and (min-width: --mobile) {
+@media screen and (min-width: 480px) {
   .container {
-    width: --mobile;
+    width: 480px;
   }
 }
-@media screen and (min-width: --tablet) {
+@media screen and (min-width: 768px) {
   .container {
-    width: --tablet;
+    width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
 }
-@media screen and (min-width: --desktop) {
+@media screen and (min-width: 1280px) {
   .container {
-    width: --desktop;
+    width: 1280px;
   }
-}
-
-:root {
-  --border-radius: 5px;
-  --main-bg-color: #e5e5e5;
-  --footer-bg-color: #f7f7f7;
-  --light-color: #ffffff;
-  --dark-color: #000000;
-  --modal-text: #8c8c8c;
-  --orange-color: #ff6b01;
-  --red-color: #ff001b;
-  --shadow: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
-  --animationTransition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --font-family: "Roboto", sans-serif;
-  --mobile: 480px;
-  --min-tablet: 767px;
-  --tablet: 768px;
-  --min-desktop: 1279px;
-  --desktop: 1280px;
 }/*# sourceMappingURL=library.css.map */
