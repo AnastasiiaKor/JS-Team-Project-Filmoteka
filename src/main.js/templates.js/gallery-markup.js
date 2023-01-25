@@ -1,20 +1,4 @@
-import { getTrending } from './requests';
-
-const gallery = document.querySelector('.gallery');
-let page = 1;
-
-buildGallery();
-
-async function buildGallery() {
-  try {
-    const data = await getTrending(page);
-    createMarkup(data);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-function createMarkup({ results }) {
+function createGalleryMarkup(gallery, { results }) {
   const markup = results
     .map(({ id, poster_path, title, genre_ids, release_date }) => {
       const date = new Date(release_date).getFullYear();
@@ -40,25 +24,4 @@ function createMarkup({ results }) {
   gallery.insertAdjacentHTML('beforeend', markup);
 }
 
-function getMovieById(callback) {
-  gallery.addEventListener('click', e => {
-    e.preventDefault();
-    if (e.target.nodeName !== 'A') return;
-    return callback(e.target.getAttribute('href'));
-  });
-}
-
-export { getMovieById };
-
-/*
-To get Movie by ID:
-
-import { getMovieById } from './gallery';
-
-getMovieById(callback);
-
-function callback(id) {
-  ...
-}
-
-*/
+export { createGalleryMarkup };
