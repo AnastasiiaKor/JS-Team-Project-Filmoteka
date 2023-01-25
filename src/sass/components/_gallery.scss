@@ -1,0 +1,60 @@
+.gallery {
+    display: grid;
+    width: 100%;
+    max-width: 1140px;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: $mobile) {
+        grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
+    }
+    
+    @media screen and (min-width: $tablet) {
+        grid-gap: 32px;
+    }
+
+    &__poster {
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        height: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+        color: inherit;
+        text-decoration: none;
+        transition: transform $animationTransition;
+    }
+
+    &__link:hover {
+        cursor: zoom-in;
+        transform: scale(1.03);
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+        font-family: $primary-font-family;
+        font-weight: 500;
+        @include textStyle(12px, 1.33)
+    }
+
+    &__movie-title {
+        text-transform: uppercase;
+    }
+
+    &__movie-meta {
+        color: $orange-color;
+    }
+}
