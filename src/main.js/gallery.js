@@ -40,7 +40,7 @@ function createMarkup({ results }) {
   gallery.insertAdjacentHTML('beforeend', markup);
 }
 
-function getInfoById(callback) {
+function getMovieById(callback) {
   gallery.addEventListener('click', e => {
     e.preventDefault();
     if (e.target.nodeName !== 'A') return;
@@ -48,13 +48,14 @@ function getInfoById(callback) {
   });
 }
 
-export { getInfoById };
+export { getMovieById };
+
 /*
-To get ID:
+To get Movie by ID:
 
-import { getInfoById } from './gallery';
+import { getMovieById } from './gallery';
 
-getInfoById(callback);
+getMovieById(callback);
 
 function callback(id) {
   ...
