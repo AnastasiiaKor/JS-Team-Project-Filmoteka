@@ -1,14 +1,25 @@
 .pagination {
     display:flex;
     gap:16px;
-    &-button {
-        width:40px;
-        height:40px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+}
+.pagination-button {
+    width:40px;
+    height:40px;
 
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px;
-        background-color: var(--orange-color);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    &.current {
+        background-color: $orange-color;
+        color:white;
+    }
+    
+
+    &.arrow {
+        background-color: $footer-bg-color;
     }
 }
