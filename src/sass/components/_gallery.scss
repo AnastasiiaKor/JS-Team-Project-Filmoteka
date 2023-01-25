@@ -1,7 +1,6 @@
 .gallery {
     display: grid;
     width: 100%;
-    max-width: 1140px;
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     grid-gap: 20px;
     justify-content: center;
@@ -17,13 +16,6 @@
         grid-gap: 32px;
     }
 
-    &__poster {
-        display: block;
-        width: 100%;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-
     &__link {
         position: relative;
         display: block;
@@ -36,8 +28,19 @@
     }
 
     &__link:hover {
-        cursor: zoom-in;
+        cursor: pointer;
         transform: scale(1.03);
+    }
+    
+    &__event-wrapper {
+        pointer-events: none;
+    }
+
+    &__poster {
+        display: block;
+        width: 100%;
+        border-radius: 5px;
+        object-fit: cover;
     }
 
     &__description {

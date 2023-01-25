@@ -1,13 +1,13 @@
 import { getTrending } from './requests';
 
 const gallery = document.querySelector('.gallery');
+let page = 1;
 
 buildGallery();
 
 async function buildGallery() {
   try {
-    console.log('object');
-    const data = await getTrending((page = 1));
+    const data = await getTrending(page);
     createMarkup(data);
   } catch (error) {
     console.log(error);
@@ -22,17 +22,42 @@ function createMarkup({ results }) {
       if (genre_ids && date) separator = ' | ';
       return `<li class="gallery__item">
                 <a class="gallery__link" href="${id}">
-                    <img class="gallery__poster" src="https://image.tmdb.org/t/p/w500${poster_path}" loading="lazy" />
-                    <div class="gallery__description">
-                        <p class="gallery__movie-title">${title}</p>
-                        <p class="gallery__movie-meta">
-                        ${genre_ids}${separator}${date}
-                        </p>
+                    <div class='gallery__event-wrapper'>
+                        <img class="gallery__poster" src="https://image.tmdb.org/t/p/w500${poster_path}" loading="lazy" />
+                        <div class="gallery__description">
+                            <p class="gallery__movie-title">${title}</p>
+                            <p class="gallery__movie-meta">
+                            ${genre_ids}${separator}${date}
+                            </p>
+                        </div>
                     </div>
                 </a>
-            </li>`;
+             </li>   
+            `;
     })
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', markup);
 }
+
+function getInfoById(callback) {
+  gallery.addEventListener('click', e => {
+    e.preventDefault();
+    if (e.target.nodeName !== 'A') return;
+    return callback(e.target.getAttribute('href'));
+  });
+}
+
+export { getInfoById };
+/*
+To get ID:
+
+import { getInfoById } from './gallery';
+
+getInfoById(callback);
+
+function callback(id) {
+  ...
+}
+
+*/
