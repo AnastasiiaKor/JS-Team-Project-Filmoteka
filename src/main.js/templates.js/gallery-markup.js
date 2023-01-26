@@ -1,6 +1,5 @@
 function createGalleryMarkup(gallery, { results }) {
   const genresList = JSON.parse(localStorage.getItem('genres'));
-  console.log(genresList);
   const markup = results
     .map(
       ({ id, poster_path, title, genre_ids, release_date, vote_average }) => {
