@@ -1,43 +1,37 @@
 <header class="header-library header">
+
     <div class="header__container">
         <nav class="nav">
-            <a href="./index.html" class="logo">
+            <a href="./index.html" class="logo logo-return">
               <svg class="logo__icon" width="24" height="24">
                 <use href="./images/icon.svg#icon-logo"></use>
               </svg>
               <h1 class="logo__text">Filmoteka</h1>
             </a>
-            <ul class="nav-list">
-              <li><a class="nav-list__item" href="./index.html">Home</a></li>
-              <li><a class="nav-list__item" href="./library.html">my library</a></li>
+       
+        <!-- <ul class="nav-list">
+          <li><a class="nav-list__item" href="./index.html">Home</a></li>
+          <li><a class="nav-list__item" href="./library.html">my library</a></li>
+        </ul> -->
+
+           <ul class="nav-list">
+              <li class="nav-list__item">
+                <a class="nav-list__link" href="./index.html">Home</a>
+              </li>
+              <li class="nav-list__item">
+                <a class="nav-list__link nav-list__link--current" href="./library.html">my library</a>
+              </li>
             </ul>
+
         </nav>
-      <!-- <div class="main-header">
-        <a href="./index.html" class="logo link">
-          <svg class="icon-home" width="24" height="24">
-            <use href="./images/icon.svg#icon-logo"></use>
-          </svg>
-          <span class="logo-span">Filmoteka</span>
-        </a>
-        <nav class="nav">
-          <ul class="nav-home list">
-            <li class="nav-list__item">
-              <a href="./index.html" class="nav-list__link link">Home</a>
-            </li>
-            <li class="nav-list__item">
-              <a href="./library.html" class="nav-list__link link current">My library</a>
-            </li>
-          </ul>
-        </nav>
-      </div> -->
+
       <ul class="btn">
             <li class="btn-list">
                 <button id="watched" class="button" type="submit">Watched</button>
             </li>
             <li class="btn-list">
-                <button id="queue" class="button btn-add__active" type="submit">queue</button>
+                <button id="queue" class="button" type="submit">queue</button>
             </li>
       </ul>
     </div>  
 </header>
-  

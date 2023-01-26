@@ -1,17 +1,18 @@
 import { getGenresById } from '../get-genres';
 
-function createGalleryMarkup(gallery, { results }) {
+function createGalleryMarkup(results) {
   const markup = results
-    .map(
-      ({ id, poster_path, title, genre_ids, release_date, vote_average }) => {
-        const date = new Date(release_date).getFullYear();
-        let separator = '';
-        // if (title.length > 30) title = title.slice(0, 30).concat('...');
-        if (genre_ids && date) separator = ' | ';
-        const genres = getGenresById(genre_ids);
+    .map(result => {
+      const { id, poster_path, title, genre_ids, release_date, vote_average } =
+        result;
+      const date = new Date(release_date).getFullYear();
+      let separator = '';
+      if (title.length > 30) title = title.slice(0, 30).concat('...');
+      if (genre_ids && date) separator = ' | ';
+      const genres = getGenresById(genre_ids);
 
-        return `<li class="gallery__item">
-                <a class="gallery__link" href="${id}" title="${title}">
+      return `<li class="gallery__item">
+                <a class="gallery__link" href="${id}">
                     <div class='gallery__event-wrapper'>
                         <img class="gallery__poster" src="https://image.tmdb.org/t/p/w500${poster_path}" loading="lazy" />
                         <div class="gallery__description">
@@ -28,11 +29,9 @@ function createGalleryMarkup(gallery, { results }) {
                 </a>
              </li>   
             `;
-      }
-    )
+    })
     .join('');
-
-  gallery.innerHTML = markup;
+  return markup;
 }
 
 export { createGalleryMarkup };
