@@ -13,8 +13,24 @@
   padding: 40px 20px;
   margin-left: auto;
   margin-right: auto;
+
   background-image: linear-gradient($opacity-header, $opacity-header),
                    url('/src/images/home_warning_@x1_320min.jpg');
+
+
+  @media screen and (min-width: 768px) {
+    padding-right: 33px;
+    padding-left: 33px;
+  }
+
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.56),
+    rgba(0, 0, 0, 0.56)
+  );
+
+   ,url(../images/hesat_1.png);
+
   background-size: 100% 100%;
   box-shadow: $shadow-header;
     
@@ -65,6 +81,11 @@
 
 .nav {
   display: flex;
+  margin-bottom: 62px;
+
+  @media screen and (min-width: #{$tablet}) {
+    margin-bottom: 40px;
+  }
 }
 
 .logo {
@@ -125,6 +146,7 @@
   }
   
 }
+
 
 .btn {
   display: flex;
@@ -211,3 +233,4 @@
       transform: scale(1.1);
     }
 }
+
