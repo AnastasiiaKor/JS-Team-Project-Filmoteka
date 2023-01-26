@@ -23,6 +23,11 @@
     transform: scale(1.03);
   }
 
+  &__link:focus {
+    outline: 4px solid $orange-color;
+    outline-offset: 4px;
+  }
+
   &__event-wrapper {
     pointer-events: none;
   }
