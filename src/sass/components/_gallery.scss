@@ -23,6 +23,11 @@
     transform: scale(1.03);
   }
 
+  &__link:focus {
+    outline: 4px solid $orange-color;
+    outline-offset: 4px;
+  }
+
   &__event-wrapper {
     pointer-events: none;
   }
@@ -45,11 +50,14 @@
   }
 
   &__movie-title {
+    max-width: 100%;
     text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   &__movie-meta {
-    line-height: 1.6;
     color: $orange-color;
   }
 
