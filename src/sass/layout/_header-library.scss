@@ -1,10 +1,10 @@
 .header {
-  font-family: 'Roboto', sans-serif;
+  font-family: $primary-font-family;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
-  color: #ffffff;
+  color: $light-color;
 }
 
 .header__container {
@@ -13,34 +13,34 @@
   padding: 40px 20px;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+  background-image: linear-gradient($opacity-header, $opacity-header),
                    url('/src/images/home_warning_@x1_320min.jpg');
   background-size: 100% 100%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: $shadow-header;
     
   @media screen and (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      background-image: linear-gradient($opacity-header, $opacity-header),
       url('/src/images/home_warning_@x2_320min.jpg');
       background-size: 100% 100%;
   }
   
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding-right: 33px;
     padding-left: 33px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
       min-height: 216px;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      background-image: linear-gradient($opacity-header, $opacity-header),
                    url('/src/images/home_warning_@x1_768min.jpg');
       background-size: 100% 100%;
       
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        background-image: linear-gradient($opacity-header, $opacity-header),
                    url('/src/images/home_warning_@x2_768min.jpg');
         background-size: 100% 100%;
       }
@@ -49,14 +49,14 @@
 
   @media screen and (min-width: 1280px) {
     min-height: 216px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    background-image: linear-gradient($opacity-header, $opacity-header),
                  url('/src/images/home_warning_@x1_1280min.jpg');
     background-size: 100% 100%;
     
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        background-image: linear-gradient($opacity-header, $opacity-header),
                   url('/src/images/home_warning_@x2_1280min.jpg');
         background-size: 100% 100%;
       }
@@ -73,10 +73,8 @@
 
   &__text {
     display: inline-block;
-
     margin: 0;
     margin-left: 10px;
-
     font-size: 30px;
 
     @media screen and (max-width: 767px) {
@@ -101,24 +99,32 @@
   align-items: center;
   column-gap: 40px;
 
-  &__item {
+  &__link {
     display: inline-block;
 
     margin: 0;
     padding: 0;
-
     padding-top: 4px;
     padding-bottom: 6px;
-
     text-decoration: none;
     list-style: none;
     text-align: center;
     text-transform: uppercase;
-
     color: inherit;
   }
+  &__link--current::after{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: $red-color;
+  }
+  
 }
-
 
 .btn {
   display: flex;
@@ -126,15 +132,14 @@
   margin-top: 40px;
 }
 
-
 .button {
   cursor: pointer;
   width: 148px;
   height: 42px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: $light-color;
   background: rgba(0, 0, 0, 0.56);
-  border: 1px solid #ffffff;
+  border: 1px solid $light-color;
   border-radius: 5px;
   
   @media screen and (max-width: 320px){
@@ -147,8 +152,8 @@
   }
 
   &:hover {
-    background-color: #fec69e;
-    box-shadow: 0px 8px 43px rgba(254, 198, 158, 0.6);
+    background-color: $hover-btn-color;
+    box-shadow: $shadow-button;
     border: none;
     transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -165,8 +170,44 @@
 
   
 }
+
 .button.btn-add__active {
-  background-color: #ff6b01;
-  color: #ffffff;
-  border-color: #ff6b01;
+  background-color: $orange-color;
+  color: $light-color;
+  border-color: $orange-color;
+}
+
+.nav-list {
+  display: flex;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.16;
+
+  &__item {
+    transform: scale(1);
+    transition: transform 350ms $bezier-hov;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.25);
+    }
+  }
+
+  &__link {
+    color:$light-color;
+    transition: color 350ms $bezier-hov;
+
+    &:hover,
+    &:focus {
+      color: $red-color;
+    }
+  }
+}
+
+.logo-return {
+  transition: 350ms $bezier-hov;
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
 }
