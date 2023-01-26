@@ -8,10 +8,9 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.25);
   z-index: 100;
   overflow: auto;
-  opacity: 0.25;
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -22,12 +21,12 @@ h3 {
     visibility 800ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal__backdrop.is-hidden {
-  transform: scale(0);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
+// .modal__backdrop.is-hidden {
+//   transform: scale(0);
+//   opacity: 0;
+//   visibility: hidden;
+//   pointer-events: none;
+// }
 
 .modal {
   position: absolute;
@@ -35,7 +34,9 @@ h3 {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 48px 20px;
+  opacity: 1;
   background-color: inherit;
+  background-color: white;
   border: 1px solid #0000001a;
   width: 94%;
   z-index: 101;
@@ -66,14 +67,27 @@ h3 {
   width: 30px;
   height: 30px;
   @include flexCentered(flex, center, center);
-  fill: currentColor;
-  color: inherit;
-  border: none;
+  // fill: currentColor;
+  // color: inherit;
+  // border: none;
+  fill: black;
+  color: black;
+  border-color: black;
   background-color: inherit;
   transition: transform, color $animationTransition;
   &:hover,
   &:focus {
     @extend %button-modal--hover;
+  }
+}
+.film__image {
+  display: block;
+  width: 100%;
+  min-width: 264px;
+  border-radius: 5px;
+  object-fit: cover;
+  @media screen and (min-width: $tablet) {
+    min-width: 264px;
   }
 }
 .film__title {
@@ -110,7 +124,7 @@ h3 {
 .modal__wrapper {
   @media screen and (min-width: $tablet) {
     @include flexCentered(flex, center, center);
-    gap: 68px;
+    gap: 12px;
   }
   @media screen and (min-width: $desktop) {
     gap: 16px;
