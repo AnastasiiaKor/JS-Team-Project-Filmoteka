@@ -301,10 +301,13 @@ img {
   text-transform: uppercase;
 }
 .gallery__movie-meta {
+  line-height: 1.6;
   color: #ff6b01;
 }
+.gallery__movie-info {
+  margin-right: 9px;
+}
 .gallery__movie-rating {
-  margin-left: 9px;
   padding: 1px 6px;
   border-radius: 5px;
   color: #ffffff;
