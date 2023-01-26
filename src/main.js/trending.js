@@ -6,7 +6,6 @@ const gallery = document.querySelector('.gallery');
 let page = 1;
 
 buildGallery();
-getMovie(gallery);
 
 async function buildGallery() {
   try {
