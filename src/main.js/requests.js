@@ -8,9 +8,9 @@ async function getTrending(page) {
   return response.data;
 }
 //SEARCH
-async function getMoviesByKeyword(keyword, page) {
+async function getMoviesByKeyword({ keyword, page }) {
   const response = await instance(
-    `/search/movie?api_key=${KEY}&page=${2}&query=${keyword}&language=en-US`
+    `search/movie?api_key=${KEY}&page=${page}&query=${keyword}&language=en-US`
   );
   return response.data;
 }
