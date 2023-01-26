@@ -10,6 +10,7 @@ async function buildGallery() {
   try {
     const data = await getTrending(page);
     createGalleryMarkup(gallery, data);
+    return data;
   } catch (error) {
     console.log(error);
   }
