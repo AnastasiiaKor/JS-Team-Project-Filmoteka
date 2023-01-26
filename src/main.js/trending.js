@@ -9,8 +9,8 @@ buildGallery();
 async function buildGallery() {
   try {
     const data = await getTrending(page);
-    createGalleryMarkup(gallery, data);
-    return data;
+    const markup = createGalleryMarkup(data.results);
+    gallery.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
     console.log(error);
   }
