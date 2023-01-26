@@ -294,10 +294,13 @@ img {
   letter-spacing: 0.04em;
 }
 .gallery__movie-title {
+  max-width: 100%;
   text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .gallery__movie-meta {
-  line-height: 1.6;
   color: #ff6b01;
 }
 .gallery__movie-info {

@@ -6,11 +6,12 @@ function createGalleryMarkup(gallery, { results }) {
       ({ id, poster_path, title, genre_ids, release_date, vote_average }) => {
         const date = new Date(release_date).getFullYear();
         let separator = '';
+        // if (title.length > 30) title = title.slice(0, 30).concat('...');
         if (genre_ids && date) separator = ' | ';
         const genres = getGenresById(genre_ids);
 
         return `<li class="gallery__item">
-                <a class="gallery__link" href="${id}">
+                <a class="gallery__link" href="${id}" title="${title}">
                     <div class='gallery__event-wrapper'>
                         <img class="gallery__poster" src="https://image.tmdb.org/t/p/w500${poster_path}" loading="lazy" />
                         <div class="gallery__description">
