@@ -31,7 +31,7 @@ async function searchMovies(event) {
       clearInfo();
     }
   } catch (error) {
-    throw new Error();
+    console.log(error);
   }
 }
 

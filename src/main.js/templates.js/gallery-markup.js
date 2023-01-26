@@ -7,7 +7,7 @@ function createGalleryMarkup(results) {
         result;
       const date = new Date(release_date).getFullYear();
       let separator = '';
-      if (title.length > 30) title = title.slice(0, 30).concat('...');
+      if (title.length > 30) title.slice(0, 30).concat('...');
       if (genre_ids && date) separator = ' | ';
       const genres = getGenresById(genre_ids);
 
