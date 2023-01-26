@@ -1,6 +1,6 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #e5e5e5;
   color: #000000;
 }
@@ -61,14 +61,14 @@ img {
   bottom: 0;
   left: 0;
   display: block;
-  content: "";
+  content: '';
   width: 100%;
   height: 3px;
   background-color: #ff001b;
 }
 
 .header {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -82,7 +82,11 @@ img {
   padding: 40px 20px;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.56),
+    rgba(0, 0, 0, 0.56)
+  );
   background-size: cover;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -91,7 +95,10 @@ img {
     background-image: url(../images/Group\ 86_home@x1_320min.jpg);
   }
 }
-@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px), screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px), screen and (min-resolution: 192dpi) and (max-width: 767px), screen and (min-resolution: 2dppx) and (max-width: 767px) {
+@media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+  screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px),
+  screen and (min-resolution: 192dpi) and (max-width: 767px),
+  screen and (min-resolution: 2dppx) and (max-width: 767px) {
   .header__container {
     background-image: url(../images/Group\ 86_home@x2_320min.jpg);
   }
@@ -104,7 +111,10 @@ img {
     background-image: url(../images/Group\ 86_home@x1_768min.jpg);
   }
 }
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px), screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px), screen and (min-resolution: 192dpi) and (min-width: 768px), screen and (min-resolution: 2dppx) and (min-width: 768px) {
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+  screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px),
+  screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px) {
   .header__container {
     background-image: url(../images/Group\ 86_home@x2_768min.jpg);
   }
@@ -114,7 +124,10 @@ img {
     background-image: url(../images/Group\ 87_home@x1_1280min.jpg);
   }
 }
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 1280px), screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1280px), screen and (min-resolution: 192dpi) and (min-width: 1280px), screen and (min-resolution: 2dppx) and (min-width: 1280px) {
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1280px),
+  screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1280px),
+  screen and (min-resolution: 192dpi) and (min-width: 1280px),
+  screen and (min-resolution: 2dppx) and (min-width: 1280px) {
   .header__container {
     background-image: url(../images/Group\ 87_home@x2_1280min.jpg);
   }
@@ -145,7 +158,7 @@ img {
     padding: 0;
     clip: rect(0 0 0 0);
     -webkit-clip-path: inset(50%);
-            clip-path: inset(50%);
+    clip-path: inset(50%);
     margin: -1px;
   }
 }
@@ -161,7 +174,7 @@ img {
   justify-content: center;
   align-items: center;
   -moz-column-gap: 40px;
-       column-gap: 40px;
+  column-gap: 40px;
 }
 .nav-list__link {
   display: inline-block;
@@ -250,22 +263,11 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 480px) {
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
-  }
-}
-@media screen and (min-width: 768px) {
-  .gallery {
-    grid-gap: 32px;
-  }
-}
 .gallery__link {
   position: relative;
   display: block;
   height: 100%;
   border-radius: 4px;
-  overflow: hidden;
   color: inherit;
   text-decoration: none;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -282,14 +284,14 @@ img {
   width: 100%;
   border-radius: 5px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .gallery__description {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-top: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
@@ -299,7 +301,43 @@ img {
   text-transform: uppercase;
 }
 .gallery__movie-meta {
+  line-height: 1.6;
   color: #ff6b01;
+}
+.gallery__movie-info {
+  margin-right: 9px;
+}
+.gallery__movie-rating {
+  padding: 1px 6px;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #ff6b01;
+}
+@media screen and (min-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
+  }
+}
+@media screen and (min-width: 768px) {
+  .gallery {
+    grid-gap: 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery__description {
+    gap: 6px;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+  }
+  .gallery__movie-rating {
+    padding: 3px 8px;
+  }
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
 }
 
 .pagination {
@@ -350,10 +388,10 @@ img {
   cursor: auto;
 }
 .pagination-button.arrow-left {
-  background-image: url("/src/images/arrow-left.svg");
+  background-image: url('/src/images/arrow-left.svg');
 }
 .pagination-button.arrow-right {
-  background-image: url("/src/images/arrow-right.svg");
+  background-image: url('/src/images/arrow-right.svg');
 }
 
 .btn {
@@ -385,4 +423,4 @@ img {
   background-color: #ff6b01;
   color: #ffffff;
   border-color: #ff6b01;
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */

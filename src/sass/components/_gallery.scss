@@ -8,20 +8,11 @@
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: $mobile) {
-    grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
-  }
-
-  @media screen and (min-width: $tablet) {
-    grid-gap: 32px;
-  }
-
   &__link {
     position: relative;
     display: block;
     height: 100%;
     border-radius: 4px;
-    overflow: hidden;
     color: inherit;
     text-decoration: none;
     transition: transform $animationTransition;
@@ -58,6 +49,37 @@
   }
 
   &__movie-meta {
+    line-height: 1.6;
     color: $orange-color;
+  }
+
+  &__movie-info {
+    margin-right: 9px;
+  }
+
+  &__movie-rating {
+    padding: 1px 6px;
+    border-radius: 5px;
+    color: $light-color;
+    background-color: $orange-color;
+  }
+
+  @media screen and (min-width: $mobile) {
+    grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
+  }
+
+  @media screen and (min-width: $tablet) {
+    grid-gap: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    &__description {
+      gap: 6px;
+      @include textStyle(20px, 1.2);
+    }
+
+    &__movie-rating {
+      padding: 3px 8px;
+    }
   }
 }
