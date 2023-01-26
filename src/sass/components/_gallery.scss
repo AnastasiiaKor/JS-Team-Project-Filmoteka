@@ -49,11 +49,15 @@
   }
 
   &__movie-meta {
+    line-height: 1.6;
     color: $orange-color;
   }
 
+  &__movie-info {
+    margin-right: 9px;
+  }
+
   &__movie-rating {
-    margin-left: 9px;
     padding: 1px 6px;
     border-radius: 5px;
     color: $light-color;
