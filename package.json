@@ -23,8 +23,7 @@
     "firebase": "^9.16.0",
     "firebaseui": "^6.0.2",
     "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.6",
-    "tooltip": "^1.6.1"
+    "notiflix": "^3.2.6"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
