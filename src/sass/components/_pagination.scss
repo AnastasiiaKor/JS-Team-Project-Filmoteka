@@ -1,6 +1,7 @@
 .pagination-container {
   display: flex;
   justify-content: center;
+  margin: 60px auto 60px auto;
 }
 .pagination {
   display: inline-flex;
@@ -56,5 +57,13 @@
   }
   &.arrow-right {
     background-image: url('/src/images/arrow-right.svg');
+  }
+}
+
+.dots, .last {
+  display:none;
+
+  @media screen and (min-width: $min-tablet) {
+    display:flex;
   }
 }

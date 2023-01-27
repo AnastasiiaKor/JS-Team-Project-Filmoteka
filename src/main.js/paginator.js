@@ -55,7 +55,7 @@ export class Paginator {
       }
       paginatorCode = `${this.arrow('left', this.#currentPage > 1)} ${list.join(
         ''
-      )} ${this.dots('front')} ${this.number(this.#totalPages)} ${this.arrow(
+      )} ${this.dots('front')} ${this.lastnumber(this.#totalPages)} ${this.arrow(
         'right',
         true
       )}`;
@@ -69,7 +69,7 @@ export class Paginator {
             : this.number(i);
         list.push(addButton);
       }
-      paginatorCode = `${this.arrow('left', true)} ${this.number(
+      paginatorCode = `${this.arrow('left', true)} ${this.lastnumber(
         1
       )} ${this.dots('back')}  ${list.join('')} ${this.arrow(
         'right',
@@ -82,9 +82,9 @@ export class Paginator {
       )} ${this.active(this.#currentPage)} ${this.number(
         this.#currentPage + 1
       )} ${this.number(this.#currentPage + 2)}`;
-      paginatorCode = `${this.arrow('left', true)} ${this.number(
+      paginatorCode = `${this.arrow('left', true)} ${this.lastnumber(
         1
-      )} ${this.dots('back')} ${list} ${this.dots('front')} ${this.number(
+      )} ${this.dots('back')} ${list} ${this.dots('front')} ${this.lastnumber(
         this.#totalPages
       )} ${this.arrow('right', true)}`;
     }
@@ -98,10 +98,14 @@ export class Paginator {
     }" data-button="${direction}"></div>`;
   }
   dots(direction) {
-    return `<div class="pagination-numbers" data-button="${direction}">...</div>`;
+    return `<div class="pagination-numbers dots" data-button="${direction}">...</div>`;
   }
   number(n) {
     return `<div class="pagination-numbers" data-button="${n}">${n}</div>`;
+  }
+
+  lastnumber(n) {
+    return `<div class="pagination-numbers last" data-button="${n}">${n}</div>`;
   }
 
   active(n) {
