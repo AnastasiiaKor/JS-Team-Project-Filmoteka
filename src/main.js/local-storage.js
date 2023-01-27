@@ -60,6 +60,4 @@ function setLocalStorage(data) {
   }
 }
 
-function removeBtnEventListener() {}
-
 export { setLocalStorage };
