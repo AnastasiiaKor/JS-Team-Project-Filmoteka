@@ -32,11 +32,20 @@
     pointer-events: none;
   }
 
+  &__poster-wrapper {
+    display: flex;
+    overflow: hidden;
+    border-radius: 5px;
+    background-image: url(../images/placeholder.webp);
+    background-size: cover;
+    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.2);
+  }
+
   &__poster {
+    object-fit: cover;
+
     display: block;
     width: 100%;
-    border-radius: 5px;
-    object-fit: cover;
   }
 
   &__description {
@@ -73,7 +82,7 @@
   }
 
   @media screen and (min-width: $mobile) {
-    &__poster {
+    &__poster-wrapper {
       height: 398px;
     }
   }
@@ -82,7 +91,7 @@
     grid-gap: 32px;
     grid-template-columns: 336px 336px;
 
-    &__poster {
+    &__poster-wrapper {
       height: 455px;
     }
   }
@@ -95,7 +104,7 @@
       @include textStyle(20px, 1.2);
     }
 
-    &__poster {
+    &__poster-wrapper {
       height: 600px;
     }
 
