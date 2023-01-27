@@ -16,21 +16,29 @@ async function searchMovies(event) {
         keyword: value,
         page: 1,
       });
+    } else {
+      searchResult.innerHTML =
+        'Movie name  must not be empty. Please, enter movie name to search.';
+      clearInfo();
     }
-    if (serched.results.length) {
+    if (serched?.results?.length) {
       const markup = createGalleryMarkup(serched.results);
       searchResult.innerHTML = '';
       gallery.innerHTML = markup;
     } else if (value) {
       searchResult.innerHTML =
         'Search result not successful. Enter the correct movie name and try again.';
-      setTimeout(() => {
-        searchResult.innerHTML = '';
-      }, WARNING_CLEAR_DELAY);
+      clearInfo();
     }
   } catch (error) {
-    throw new Error();
+    console.log(error);
   }
 }
 
 headerForm.addEventListener('submit', searchMovies);
+
+const clearInfo = () => {
+  setTimeout(() => {
+    searchResult.innerHTML = '';
+  }, WARNING_CLEAR_DELAY);
+};
