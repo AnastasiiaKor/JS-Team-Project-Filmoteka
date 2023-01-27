@@ -57,7 +57,8 @@ const onSearch = event => {
   event.preventDefault();
   const value = event.target['search-film'].value.trim();
   if (value) {
-    getMovies(value, 1);
+    query = value;
+    getMovies(query, 1);
   } else {
     searchResult.textContent = 'Movie name must not be empty. Please, enter movie name to search.';
     clearInfo();
