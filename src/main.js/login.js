@@ -1,12 +1,12 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 const firebaseConfig = {
-  apiKey: 'AIzaSyARNRNbYX7sZVx7e1EUAfDDynq2YzI-Mg0',
-  authDomain: 'myproject-551520.firebaseapp.com',
-  projectId: 'myproject-551520',
-  storageBucket: 'myproject-551520.appspot.com',
-  messagingSenderId: '460866384248',
-  appId: '1:460866384248:web:6c5f416450cb9fe7c4188d',
+  apiKey: 'AIzaSyASYZ8NOzf1HV_qXySt_PAWGOCo9aSEqfI',
+  authDomain: 'filmoteka-tp.firebaseapp.com',
+  projectId: 'filmoteka-tp',
+  storageBucket: 'filmoteka-tp.appspot.com',
+  messagingSenderId: '973907143233',
+  appId: '1:973907143233:web:fc416ff81e72bf4792b4c0',
 };
 const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
@@ -19,6 +19,7 @@ const onLogin = event => {
 
       const token = credential.accessToken;
       const user = result.user;
+      localStorage.setItem('user', user.displayName);
     })
     .catch(error => {
       const errorCode = error.code;
