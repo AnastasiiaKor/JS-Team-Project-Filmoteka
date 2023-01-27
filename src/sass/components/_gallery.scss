@@ -1,7 +1,6 @@
 .gallery {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   grid-gap: 20px;
   justify-content: center;
   margin-top: 60px;
@@ -26,6 +25,7 @@
   &__link:focus {
     outline: 4px solid $orange-color;
     outline-offset: 4px;
+    transform: scale(1.03);
   }
 
   &__event-wrapper {
@@ -73,17 +73,30 @@
   }
 
   @media screen and (min-width: $mobile) {
-    grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
+    &__poster {
+      height: 398px;
+    }
   }
 
   @media screen and (min-width: $tablet) {
     grid-gap: 32px;
+    grid-template-columns: 336px 336px;
+
+    &__poster {
+      height: 455px;
+    }
   }
 
   @media screen and (min-width: $desktop) {
+    grid-template-columns: 395px 395px 395px;
+
     &__description {
       gap: 6px;
       @include textStyle(20px, 1.2);
+    }
+
+    &__poster {
+      height: 600px;
     }
 
     &__movie-rating {
