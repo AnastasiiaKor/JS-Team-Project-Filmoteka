@@ -4,61 +4,69 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
+
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
   color: $light-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-size: cover;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.56),
+    rgba(0, 0, 0, 0.56)
+  );
+
+  @media screen and (max-width: $min-tablet) {
+    background-image: linear-gradient($opacity-header, $opacity-header),
+    url(../images/home_warning_@x1_320min.jpg);
+    background-size: 100% 100%;
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient($opacity-header, $opacity-header),
+      url(../images/home_warning_@x2_320min.jpg);
+      background-size: 100% 100%;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    background-image: linear-gradient($opacity-header, $opacity-header),
+    url(../images/home_warning_@x1_768min.jpg);
+    background-size: 100% 100%;
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient($opacity-header, $opacity-header),
+      url(../images/home_warning_@x2_768min.jpg);
+      background-size: 100% 100%;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    background-image: linear-gradient($opacity-header, $opacity-header),
+    url(../images/home_warning_@x1_1280min.jpg);
+    background-size: 100% 100%;
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient($opacity-header, $opacity-header),
+      url(../images/home_warning_@x2_1280min.jpg);
+      background-size: 100% 100%;
+    }
+  }
 }
 
 .header__container {
-  max-width: 1280px;
-  height: 216px;
+  min-height: 230px;
   padding: 40px 20px;
-  margin-left: auto;
-  margin-right: auto;
-  background-image: linear-gradient($opacity-header, $opacity-header),
-    url('/src/images/home_warning_@x1_320min.jpg');
-  background-size: 100% 100%;
-  box-shadow: $shadow-header;
-
-  @media screen and (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: linear-gradient($opacity-header, $opacity-header),
-      url('/src/images/home_warning_@x2_320min.jpg');
-    background-size: 100% 100%;
-  }
-
-  @media screen and (min-width: $tablet) {
-    padding-right: 33px;
-    padding-left: 33px;
-  }
 
   @media screen and (min-width: $tablet) {
     min-height: 216px;
-    background-image: linear-gradient($opacity-header, $opacity-header),
-      url('/src/images/home_warning_@x1_768min.jpg');
-    background-size: 100% 100%;
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: linear-gradient($opacity-header, $opacity-header),
-        url('/src/images/home_warning_@x2_768min.jpg');
-      background-size: 100% 100%;
-    }
-  }
-
-  @media screen and (min-width: 1280px) {
-    min-height: 216px;
-    background-image: linear-gradient($opacity-header, $opacity-header),
-      url('/src/images/home_warning_@x1_1280min.jpg');
-    background-size: 100% 100%;
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: linear-gradient($opacity-header, $opacity-header),
-        url('/src/images/home_warning_@x2_1280min.jpg');
-      background-size: 100% 100%;
-    }
   }
 }
 
