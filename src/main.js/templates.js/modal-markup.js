@@ -1,4 +1,4 @@
-import { getGenresById } from '../get-genres';
+// import { getGenresById } from '../get-genres';
 
 let modalDetails = document.querySelector('.js-modal');
 
@@ -15,7 +15,7 @@ function createModalMarkup(movie) {
     video,
     overview,
   } = movie;
-  const genres = getGenresById(genre_ids);
+  // const genres = getGenresById(genre_ids);
   const markup = `
       <div class="modal__backdrop">
     <div class="modal">
@@ -56,7 +56,7 @@ function createModalMarkup(movie) {
               </tr>
               <tr>
                 <td class="film__item">Genre</td>
-                <td class="film__details">${genres}</td>
+                <td class="film__details">${genre_ids}</td>
               </tr>
             </tbody>
           </table>

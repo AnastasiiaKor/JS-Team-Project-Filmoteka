@@ -30,10 +30,10 @@ function onCloseClick(e) {
     modalDetails.innerHTML = '';
   }
 }
-function onClickOutsideModal(e) {
-  // console.log(e.target.nodeName);
-  // if (e.target.nodeName === ) {
-  //   // modalContainer.removeEventListener();
-  //   modalDetails.innerHTML = '';
-  // }
-}
+// function onClickOutsideModal(e) {
+//   // console.log(e.target.nodeName);
+//   // if (e.target.nodeName === ) {
+//   //   // modalContainer.removeEventListener();
+//   //   modalDetails.innerHTML = '';
+//   // }
+// }
