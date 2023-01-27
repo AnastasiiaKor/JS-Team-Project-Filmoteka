@@ -1,9 +1,10 @@
 .header {
-  font-family: $primary-font-family;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
+
 
   max-width: 1600px;
   margin-left: auto;
@@ -39,23 +40,11 @@
       background-image: linear-gradient($opacity-header, $opacity-header),
       url(../images/home_warning_@x2_768min.jpg);
       background-size: 100% 100%;
-    }
-  }
 
-  @media screen and (min-width: $desktop) {
-    background-image: linear-gradient($opacity-header, $opacity-header),
-    url(../images/home_warning_@x1_1280min.jpg);
-    background-size: 100% 100%;
-
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      background-image: linear-gradient($opacity-header, $opacity-header),
-      url(../images/home_warning_@x2_1280min.jpg);
-      background-size: 100% 100%;
     }
   }
 }
+
 
 .header__container {
   min-height: 230px;
@@ -76,8 +65,10 @@
 
   &__text {
     display: inline-block;
+
     margin: 0;
-    margin-left: 10px;
+    margin-left: 8px;
+
     font-size: 30px;
 
     @media screen and (max-width: 767px) {
@@ -102,31 +93,24 @@
   align-items: center;
   column-gap: 40px;
 
-  &__link {
+  &__item {
     display: inline-block;
 
     margin: 0;
     padding: 0;
+
     padding-top: 4px;
     padding-bottom: 6px;
+
     text-decoration: none;
     list-style: none;
     text-align: center;
     text-transform: uppercase;
+
     color: inherit;
   }
-  &__link--current::after {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    display: block;
-    content: '';
-    width: 100%;
-    height: 3px;
-    border-radius: 2px;
-    background-color: $red-color;
-  }
 }
+
 
 .btn {
   display: flex;
@@ -134,28 +118,31 @@
   margin-top: 40px;
 }
 
+
 .button {
   cursor: pointer;
   width: 148px;
   height: 42px;
   text-transform: uppercase;
+
   color: $light-color;
   background: $opacity-header;
   border: 1px solid $light-color;
-  border-radius: 5px;
 
-  @media screen and (max-width: 320px) {
+  border-radius: 5px;
+  
+  @media screen and (max-width: 320px){
     width: 130px;
     height: 44px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px){
     width: 152px;
     height: 44px;
   }
 
   &:hover {
-    background-color: $hover-btn-color;
-    box-shadow: $shadow-button;
+    background-color: #fec69e;
+    box-shadow: 0px 8px 43px rgba(254, 198, 158, 0.6);
     border: none;
     transition: 350ms $bezier-btn;
   }
@@ -163,50 +150,17 @@
 
 .btn-list:not(:last-child) {
   margin-right: 40px;
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 320px){
     margin-right: 20px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px){
     margin-right: 16px;
   }
-}
 
+  
+}
 .button.btn-add__active {
-  background-color: $orange-color;
-  color: $light-color;
-  border-color: $orange-color;
-}
-
-.nav-list {
-  display: flex;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 1.16;
-
-  &__item {
-    transform: scale(1);
-    transition: transform 350ms $bezier-hov;
-    &:hover,
-    &:focus {
-      transform: scale(1.25);
-    }
-  }
-
-  &__link {
-    color: $light-color;
-    transition: color 350ms $bezier-hov;
-
-    &:hover,
-    &:focus {
-      color: $red-color;
-    }
-  }
-}
-
-.logo-return {
-  transition: 350ms $bezier-hov;
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-  }
+  background-color: #ff6b01;
+  color: #ffffff;
+  border-color: #ff6b01;
 }
