@@ -15,12 +15,12 @@ function createModalMarkup(movie) {
     video,
     overview,
   } = movie;
-  const trailerButton = movie.video
+  const trailerButton = video
     ? `<button type="button" class="button film__button--trailer">
-      Try to watch trailer ${video}
+      Watch trailer
     </button>`
     : '';
-
+  console.log(movie);
   const genresList = genres.map(genre => genre.name).join(', ');
 
   const genre =
