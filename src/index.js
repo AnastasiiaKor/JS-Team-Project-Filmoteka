@@ -5,3 +5,5 @@ import './main.js/trending';
 import './main.js/search';
 import './main.js/modal';
 import './main.js/login';
+import './main.js/gallery';
+import './main.js/modal-students';
