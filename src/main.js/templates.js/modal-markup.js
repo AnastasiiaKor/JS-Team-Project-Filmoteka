@@ -11,13 +11,27 @@ function createModalMarkup(movie) {
     vote_count,
     popularity,
     original_title,
-    genre_ids,
+    genres,
     video,
     overview,
   } = movie;
-  // const genres = getGenresById(genre_ids);
+  const trailerButton = movie.video
+    ? `<button type="button" class="button film__button--trailer">
+      Try to watch trailer ${video}
+    </button>`
+    : '';
+
+  const genresList = genres.map(genre => genre.name).join(', ');
+
+  const genre =
+    genres.length !== 0
+      ? `<tr>
+        <td class="film__item">Genre</td>
+        <td class="film__details">${genresList}</td>
+      </tr>`
+      : '';
   const markup = `
-      <div class="modal__backdrop">
+  <div class="modal__backdrop">
     <div class="modal">
       <button type="button" class="button__close">
         <svg width="30" height="30">
@@ -54,15 +68,10 @@ function createModalMarkup(movie) {
                 <td class="film__item">Original Title</td>
                 <td class="film__details upper">${original_title}</td>
               </tr>
-              <tr>
-                <td class="film__item">Genre</td>
-                <td class="film__details">${genre_ids}</td>
-              </tr>
+              ${genre}
             </tbody>
           </table>
-          <button type="button" class="button film__button--trailer">
-            Try to watch trailer ${video} 
-          </button>
+          ${trailerButton}
           <div>
             <h3 class="film__about--title upper">About</h3>
             <p class="film__about--text">${overview}</p>
@@ -80,7 +89,7 @@ function createModalMarkup(movie) {
     </div>
   </div>
       `;
-
   modalDetails.innerHTML = markup;
 }
+
 export { createModalMarkup };
