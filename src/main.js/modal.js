@@ -1,5 +1,6 @@
 import { createModalMarkup } from './templates.js/modal-markup';
 import { getMovie } from './get-movie';
+import { setLocalStorage } from './local-storage';
 
 const gallery = document.querySelector('.gallery');
 gallery.addEventListener('click', openModal);
@@ -16,6 +17,8 @@ function openModal(e) {
       createModalMarkup(data);
       modalContainer = document.querySelector('.modal');
       modalContainer.addEventListener('click', onCloseClick);
+
+      setLocalStorage(data);
     })
     .catch(error => {
       console.log(error.message);
