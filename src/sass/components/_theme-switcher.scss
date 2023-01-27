@@ -1,0 +1,34 @@
+.theme-switcher__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+
+    fill: $light-color;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+
+    transition: background $animationTransition;
+
+    &:hover {
+        background-color: $orange-color;
+    }
+}
+
+.icon-ishidden {
+    display: none;
+}
+
+// .my-tooltip {
+//     display: none;
+// }
+
+// .my-tooltip-active {
+//     display: block;
+// }
