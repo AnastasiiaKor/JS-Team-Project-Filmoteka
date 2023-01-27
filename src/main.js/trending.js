@@ -14,7 +14,8 @@ async function buildGallery(page = 1) {
   try {
     const data = await getTrending(page);
     const markup = createGalleryMarkup(data.results);
-    gallery.insertAdjacentHTML('beforeend', markup);
+    //gallery.insertAdjacentHTML('beforeend', markup);
+    gallery.innerHTML = markup;
     p.currentPage = data.page;
     p.totalPages = data.total_pages;
   } catch (error) {
