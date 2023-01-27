@@ -61,7 +61,7 @@ function createModalMarkup(movie) {
             </tbody>
           </table>
           <button type="button" class="button film__button--trailer">
-            ${video} Check, if we've got a trailer
+            Try to watch trailer ${video} 
           </button>
           <div>
             <h3 class="film__about--title upper">About</h3>
