@@ -4,3 +4,4 @@ import './main.js/trending';
 import './main.js/pagination';
 import './main.js/search';
 import './main.js/login';
+import './main.js/theme-switcher';
