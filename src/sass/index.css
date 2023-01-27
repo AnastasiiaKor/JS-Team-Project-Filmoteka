@@ -360,6 +360,7 @@ img {
 .gallery__link:focus {
   outline: 4px solid #ff6b01;
   outline-offset: 4px;
+  transform: scale(1.03);
 }
 .gallery__event-wrapper {
   pointer-events: none;
