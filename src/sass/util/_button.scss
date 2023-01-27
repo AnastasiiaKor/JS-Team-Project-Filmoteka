@@ -1,31 +1,78 @@
-.btn {
+.btn-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
+
+  &__item {
+    display: flex;
+    @media screen and (max-width: #{$min-tablet}) {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+
+  @media screen and (min-width: #{$tablet}) {
+    gap: 32px;
+  }
 }
 
 .button {
-  width: 148px;
-  height: 42px;
+  padding: 6px 12px;
+
+  min-width: 110px;
+  min-height: 44px;
+  // flex-grow: 1;
+  // flex-basis: 330px;
+
   text-transform: uppercase;
-  color: #ffffff;
+  color: #{$light-color};
   background: rgba(0, 0, 0, 0.56);
-  border: 1px solid #ffffff;
+  border: 1px solid #{$light-color};
   border-radius: 5px;
+  cursor: pointer;
+
+  transition: #{$animationTransition};
 
   &:hover {
     background-color: #fec69e;
     box-shadow: 0px 8px 43px rgba(254, 198, 158, 0.6);
-    border: none;
-    transition: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-color: #fec69e;
+  }
+
+  &:active {
+    background-color: #{$orange-color};
+    color: #{$light-color};
+    border-color: #{$orange-color};
+  }
+
+  @media screen and (min-width: #{$tablet}) {
+    min-width: 152px;
+  }
+
+  @media screen and (min-width: #{$desktop}) {
+    min-width: 148px;
+    min-height: 42px;
   }
 }
 
-.btn-list:not(:last-child) {
-  margin-right: 16px;
+.film__button {
+  color: #{$dark-color};
+  border-color: #{$dark-color};
+  background-color: inherit;
+
+  @media screen and (min-width: #{$tablet}) {
+    width: 125px;
+  }
+
+  @media screen and (min-width: #{$desktop}) {
+    width: 136px;
+    min-height: 44px;
+  }
 }
 
 .button.btn-add__active {
-  background-color: #ff6b01;
-  color: #ffffff;
-  border-color: #ff6b01;
+  background-color: #{$orange-color};
+  color: #{$light-color};
+  border-color: #{$orange-color};
 }
