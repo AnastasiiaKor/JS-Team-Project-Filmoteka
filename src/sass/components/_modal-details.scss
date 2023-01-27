@@ -73,8 +73,8 @@ h3 {
   fill: black;
   color: black;
   border-color: black;
-  background-color: inherit;
-  transition: transform, color $animationTransition;
+  background-color: transparent;
+  transition: transform $animationTransition;
   &:hover,
   &:focus {
     @extend %button-modal--hover;
@@ -83,7 +83,6 @@ h3 {
 .film__image {
   display: block;
   width: 100%;
-  min-width: 264px;
   border-radius: 5px;
   object-fit: cover;
   @media screen and (min-width: $tablet) {
@@ -91,6 +90,7 @@ h3 {
   }
 }
 .film__title {
+  margin-bottom: 12px;
   font-family: $primary-font-family;
   color: $dark-color;
   @include textStyle(20px, 1.15);
@@ -112,6 +112,18 @@ h3 {
   color: $dark-color;
   @include textStyle(12px, 1.33);
   margin-bottom: 8px;
+}
+.film__rating {
+  color: #fff;
+  background-color: #ff6b01;
+  border-radius: 5px;
+  padding: 1px 7px;
+  align-items: center;
+}
+.film__votes-number {
+  background-color: $footer-bg-color;
+  border-radius: 5px;
+  padding: 1px 7px;
 }
 .film__button {
   @extend %button-modal;
