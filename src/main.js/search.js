@@ -1,13 +1,16 @@
 import { getMovie } from './get-movie';
 import { getMoviesByKeyword } from './requests';
 import { createGalleryMarkup } from './templates.js/gallery-markup';
+import { paginator } from './paginator';
 
 const headerForm = document.querySelector('.search-form');
 const searchResult = document.querySelector('.search-result');
 const gallery = document.querySelector('.gallery');
 const WARNING_CLEAR_DELAY = 3000;
 let query = '';
-
+const searchMore = (n) => {
+  getMovies(query, n);
+}
 const getMovies = async (query, page) => {
   let searched = await getMoviesByKeyword({
     keyword: query,
@@ -17,6 +20,9 @@ const getMovies = async (query, page) => {
     const markup = createGalleryMarkup(searched.results);
     searchResult.textContent = '';
     gallery.innerHTML = markup;
+    paginator.callback = searchMore;
+    paginator.currentPage = searched.page;
+    paginator.totalPages = searched.total_pages;
   } else {
     searchResult.textContent = 'Search result not successful. Enter the correct movie name and try again.';
     clearInfo();

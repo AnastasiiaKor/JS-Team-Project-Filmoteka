@@ -1,8 +1,10 @@
-export class Paginator {
+class Paginator {
   #totalPages;
   #currentPage;
+  #callback;
 
-  constructor(callback, container) {
+  constructor(cb, container) {
+    this.#callback = cb;
     this.#currentPage = 1;
     this.#totalPages = 100;
     this.container = container;
@@ -12,19 +14,19 @@ export class Paginator {
       if (response && isActive) {
         switch (response) {
           case 'left':
-            callback(this.#currentPage - 1);
+            this.#callback(this.#currentPage - 1);
             break;
           case 'right':
-            callback(this.#currentPage + 1);
+            this.#callback(this.#currentPage + 1);
             break;
           case 'back':
-            callback(this.#currentPage - 3);
+            this.#callback(this.#currentPage - 3);
             break;
           case 'front':
-            callback(this.#currentPage + 3);
+            this.#callback(this.#currentPage + 3);
             break;
           default:
-            callback(Number(response));
+            this.#callback(Number(response));
         }
       }
     });
@@ -38,6 +40,10 @@ export class Paginator {
   set currentPage(n) {
     this.#currentPage = n;
     this.render();
+  }
+
+  set callback(n) {
+    this.#callback = n;
   }
 
   render() {
@@ -112,3 +118,9 @@ export class Paginator {
     return `<div class="pagination-button current" data-button="${n}">${n}</div>`;
   }
 }
+
+const paginatorContainer = document.querySelector('.pagination');
+export const paginator = new Paginator((page) => {
+
+
+}, paginatorContainer);
