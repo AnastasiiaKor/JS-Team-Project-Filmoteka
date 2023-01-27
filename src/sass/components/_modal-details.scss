@@ -70,14 +70,14 @@ h3 {
   // fill: currentColor;
   // color: inherit;
   // border: none;
-  fill: black;
+  fill: currentColor;
   color: black;
-  border-color: black;
+  // border-color: black;
   background-color: transparent;
   transition: transform $animationTransition;
   &:hover,
   &:focus {
-    @extend %button-modal--hover;
+    color: $orange-color;
   }
 }
 .film__image {
