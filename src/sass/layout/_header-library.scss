@@ -14,52 +14,51 @@
   margin-left: auto;
   margin-right: auto;
   background-image: linear-gradient($opacity-header, $opacity-header),
-                   url('/src/images/home_warning_@x1_320min.jpg');
+    url('/src/images/home_warning_@x1_320min.jpg');
   background-size: 100% 100%;
   box-shadow: $shadow-header;
-    
+
   @media screen and (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-      background-image: linear-gradient($opacity-header, $opacity-header),
+    background-image: linear-gradient($opacity-header, $opacity-header),
       url('/src/images/home_warning_@x2_320min.jpg');
-      background-size: 100% 100%;
+    background-size: 100% 100%;
   }
-  
+
   @media screen and (min-width: $tablet) {
     padding-right: 33px;
     padding-left: 33px;
   }
 
   @media screen and (min-width: $tablet) {
-      min-height: 216px;
-      background-image: linear-gradient($opacity-header, $opacity-header),
-                   url('/src/images/home_warning_@x1_768min.jpg');
-      background-size: 100% 100%;
-      
+    min-height: 216px;
+    background-image: linear-gradient($opacity-header, $opacity-header),
+      url('/src/images/home_warning_@x1_768min.jpg');
+    background-size: 100% 100%;
+
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-        background-image: linear-gradient($opacity-header, $opacity-header),
-                   url('/src/images/home_warning_@x2_768min.jpg');
-        background-size: 100% 100%;
-      }
+      background-image: linear-gradient($opacity-header, $opacity-header),
+        url('/src/images/home_warning_@x2_768min.jpg');
+      background-size: 100% 100%;
+    }
   }
-
 
   @media screen and (min-width: 1280px) {
     min-height: 216px;
     background-image: linear-gradient($opacity-header, $opacity-header),
-                 url('/src/images/home_warning_@x1_1280min.jpg');
+      url('/src/images/home_warning_@x1_1280min.jpg');
     background-size: 100% 100%;
-    
+
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-        background-image: linear-gradient($opacity-header, $opacity-header),
-                  url('/src/images/home_warning_@x2_1280min.jpg');
-        background-size: 100% 100%;
-      }
+      background-image: linear-gradient($opacity-header, $opacity-header),
+        url('/src/images/home_warning_@x2_1280min.jpg');
+      background-size: 100% 100%;
+    }
   }
 }
 
@@ -112,18 +111,17 @@
     text-transform: uppercase;
     color: inherit;
   }
-  &__link--current::after{
+  &__link--current::after {
     position: relative;
     bottom: 0;
     left: 0;
     display: block;
-    content: "";
+    content: '';
     width: 100%;
     height: 3px;
     border-radius: 2px;
     background-color: $red-color;
   }
-  
 }
 
 .btn {
@@ -141,12 +139,12 @@
   background: rgba(0, 0, 0, 0.56);
   border: 1px solid $light-color;
   border-radius: 5px;
-  
-  @media screen and (max-width: 320px){
+
+  @media screen and (max-width: 320px) {
     width: 130px;
     height: 44px;
   }
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: 152px;
     height: 44px;
   }
@@ -161,14 +159,12 @@
 
 .btn-list:not(:last-child) {
   margin-right: 40px;
-  @media screen and (max-width: 320px){
+  @media screen and (max-width: 320px) {
     margin-right: 20px;
   }
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     margin-right: 16px;
   }
-
-  
 }
 
 .button.btn-add__active {
@@ -186,7 +182,6 @@
   &__item {
     transform: scale(1);
     transition: transform 350ms $bezier-hov;
-
     &:hover,
     &:focus {
       transform: scale(1.25);
@@ -194,7 +189,7 @@
   }
 
   &__link {
-    color:$light-color;
+    color: $light-color;
     transition: color 350ms $bezier-hov;
 
     &:hover,
@@ -206,8 +201,8 @@
 
 .logo-return {
   transition: 350ms $bezier-hov;
-    &:hover,
-    &:focus {
-      transform: scale(1.1);
-    }
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
 }
