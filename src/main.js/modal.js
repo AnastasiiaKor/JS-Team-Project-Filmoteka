@@ -1,5 +1,6 @@
 import { createModalMarkup } from './templates.js/modal-markup';
 import { getMovie } from './get-movie';
+import { setLocalStorage } from './local-storage';
 
 const gallery = document.querySelector('.gallery');
 const modalDetails = document.querySelector('.js-modal');
@@ -14,6 +15,8 @@ function openModal(e) {
   getMovie(e)
     .then(data => {
       createModalMarkup(data);
+
+      setLocalStorage(data);
 
       buttonClose = document.querySelector('.button__close');
       backdrop = document.querySelector('.modal__backdrop');

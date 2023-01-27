@@ -23,7 +23,7 @@
   min-width: 110px;
   min-height: 44px;
   // flex-grow: 1;
-  flex-basis: 330px;
+  // flex-basis: 330px;
 
   text-transform: uppercase;
   color: #{$light-color};
@@ -62,11 +62,11 @@
   background-color: inherit;
 
   @media screen and (min-width: #{$tablet}) {
-    min-width: 125px;
+    width: 125px;
   }
 
   @media screen and (min-width: #{$desktop}) {
-    min-width: 136px;
+    width: 136px;
     min-height: 44px;
   }
 }
