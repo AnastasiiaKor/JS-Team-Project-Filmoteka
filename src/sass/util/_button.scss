@@ -35,12 +35,11 @@
   transition: #{$animationTransition};
 
   &:hover {
-    background-color: #fec69e;
-    box-shadow: 0px 8px 43px rgba(254, 198, 158, 0.6);
-    border-color: #fec69e;
+    background-color: #{$orange-color};
+    color: #{$light-color};
+    border-color: #{$orange-color};
   }
-
-  &:active {
+  &:focus {
     background-color: #{$orange-color};
     color: #{$light-color};
     border-color: #{$orange-color};
