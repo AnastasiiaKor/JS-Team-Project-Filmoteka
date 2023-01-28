@@ -1,4 +1,4 @@
-// import Tooltip from '';
+import tooltip from 'tooltip';
 
 const themeSwitcherBtn = document.querySelector('.theme-switcher__btn');
 const themeSwitcherIconSun = document.querySelector('.theme-switcher__btn-icon-sun');
@@ -35,11 +35,16 @@ function onThemeSwitcherBtnClick() {
     localStorage.setItem("theme", theme);
 };
 
-// var tooltip = new Tooltip({
-//     el: document.body.querySelector('.my-tooltip'),
-//     activeClass: 'my-tooltip-active',
-//     triggerClass: 'my-tooltip-toggle-btn'
-// });
- 
-// tooltip.show();
-// tooltip.hide();
+const config = {
+    showDelay: 100,
+    style: {
+        padding: 3,
+    },
+    className: "tooltip",
+    offset: {
+        x: -45,
+        y: -65
+    }
+};
+
+tooltip(config);
