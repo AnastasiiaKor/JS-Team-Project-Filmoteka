@@ -72,9 +72,3 @@
 
 .dots, .last {
   display:none;
-
-  @media screen and (min-width: $min-tablet) {
-    display:flex;
-  }
-}
-
