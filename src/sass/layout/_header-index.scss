@@ -50,6 +50,7 @@
 }
 
 .header__container {
+  position: relative;
   min-height: 230px;
   padding: 40px 20px;
 
@@ -77,7 +78,9 @@
     display: inline-block;
     margin: 0;
     margin-left: 8px;
-    font-size: 30px;
+	 font-weight: 500;
+	 font-size: 30px;
+	 line-height: 1.17;
 
     @media screen and (max-width: $min-tablet) {
       position: absolute;
@@ -120,8 +123,8 @@
 	  padding: 0;
 	  padding-top: 4px;
 	  padding-bottom: 6px;
- 
-	  text-align: center;
+
+ 	  text-align: center;
 	  text-transform: uppercase;
  
 	  color: inherit;
@@ -195,6 +198,8 @@
 }
 
 .search-result {
+  position: absolute;
+  left: 25%;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;

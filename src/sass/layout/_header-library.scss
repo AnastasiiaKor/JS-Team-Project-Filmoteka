@@ -5,7 +5,7 @@
   font-size: 12px;
   line-height: 1.17;
   color: $light-color;
-    
+
   background-image: linear-gradient($opacity-header, $opacity-header),
       url('/src/images/home_warning_@x1_320min.jpg');
   // background-size: cover;    
@@ -217,4 +217,18 @@
   &:focus {
     transform: scale(1.1);
   }
+}
+
+.library-info {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  color: white;
+  display: flex;
+  justify-content: center;
 }
