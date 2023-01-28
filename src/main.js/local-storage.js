@@ -1,10 +1,13 @@
+import { setData } from './kr580vm80a';
+
 function setLocalStorage(data) {
   const btnAddList = document.querySelector('.js-btn-add-list');
   const btnAddToWatched = document.querySelector('[data-addto="watched"]');
   const btnAddToQueue = document.querySelector('[data-addto="queue"]');
 
   checkLS();
-
+  console.log(data);
+  setData(data, data.id);
   btnAddList.addEventListener('click', onBtnClick);
 
   function onBtnClick(event) {
