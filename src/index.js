@@ -7,3 +7,4 @@ import './main.js/search';
 import './main.js/modal';
 import './main.js/login';
 import './main.js/theme-switcher';
+import './main.js/footer-modal';
