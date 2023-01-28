@@ -492,19 +492,6 @@ img {
   }
 }
 
-.library-info {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.14;
-  text-align: center;
-
-  margin-left: auto;
-  margin-right: auto;
-
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-}
 
 .footer {
   margin-top: auto;
