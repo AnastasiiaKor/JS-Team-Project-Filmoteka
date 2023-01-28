@@ -3,7 +3,7 @@
   width: 100%;
   grid-gap: 20px;
   justify-content: center;
-  margin-top: 60px;
+  padding: 20px 0 40px;
   margin-left: auto;
   margin-right: auto;
 
@@ -90,6 +90,7 @@
   @media screen and (min-width: $tablet) {
     grid-gap: 32px;
     grid-template-columns: 336px 336px;
+    padding: 40px 0;
 
     &__poster-wrapper {
       height: 455px;
@@ -112,4 +113,32 @@
       padding: 3px 8px;
     }
   }
+}
+
+.empty_library_bcg_img{
+  margin-top: 100px; 
+  margin-bottom: 60px;
+  background-image: url('/src/images/nomovies.svg');
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: 0){
+      
+      height: 150px;
+      width: 150px; 
+  }
+  @media screen and (min-width: 768px) {
+      height: 250px;
+      width: 250px;
+  }
+  @media screen and (min-width: 1200px){
+      height: 400px;
+      width: 400px; 
+  }
+ 
 }
