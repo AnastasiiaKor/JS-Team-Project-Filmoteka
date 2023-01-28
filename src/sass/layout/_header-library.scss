@@ -5,8 +5,7 @@
   font-size: 12px;
   line-height: 1.17;
   color: $light-color;
-  
-  
+    
   background-image: linear-gradient($opacity-header, $opacity-header),
       url('/src/images/home_warning_@x1_320min.jpg');
   // background-size: cover;    
@@ -45,7 +44,7 @@
     }
   }
 
-// -----------Desk--------------------------------
+// -----------Desktop--------------------------------
 
  @media screen and (min-width: 1280px) {
     min-height: 216px;
