@@ -2,7 +2,7 @@
 $border-radius: 5px;
 
 //  COLORS
-$main-bg-color: #e5e5e5;
+$main-bg-color: #ffffff;
 $footer-bg-color: #f7f7f7;
 $light-color: #ffffff;
 $dark-color: #000000;
@@ -12,9 +12,7 @@ $red-color: #ff001b;
 $hover-btn-color: #fec69e;
 
 // BEZIER
-$bezier-hov: cubic-bezier(.12,.68,.82,.55);
-
-
+$bezier-hov: cubic-bezier(0.12, 0.68, 0.82, 0.55);
 
 // OPACITY
 $opacity-header: rgba(0, 0, 0, 0.56);

@@ -8,3 +8,4 @@ import './main.js/modal';
 import './main.js/login';
 import './main.js/theme-switcher';
 import './main.js/footer-modal';
+import './main.js/back-to-top';
