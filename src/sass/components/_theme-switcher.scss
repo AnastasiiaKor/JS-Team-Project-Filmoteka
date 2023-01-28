@@ -1,12 +1,15 @@
 .theme-switcher__btn {
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+
     display: flex; 
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     width: 32px;
     height: 32px;
-    margin-left: auto;
-    
+        
     fill: $light-color;
     background: none;
     border: none;
@@ -17,7 +20,7 @@
     transition: background $animationTransition;
 
     &:hover {
-        background-color: $orange-color;
+        background-color: $red-color;
     }
 }
 
@@ -25,10 +28,7 @@
     display: none;
 }
 
-// .my-tooltip {
-//     display: none;
-// }
-
-// .my-tooltip-active {
-//     display: block;
-// }
+.tooltip {
+    background: $light-color;
+    color: $dark-color;
+}
