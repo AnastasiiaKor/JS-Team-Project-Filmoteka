@@ -20,6 +20,7 @@ const getMovies = async (query, page) => {
     const markup = createGalleryMarkup(searched.results);
     searchResult.textContent = '';
     gallery.innerHTML = markup;
+    gallery.scrollIntoView();
     paginator.callback = searchMore;
     paginator.currentPage = searched.page;
     paginator.totalPages = searched.total_pages;
