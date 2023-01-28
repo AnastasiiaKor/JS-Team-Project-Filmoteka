@@ -1,12 +1,25 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #e5e5e5;
+  background-color: #ffffff;
   color: #000000;
 }
 body.dark-theme {
   background-color: #000000;
   color: #ffffff;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ff6b01;
+  border-radius: 10px;
 }
 
 a {
