@@ -47,18 +47,31 @@
     background-color: $orange-color;
     color: white;
   }
-  &.unactive {
-    opacity: 0.3;
-    cursor: auto;
-  }
 
+  &:hover {
+    background-color: #fec69e;
+    transition: all .35s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 8px 43px rgb(254 198 158 / 60%);
+  }
   &.arrow-left {
     background-image: url('/src/images/arrow-left.svg');
   }
   &.arrow-right {
     background-image: url('/src/images/arrow-right.svg');
   }
+  &.unactive {
+    opacity: 0.3;
+    cursor: auto;
+    &:hover {
+      background-color: $footer-bg-color;
+    }
+  }
 }
 
 .dots, .last {
   display:none;
+
+  @media screen and (min-width: $min-tablet) {
+    display:flex;
+  }
+}
