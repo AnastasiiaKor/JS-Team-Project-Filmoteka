@@ -1,13 +1,12 @@
-import Tooltip from 'tooltip';
-console.log("Tooltip", Tooltip)
-
+import tooltip from 'tooltip';
 
 const themeSwitcherBtn = document.querySelector('.theme-switcher__btn'); 
 const themeSwitcherIconSun = document.querySelector('.theme-switcher__btn-icon-sun'); 
 const themeSwitcherIconMoon = document.querySelector('.theme-switcher__btn-icon-moon'); 
+// const modal = document.querySelector('.modal');
  
 themeSwitcherBtn.addEventListener('click', onThemeSwitcherBtnClick); 
- 
+
 const currentTheme = localStorage.getItem("theme"); 
  
 if (currentTheme === "dark") { 
@@ -16,7 +15,7 @@ if (currentTheme === "dark") {
 } else { 
     themeSwitcherIconMoon.classList.add("icon-ishidden"); 
 }; 
- 
+
 function onThemeSwitcherBtnClick() {  
     let theme = "light"; 
  
@@ -37,13 +36,16 @@ function onThemeSwitcherBtnClick() {
     localStorage.setItem("theme", theme); 
 };
 
-// const tooltip = new Tooltip({
-//     el: document.body.querySelector('.my-tooltip'),
-//     activeClass: 'my-tooltip-active',
-//     triggerClass: 'my-tooltip-toggle-btn'
-// });
-
-// tooltip.show();
-// tooltip.hide();
-
-
+const config = {
+    showDelay: 100,
+    style: {
+        padding: 3,
+    },
+    className: "tooltip",
+    offset: {
+        x: -45,
+        y: -65
+    }
+};
+ 
+tooltip(config);
