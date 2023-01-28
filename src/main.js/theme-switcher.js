@@ -48,3 +48,4 @@ const config = {
 };
 
 tooltip(config);
+
