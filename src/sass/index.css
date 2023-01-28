@@ -1,25 +1,16 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #ffffff;
+  background-color: #e5e5e5;
   color: #000000;
 }
 body.dark-theme {
   background-color: #000000;
   color: #ffffff;
-}
-
-body::-webkit-scrollbar {
-  width: 15px;
-}
-
-body::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #ff6b01;
-  border-radius: 10px;
 }
 
 a {
@@ -559,7 +550,7 @@ img {
   width: 100%;
   grid-gap: 20px;
   justify-content: center;
-  margin-top: 60px;
+  padding: 20px 0 40px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -637,6 +628,7 @@ img {
   .gallery {
     grid-gap: 32px;
     grid-template-columns: 336px 336px;
+    padding: 40px 0;
   }
   .gallery__poster-wrapper {
     height: 455px;
@@ -865,23 +857,15 @@ h3 {
   background-color: #ff6b01;
   color: white;
 }
-.pagination-button:hover {
-  background-color: #fec69e;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 43px rgba(254, 198, 158, 0.6);
+.pagination-button.unactive {
+  opacity: 0.3;
+  cursor: auto;
 }
 .pagination-button.arrow-left {
   background-image: url("/src/images/arrow-left.svg");
 }
 .pagination-button.arrow-right {
   background-image: url("/src/images/arrow-right.svg");
-}
-.pagination-button.unactive {
-  opacity: 0.3;
-  cursor: auto;
-}
-.pagination-button.unactive:hover {
-  background-color: #f7f7f7;
 }
 
 .dots, .last {
