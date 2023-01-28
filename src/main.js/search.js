@@ -29,22 +29,22 @@ const getMovies = async (query, page) => {
   }
 }
 
-async function searchMovies(event) {
+/* async function searchMovies(event) {
   event.preventDefault();
   try {
     const value = event.target['search-film'].value;
     let serched = {};
     if (value) {
       getMovies(value, 1);
-/*       serched = await getMoviesByKeyword({
+      serched = await getMoviesByKeyword({
         keyword: value,
         page: 1,
-      }); */
+      });
     } else {
       searchResult.textContent = 'Movie name must not be empty. Please, enter movie name to search.';
       clearInfo();
     }
-/*     if (serched?.results?.length) {
+    if (serched?.results?.length) {
       console.log(serched);
       const markup = createGalleryMarkup(serched.results);
       searchResult.innerHTML = '';
@@ -53,11 +53,11 @@ async function searchMovies(event) {
       searchResult.innerHTML =
         'Search result not successful. Enter the correct movie name and try again.';
       clearInfo();
-    } */
+    }
   } catch (error) {
     console.log(error);
   }
-}
+} */
 
 const onSearch = event => {
   event.preventDefault();
