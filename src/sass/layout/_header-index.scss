@@ -4,56 +4,57 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
-  color: $light-color;
-}
 
-.header__container {
   max-width: 1600px;
-  min-height: 230px;
-  padding: 40px 20px;
   margin-left: auto;
   margin-right: auto;
 
+  color: $light-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-size: cover;
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.56),
     rgba(0, 0, 0, 0.56)
   );
 
-  background-size: cover;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
   @media screen and (max-width: $min-tablet) {
     background-image: url(../images/Group\ 86_home@x1_320min.jpg);
-  }
 
-  @media screen and (min-device-pixel-ratio: 2) and (max-width: $min-tablet),
-    screen and (min-resolution: 192dpi) and (max-width: $min-tablet),
-    screen and (min-resolution: 2dppx) and (max-width: $min-tablet) {
-    background-image: url(../images/Group\ 86_home@x2_320min.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../images/Group\ 86_home@x2_320min.jpg);
+    }
   }
 
   @media screen and (min-width: $tablet) {
-    min-height: 216px;
-    padding-right: 32px;
-    padding-left: 32px;
     background-image: url(../images/Group\ 86_home@x1_768min.jpg);
-  }
 
-  @media screen and (min-device-pixel-ratio: 2) and (min-width: $tablet),
-    screen and (min-resolution: 192dpi) and (min-width: $tablet),
-    screen and (min-resolution: 2dppx) and (min-width: $tablet) {
-    background-image: url(../images/Group\ 86_home@x2_768min.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../images/Group\ 86_home@x2_768min.jpg);
+    }
   }
 
   @media screen and (min-width: $desktop) {
     background-image: url(../images/Group\ 87_home@x1_1280min.jpg);
-  }
 
-  @media screen and (min-device-pixel-ratio: 2) and (min-width: $desktop),
-    screen and (min-resolution: 192dpi) and (min-width: $desktop),
-    screen and (min-resolution: 2dppx) and (min-width: $desktop) {
-    background-image: url(../images/Group\ 87_home@x2_1280min.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url(../images/Group\ 87_home@x2_1280min.jpg);
+    }
+  }
+}
+
+.header__container {
+  min-height: 230px;
+  padding: 40px 20px;
+
+  @media screen and (min-width: $tablet) {
+    min-height: 216px;
   }
 }
 
@@ -67,10 +68,8 @@
 
   &__text {
     display: inline-block;
-
     margin: 0;
     margin-left: 8px;
-
     font-size: 30px;
 
     @media screen and (max-width: $min-tablet) {
@@ -92,48 +91,19 @@
   }
 }
 
-// .nav-list {
-//   display: flex;
-//   margin-left: auto;
-//   justify-content: center;
-//   align-items: center;
-//   column-gap: 40px;
-
-//   &__item {
-//     display: inline-block;
-
-//     margin: 0;
-//     padding: 0;
-
-//     padding-top: 4px;
-//     padding-bottom: 6px;
-
-//     text-decoration: none;
-//     list-style: none;
-//     text-align: center;
-//     text-transform: uppercase;
-
-//     color: inherit;
-//   }
-// }
 .nav-list {
-  display: flex;
-  margin-left: auto;
-  justify-content: center;
-  align-items: center;
+  @include flexCentered();
   column-gap: 40px;
+  margin-left: auto;
 
   &__link {
     display: inline-block;
 
     margin: 0;
     padding: 0;
-
     padding-top: 4px;
     padding-bottom: 6px;
 
-    text-decoration: none;
-    list-style: none;
     text-align: center;
     text-transform: uppercase;
 
@@ -151,29 +121,30 @@
   min-width: 280px;
 
   margin-top: 54px;
+  margin-bottom: 16px;
   margin-left: auto;
   margin-right: auto;
 
   @media screen and (min-width: $tablet) {
     max-width: 336px;
     margin-top: 40px;
+    margin-bottom: 20px;
   }
 
   &__input {
     width: 100%;
     min-height: 20px;
-
     padding-left: 0;
 
     font-weight: 400;
     font-size: 14px;
     line-height: 1.14;
-    color: $light-color;
 
-    background-color: inherit;
-    border: none;
     outline: none;
+    border: none;
     border-bottom: 0.5px solid #ffffff;
+    background-color: inherit;
+    color: $light-color;
 
     &::placeholder {
       font-weight: 400;
@@ -185,13 +156,22 @@
 
   &__btn {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -20px;
+    right: -20px;
 
-    padding: 0 0 6px 6 px;
+    padding: 20 20 20px 20px;
 
     border: 0;
     background-color: inherit;
+
+    cursor: pointer;
+
+    @media screen and (min-width: #{$tablet}) {
+      top: -10px;
+      right: -10px;
+
+      padding: 10 10 10px 10px;
+    }
   }
 }
 
@@ -199,5 +179,13 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+
   color: $red-color;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
