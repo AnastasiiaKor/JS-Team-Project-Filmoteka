@@ -665,7 +665,6 @@ img {
   }
 }
 
-
 .empty_library_bcg_img {
   margin-top: 100px;
   margin-bottom: 60px;
@@ -696,7 +695,6 @@ img {
     width: 400px;
   }
 }
-
 
 h2,
 h3 {
@@ -903,15 +901,23 @@ h3 {
   background-color: #ff6b01;
   color: white;
 }
-.pagination-button.unactive {
-  opacity: 0.3;
-  cursor: auto;
+.pagination-button:hover {
+  background-color: #fec69e;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 43px rgba(254, 198, 158, 0.6);
 }
 .pagination-button.arrow-left {
   background-image: url("/src/images/arrow-left.svg");
 }
 .pagination-button.arrow-right {
   background-image: url("/src/images/arrow-right.svg");
+}
+.pagination-button.unactive {
+  opacity: 0.3;
+  cursor: auto;
+}
+.pagination-button.unactive:hover {
+  background-color: #f7f7f7;
 }
 
 .dots, .last {
