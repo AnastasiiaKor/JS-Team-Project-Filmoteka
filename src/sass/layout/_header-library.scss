@@ -5,6 +5,11 @@
   font-size: 12px;
   line-height: 1.17;
   color: $light-color;
+  background-image: linear-gradient($opacity-header, $opacity-header),
+      url('/src/images/home_warning_@x1_1280min.jpg');
+  background-size: cover;    
+  box-shadow: $shadow-header;
+ 
 }
 
 .header__container {
@@ -16,7 +21,7 @@
   background-image: linear-gradient($opacity-header, $opacity-header),
     url('/src/images/home_warning_@x1_320min.jpg');
   background-size: 100% 100%;
-  box-shadow: $shadow-header;
+  // box-shadow: $shadow-header;
 
   @media screen and (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
