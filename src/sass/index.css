@@ -1,4 +1,8 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: #ffffff;
@@ -559,7 +563,7 @@ img {
   width: 100%;
   grid-gap: 20px;
   justify-content: center;
-  margin-top: 60px;
+  padding: 20px 0 40px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -637,6 +641,7 @@ img {
   .gallery {
     grid-gap: 32px;
     grid-template-columns: 336px 336px;
+    padding: 40px 0;
   }
   .gallery__poster-wrapper {
     height: 455px;
@@ -659,6 +664,7 @@ img {
     padding: 3px 8px;
   }
 }
+
 
 .empty_library_bcg_img {
   margin-top: 100px;
@@ -690,6 +696,7 @@ img {
     width: 400px;
   }
 }
+
 
 h2,
 h3 {

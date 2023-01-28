@@ -3,7 +3,7 @@
   width: 100%;
   grid-gap: 20px;
   justify-content: center;
-  margin-top: 60px;
+  padding: 20px 0 40px;
   margin-left: auto;
   margin-right: auto;
 
@@ -90,6 +90,7 @@
   @media screen and (min-width: $tablet) {
     grid-gap: 32px;
     grid-template-columns: 336px 336px;
+    padding: 40px 0;
 
     &__poster-wrapper {
       height: 455px;
