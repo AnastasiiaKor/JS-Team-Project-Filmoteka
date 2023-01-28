@@ -1,60 +1,115 @@
 .gallery {
-    display: grid;
+  display: grid;
+  width: 100%;
+  grid-gap: 20px;
+  justify-content: center;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__link {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: 4px;
+    color: inherit;
+    text-decoration: none;
+    transition: transform $animationTransition;
+  }
+
+  &__link:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+
+  &__link:focus {
+    outline: 4px solid $orange-color;
+    outline-offset: 4px;
+    transform: scale(1.03);
+  }
+
+  &__event-wrapper {
+    pointer-events: none;
+  }
+
+  &__poster-wrapper {
+    display: flex;
+    overflow: hidden;
+    border-radius: 5px;
+    background-image: url(../images/placeholder.webp);
+    background-size: cover;
+    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  &__poster {
+    object-fit: cover;
+
+    display: block;
     width: 100%;
-    max-width: 1140px;
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    grid-gap: 20px;
-    justify-content: center;
-    margin-top: 60px;
-    margin-left: auto;
-    margin-right: auto;
+  }
 
-    @media screen and (min-width: $mobile) {
-        grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
-    }
-    
-    @media screen and (min-width: $tablet) {
-        grid-gap: 32px;
-    }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    font-family: $primary-font-family;
+    font-weight: 500;
+    @include textStyle(12px, 1.33);
+  }
 
-    &__poster {
-        display: block;
-        width: 100%;
-        border-radius: 5px;
-        object-fit: cover;
-    }
+  &__movie-title {
+    max-width: 100%;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 
-    &__link {
-        position: relative;
-        display: block;
-        height: 100%;
-        border-radius: 4px;
-        overflow: hidden;
-        color: inherit;
-        text-decoration: none;
-        transition: transform $animationTransition;
-    }
+  &__movie-meta {
+    color: $orange-color;
+  }
 
-    &__link:hover {
-        cursor: zoom-in;
-        transform: scale(1.03);
+  &__movie-info {
+    margin-right: 9px;
+  }
+
+  &__movie-rating {
+    padding: 1px 6px;
+    border-radius: 5px;
+    color: $light-color;
+    background-color: $orange-color;
+  }
+
+  @media screen and (min-width: $mobile) {
+    &__poster-wrapper {
+      height: 398px;
     }
+  }
+
+  @media screen and (min-width: $tablet) {
+    grid-gap: 32px;
+    grid-template-columns: 336px 336px;
+
+    &__poster-wrapper {
+      height: 455px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: 395px 395px 395px;
 
     &__description {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 10px;
-        font-family: $primary-font-family;
-        font-weight: 500;
-        @include textStyle(12px, 1.33)
+      gap: 6px;
+      @include textStyle(20px, 1.2);
     }
 
-    &__movie-title {
-        text-transform: uppercase;
+    &__poster-wrapper {
+      height: 600px;
     }
 
-    &__movie-meta {
-        color: $orange-color;
+    &__movie-rating {
+      padding: 3px 8px;
     }
+  }
 }
