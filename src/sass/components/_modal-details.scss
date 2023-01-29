@@ -15,7 +15,6 @@ h3 {
   overflow: auto;
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
   visibility: visible;
   pointer-events: auto;
 }
@@ -34,14 +33,13 @@ h3 {
   padding: 48px 20px;
   opacity: 1;
   background-color: inherit;
-  background-color: white;
+  color: inherit;
   border: 1px solid #0000001a;
   z-index: 101;
   font-family: $primary-font-family;
-  min-height: 50vh;
+  min-height: 35vh;
   max-height: 90vh;
-  overflow-y: scroll;
-  transform: scale(1);
+  // overflow-y: scroll;
   transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 800ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -73,8 +71,9 @@ h3 {
   height: 30px;
   @include flexCentered(flex, center, center);
   fill: currentColor;
+  color: inherit;
   border: none;
-  background-color: transparent;
+  background-color: inherit;
   transition: transform $animationTransition;
   &:hover,
   &:focus {
@@ -91,7 +90,6 @@ h3 {
   }
 }
 .film__title {
-  color: $dark-color;
   @include textStyle(20px, 1.15);
 }
 .upper {
@@ -106,7 +104,6 @@ h3 {
 }
 
 .film__details {
-  color: $dark-color;
   @include textStyle(12px, 1.33);
   margin-bottom: 8px;
 }
@@ -121,15 +118,13 @@ h3 {
 .film__votes-number {
   @include textStyle(12px, 1.33);
   background-color: $footer-bg-color;
+  color: $dark-color;
   padding: 1px 7px;
   border-radius: 5px;
 }
 .film__about--title {
   @include textStyle(20px, 1.15);
   margin-bottom: 12px;
-}
-.film__about--text {
-  font-family: $primary-font-family;
 }
 .film__button--trailer {
   @extend %button-modal;
@@ -179,3 +174,15 @@ h3 {
     height: 400px;
   }
 }
+// body::-webkit-scrollbar {
+//   width: 15px;
+// }
+
+// body::-webkit-scrollbar-track {
+//   background: rgba(255, 255, 255, 0.3);
+// }
+
+// body::-webkit-scrollbar-thumb {
+//   background-color: $orange-color;
+//   border-radius: 10px;
+// }

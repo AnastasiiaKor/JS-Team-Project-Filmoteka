@@ -91,6 +91,15 @@ function createModalMarkup(movie) {
                     Add to queue
                   </button>
                 </li>
+                <li class="btn-list__item">
+                <button
+                type="button"
+                class="button film__button upper"
+                data-addto="queue"
+                >
+                Recommended
+                </button>
+                </li>
                 ${trailerButton}
               </ul>
             </div>

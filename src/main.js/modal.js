@@ -4,6 +4,7 @@ import {
 } from './templates.js/modal-markup';
 import { getMovie } from './get-movie';
 import { setLocalStorage } from './local-storage';
+import { themeSwitcherModals } from './theme-switcher';
 
 const gallery = document.querySelector('.gallery');
 const buttonClose = document.querySelector('.button__close');
@@ -28,6 +29,7 @@ function openModal(e) {
       document.addEventListener('keydown', onKeydownEscape);
       buttonClose.addEventListener('click', closeModal);
       backdrop.addEventListener('click', onBackdropClick);
+      themeSwitcherModals(modal);
     })
     .catch(error => {
       console.log(error.message);
