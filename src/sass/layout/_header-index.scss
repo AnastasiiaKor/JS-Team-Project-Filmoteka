@@ -208,3 +208,13 @@
   justify-content: center;
   margin-top: 20px;
 }
+
+.theme-switcher__btn {
+  transform: scale(1);
+  &:hover,
+  &:focus {
+    transition: 350ms $bezier-hov;
+    transform: scale(1.4);
+    fill: $hover-btn-color;
+  }
+}

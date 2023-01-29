@@ -211,6 +211,15 @@
   }
 }
 
+.theme-switcher__btn {
+  transform: scale(1);
+  &:hover,
+  &:focus {
+    transition: 350ms $bezier-hov;
+    transform: scale(1.4);
+    fill: $red-color;
+  }
+}
 .logo-return {
   transition: 350ms $bezier-hov;
   &:hover,
