@@ -14,6 +14,7 @@ const searchMore = n => {
   getMovies(lastQuery, n);
 };
 const getMovies = async (query, page) => {
+  loadSpinnerBtn.enable();
   let searched = await getMoviesByKeyword({
     keyword: query,
     page,
@@ -32,7 +33,8 @@ const getMovies = async (query, page) => {
       'Search result not successful. Enter the correct movie name and try again.';
     clearInfo();
   }
-  loadSpinnerBtn.enable();
+  loadSpinnerBtn.disable();
+  
 };
 
 /* async function searchMovies(event) {
@@ -67,7 +69,7 @@ const getMovies = async (query, page) => {
 
 const onSearch = event => {
   event.preventDefault();
-  loadSpinnerBtn.disable();
+  
   const value = event.target['search-film'].value.trim();
   if (value) {
     getMovies(value, 1);
@@ -75,6 +77,7 @@ const onSearch = event => {
     searchResult.textContent =
       'Movie name must not be empty. Please, enter movie name to search.';
     clearInfo();
+    //loadSpinnerBtn.enable();
   }
 };
 
