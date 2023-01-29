@@ -18,11 +18,11 @@
     padding: 0; 
     
     transition: background $animationTransition;
-
+    transition: 350ms $bezier-hov;
     &:hover {
         // background-color: $red-color;
         transition: 350ms $bezier-hov;
-        transform: scale(1.4);
+        transform: scale(1.4) rotateZ(45deg);
         fill: $hover-btn-color;
     }
 }
