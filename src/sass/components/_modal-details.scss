@@ -35,7 +35,7 @@ h3 {
   transform: translate(-50%, -50%);
   padding: 48px 20px;
   opacity: 1;
-  background-color: inherit;
+  // background-color: inherit;
   background-color: white;
   border: 1px solid #0000001a;
   width: 94%;
@@ -92,7 +92,7 @@ h3 {
 .film__title {
   margin-bottom: 12px;
   font-family: $primary-font-family;
-  color: $dark-color;
+  color: inherit;
   @include textStyle(20px, 1.15);
 }
 .upper {
@@ -109,7 +109,7 @@ h3 {
 
 .film__details {
   font-family: $primary-font-family;
-  color: $dark-color;
+  color: inherit;
   @include textStyle(12px, 1.33);
   margin-bottom: 8px;
 }
@@ -121,6 +121,7 @@ h3 {
   align-items: center;
 }
 .film__votes-number {
+  color: $dark-color;
   background-color: $footer-bg-color;
   border-radius: 5px;
   padding: 7px 1px;

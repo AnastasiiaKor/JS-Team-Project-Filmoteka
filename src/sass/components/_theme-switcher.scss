@@ -32,6 +32,7 @@
 }
 
 .tooltip {
-    background: $light-color;
-    color: $dark-color;
+    border: none !important;
+    background: transparent !important;
+    color: $light-color !important;
 }
