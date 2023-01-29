@@ -1,6 +1,7 @@
 h2,
 h3 {
   margin: 0;
+  padding: 0;
 }
 .modal__backdrop {
   position: fixed;
@@ -40,6 +41,7 @@ h3 {
   border: 1px solid #0000001a;
   width: 94%;
   z-index: 101;
+  font-family: $primary-font-family;
 }
 @media screen and (max-width: $min-tablet) {
   .modal {
@@ -90,8 +92,6 @@ h3 {
   }
 }
 .film__title {
-  margin-bottom: 12px;
-  font-family: $primary-font-family;
   color: $dark-color;
   @include textStyle(20px, 1.15);
 }
@@ -100,7 +100,6 @@ h3 {
 }
 
 .film__item {
-  font-family: $primary-font-family;
   color: $modal-text;
   @include textStyle(12px, 1.33);
   margin-bottom: 8px;
@@ -108,7 +107,6 @@ h3 {
 }
 
 .film__details {
-  font-family: $primary-font-family;
   color: $dark-color;
   @include textStyle(12px, 1.33);
   margin-bottom: 8px;
@@ -116,26 +114,44 @@ h3 {
 .film__rating {
   color: $light-color;
   background-color: $orange-color;
+  @include textStyle(12px, 1.33);
   border-radius: 5px;
   padding: 1px 7px;
   align-items: center;
 }
 .film__votes-number {
+  @include textStyle(12px, 1.33);
   background-color: $footer-bg-color;
+  padding: 1px 7px;
   border-radius: 5px;
-  padding: 7px 1px;
 }
-.film__button {
-  @extend %button-modal;
+.film__about--title {
+  @include textStyle(20px, 1.15);
+  margin-bottom: 12px;
 }
-
+.film__about--text {
+  font-family: $primary-font-family;
+}
 .film__button--trailer {
   @extend %button-modal;
   align-items: center;
 }
+.film__button {
+  @extend %button-modal;
+}
 .modal__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.modal__wrapping {
+  display: flex;
+  row-gap: 20px;
+  flex-direction: column;
   @media screen and (min-width: $tablet) {
     @include flexCentered(flex, center, center);
+    flex-direction: row;
     gap: 12px;
   }
   @media screen and (min-width: $desktop) {
@@ -147,3 +163,16 @@ h3 {
   flex-direction: column;
   row-gap: 20px;
 }
+.film__trailer--item {
+  @media screen and (min-width: $tablet) {
+    width: 632px;
+    height: 356px;
+    margin-bottom: 15px;
+  }
+}
+// @media screen and (min-width: $tablet) {
+
+// }
+// @media screen and (min-width: $desktop) {
+
+// }
