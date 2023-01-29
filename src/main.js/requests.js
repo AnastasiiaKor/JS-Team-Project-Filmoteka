@@ -36,7 +36,19 @@ async function getGenres() {
   return response.data;
 }
 
-export { getTrending, getMoviesByKeyword, getMovieById, getGenres };
+async function getMovieBYGenre(genreId, page) {
+  const response = await instance(
+    `discover/movie?api_key=${KEY}&with_genres=${genreId}&page=${page}&language=en-US`
+  );
+  return response.data;
+}
+export {
+  getTrending,
+  getMoviesByKeyword,
+  getMovieById,
+  getGenres,
+  getMovieBYGenre,
+};
 
 // 'https://www.youtube.com/watch?v=BdJKm16Co6M' -- ссылка на видео
 

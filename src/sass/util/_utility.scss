@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: $primary-font-family;
   background-color: $main-bg-color;
@@ -7,6 +10,19 @@ body {
     background-color: $dark-color;
     color: $light-color;
   }
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $orange-color;
+  border-radius: 10px;
 }
 
 a {

@@ -3,7 +3,7 @@
   width: 100%;
   grid-gap: 20px;
   justify-content: center;
-  margin-top: 60px;
+  padding: 20px 0 40px;
   margin-left: auto;
   margin-right: auto;
 
@@ -32,11 +32,20 @@
     pointer-events: none;
   }
 
+  &__poster-wrapper {
+    display: flex;
+    overflow: hidden;
+    border-radius: 5px;
+    background-image: url(../images/placeholder.webp);
+    background-size: cover;
+    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.2);
+  }
+
   &__poster {
+    object-fit: cover;
+
     display: block;
     width: 100%;
-    border-radius: 5px;
-    object-fit: cover;
   }
 
   &__description {
@@ -73,7 +82,7 @@
   }
 
   @media screen and (min-width: $mobile) {
-    &__poster {
+    &__poster-wrapper {
       height: 398px;
     }
   }
@@ -81,8 +90,9 @@
   @media screen and (min-width: $tablet) {
     grid-gap: 32px;
     grid-template-columns: 336px 336px;
+    padding: 40px 0;
 
-    &__poster {
+    &__poster-wrapper {
       height: 455px;
     }
   }
@@ -95,7 +105,7 @@
       @include textStyle(20px, 1.2);
     }
 
-    &__poster {
+    &__poster-wrapper {
       height: 600px;
     }
 
@@ -103,4 +113,32 @@
       padding: 3px 8px;
     }
   }
+}
+
+.empty_library_bcg_img{
+  margin-top: 100px; 
+  margin-bottom: 60px;
+  background-image: url('/src/images/nomovies.svg');
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: 0){
+      
+      height: 150px;
+      width: 150px; 
+  }
+  @media screen and (min-width: 768px) {
+      height: 250px;
+      width: 250px;
+  }
+  @media screen and (min-width: 1200px){
+      height: 400px;
+      width: 400px; 
+  }
+ 
 }
