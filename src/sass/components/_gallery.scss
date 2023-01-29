@@ -115,8 +115,8 @@
   }
 }
 
-.empty_library_bcg_img{
-  margin-top: 100px; 
+.empty_library_bcg_img {
+  margin-top: 100px;
   margin-bottom: 60px;
   background-image: url('/src/images/nomovies.svg');
   display: block;
@@ -127,18 +127,23 @@
   margin-right: auto;
   margin-left: auto;
 
-  @media screen and (min-width: 0){
-      
-      height: 150px;
-      width: 150px; 
+  @media screen and (min-width: 0) {
+    height: 150px;
+    width: 150px;
   }
   @media screen and (min-width: 768px) {
-      height: 250px;
-      width: 250px;
+    height: 250px;
+    width: 250px;
   }
-  @media screen and (min-width: 1200px){
-      height: 400px;
-      width: 400px; 
+  @media screen and (min-width: 1200px) {
+    height: 400px;
+    width: 400px;
   }
- 
+}
+
+.genre-link {
+  pointer-events: all;
+  &:hover {
+    color: blue;
+  }
 }

@@ -17,11 +17,11 @@ function createGalleryMarkup(results) {
       const poster = poster_path
         ? `<img class="gallery__poster" src="https://image.tmdb.org/t/p/w500${poster_path}" loading="lazy" />`
         : '';
-      const separator = genre_ids.length && date ? ' | ' : '';
+      const delimiter = genre_ids.length && date ? ' | ' : '';
 
       const info =
         genres || date
-          ? `<span class="gallery__movie-info">${genres}${separator}${date}</span>`
+          ? `<span class="gallery__movie-info">${genres}${delimiter}${date}</span>`
           : '';
 
       const ratings = vote_count
@@ -35,12 +35,11 @@ function createGalleryMarkup(results) {
                     <div class='gallery__event-wrapper'>
                         <div class='gallery__poster-wrapper'>${poster}</div>
                         <div class="gallery__description">
-                            <p class="gallery__movie-title">${title}</p>
+                          <p class="gallery__movie-title">${title}</p>
                             <p class="gallery__movie-meta">
                               ${info}
                               ${ratings}
                             </p>
-                            
                         </div>
                     </div>
                 </a>
