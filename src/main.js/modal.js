@@ -1,28 +1,30 @@
-import { createModalMarkup } from './templates.js/modal-markup';
+import {
+  createModalMarkup,
+  addTrailersMarkup,
+} from './templates.js/modal-markup';
 import { getMovie } from './get-movie';
 import { setLocalStorage } from './local-storage';
 
 const gallery = document.querySelector('.gallery');
-const modalDetails = document.querySelector('.js-modal');
-let buttonClose;
-let backdrop;
+const buttonClose = document.querySelector('.button__close');
+const backdrop = document.querySelector('.modal__backdrop');
+const modal = document.querySelector('.js-modal');
 let buttonTrailer;
 
 gallery.addEventListener('click', openModal);
 
 function openModal(e) {
   e.preventDefault();
-
+  toggle();
+  document.body.style.overflow = 'hidden';
   getMovie(e)
     .then(data => {
       createModalMarkup(data);
+      console.log(data);
       setLocalStorage(data);
-
-      buttonClose = document.querySelector('.button__close');
-      backdrop = document.querySelector('.modal__backdrop');
       buttonTrailer = document.querySelector('.js-film__button--trailer');
-
-      buttonTrailer.addEventListener('click', openTrailer);
+      buttonTrailer?.addEventListener('click', openTrailers);
+      buttonTrailer.data = data;
       document.addEventListener('keydown', onKeydownEscape);
       buttonClose.addEventListener('click', closeModal);
       backdrop.addEventListener('click', onBackdropClick);
@@ -31,30 +33,31 @@ function openModal(e) {
       console.log(error.message);
     });
 }
-
+// function addListeners(data) {}
+function openTrailers(e) {
+  modal.insertAdjacentHTML(
+    'beforeend',
+    addTrailersMarkup(e.currentTarget.data)
+  );
+}
 function onKeydownEscape(e) {
   e.code === 'Escape' && closeModal();
 }
 function closeModal() {
+  toggle();
+  document.body.style.overflow = 'visible';
   buttonClose.removeEventListener('click', closeModal);
   backdrop.removeEventListener('click', closeModal);
-  buttonTrailer.removeEventListener('click', openTrailer);
-  modalDetails?.removeEventListener('keydown', onKeydownEscape);
-  modalDetails?.removeEventListener('click', closeModal);
-  modalDetails.innerHTML = '';
+  buttonTrailer.removeEventListener('click', openTrailers);
+  modal?.removeEventListener('keydown', onKeydownEscape);
+  modal?.removeEventListener('click', closeModal);
+  modal.innerHTML = '';
 }
 function onBackdropClick(event) {
   if (event.target === event.currentTarget) {
     closeModal();
   }
 }
-
-function openTrailer(e) {
-  e.preventDefault();
-  console.log('button');
-  addTrailersMarkup(trailers);
-}
-
-function addTrailersMarkup(trailers) {
-  console.log(trailer);
+function toggle() {
+  backdrop.classList.toggle('is-hidden');
 }
