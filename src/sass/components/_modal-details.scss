@@ -87,9 +87,11 @@ h3 {
   border: none;
   background-color: inherit;
   transition: transform $animationTransition;
+
   &:hover,
   &:focus {
     color: $orange-color;
+    cursor: pointer;
   }
 }
 .modal__wrapper {
