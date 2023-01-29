@@ -13,7 +13,7 @@ async function addSearchByGenre(page = 1) {
     e.preventDefault();
     if (!e.target.className.includes('genre-link')) return;
     e.stopImmediatePropagation();
-    if (e.target.dataset.id === 'trending') showTrending();
+
     try {
       const data = await getMovieBYGenre(e.target.dataset.id, page);
       const markup = createGalleryMarkup(data.results);

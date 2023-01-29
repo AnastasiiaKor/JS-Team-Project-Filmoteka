@@ -7,7 +7,7 @@ function getGenresById(ids) {
   });
   if (genres.length > 3) {
     genres = genres.slice(0, 2);
-    genres.push('<span class="genre-link" data-id="trending">Other</span>');
+    genres.push('Other');
   }
   return genres.join(', ');
 }
