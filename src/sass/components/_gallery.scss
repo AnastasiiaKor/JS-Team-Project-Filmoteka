@@ -144,6 +144,6 @@
 .genre-link {
   pointer-events: all;
   &:hover {
-    color: blue;
+    color: $hover-btn-color;
   }
 }

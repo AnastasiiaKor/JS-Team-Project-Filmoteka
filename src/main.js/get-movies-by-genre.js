@@ -10,7 +10,9 @@ paginator.callback = addSearchByGenre;
 
 async function addSearchByGenre(page = 1) {
   gallery.addEventListener('click', async e => {
+    e.preventDefault();
     if (!e.target.className.includes('genre-link')) return;
+    e.stopImmediatePropagation();
     if (e.target.dataset.id === 'trending') showTrending();
     try {
       const data = await getMovieBYGenre(e.target.dataset.id, page);
