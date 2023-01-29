@@ -92,59 +92,6 @@ h3 {
     color: $orange-color;
   }
 }
-.film__image {
-  display: block;
-  width: 100%;
-  border-radius: 5px;
-  object-fit: cover;
-  @media screen and (min-width: $tablet) {
-    min-width: 264px;
-  }
-}
-.film__title {
-  @include textStyle(20px, 1.15);
-}
-.upper {
-  text-transform: uppercase;
-}
-
-.film__item {
-  color: $modal-text;
-  @include textStyle(12px, 1.33);
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.film__details {
-  @include textStyle(12px, 1.33);
-  margin-bottom: 8px;
-}
-.film__rating {
-  color: $light-color;
-  background-color: $orange-color;
-  @include textStyle(12px, 1.33);
-  border-radius: 5px;
-  padding: 1px 7px;
-  align-items: center;
-}
-.film__votes-number {
-  @include textStyle(12px, 1.33);
-  background-color: $footer-bg-color;
-  color: $dark-color;
-  padding: 1px 7px;
-  border-radius: 5px;
-}
-.film__about--title {
-  @include textStyle(20px, 1.15);
-  margin-bottom: 12px;
-}
-.film__button--trailer {
-  @extend %button-modal;
-  align-items: center;
-}
-.film__button {
-  @extend %button-modal;
-}
 .modal__wrapper {
   display: flex;
   align-items: center;
@@ -164,10 +111,65 @@ h3 {
     gap: 16px;
   }
 }
+.film__image {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  @media screen and (min-width: $tablet) {
+    min-width: 264px;
+  }
+}
 .film__info {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+}
+.film__title {
+  @include textStyle(20px, 1.15);
+}
+.upper {
+  text-transform: uppercase;
+}
+
+.film__item {
+  color: $modal-text;
+  @include textStyle(12px, 1.33);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.film__rating {
+  color: $light-color;
+  background-color: $orange-color;
+  @include textStyle(12px, 1.33);
+  border-radius: 5px;
+  padding: 1px 7px;
+  align-items: center;
+}
+.film__votes-number {
+  @include textStyle(12px, 1.33);
+  background-color: $footer-bg-color;
+  color: $dark-color;
+  padding: 1px 7px;
+  border-radius: 5px;
+}
+.film__details {
+  @include textStyle(12px, 1.33);
+  margin-bottom: 8px;
+}
+.film__about--title {
+  @include textStyle(20px, 1.15);
+  margin-bottom: 12px;
+}
+.film__about--text {
+  @include textStyle(12px, 1.66);
+}
+.film__button {
+  @extend %button-modal;
+}
+.film__button--trailer {
+  @extend %button-modal;
+  align-items: center;
 }
 .film__trailers {
   width: 100%;
