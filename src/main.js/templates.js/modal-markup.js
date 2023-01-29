@@ -76,7 +76,7 @@ function createModalMarkup(movie) {
           <p class="film__about--text">${overview}</p>
         </div>
         <div class="film__button--wrapper">
-          <ul class="btn-list js-btn-add-list">
+          <ul class="btn-list btn-list--film js-btn-add-list">
             <li class="btn-list__item">
               <button
                 type="button"
@@ -95,9 +95,11 @@ function createModalMarkup(movie) {
                 Add to queue
               </button>
             </li>
-            <li><button type="button" class="button film__button upper">
-  try to watch trailer
-</button></li>
+            <li class="btn-list__item">
+              <button type="button" class="button film__button upper">
+              try to watch trailer
+              </button>
+            </li>
           </ul>
         </div>
       </div>
