@@ -9,9 +9,9 @@ const headerForm = document.querySelector('.search-form');
 const searchResult = document.querySelector('.search-result');
 const gallery = document.querySelector('.gallery');
 const WARNING_CLEAR_DELAY = 3000;
-let query = '';
+let lastQuery = '';
 const searchMore = n => {
-  getMovies(query, n);
+  getMovies(lastQuery, n);
 };
 const getMovies = async (query, page) => {
   let searched = await getMoviesByKeyword({
@@ -23,6 +23,7 @@ const getMovies = async (query, page) => {
     searchResult.textContent = '';
     gallery.innerHTML = markup;
     gallery.scrollIntoView();
+    lastQuery = query;
     paginator.callback = searchMore;
     paginator.currentPage = searched.page;
     paginator.totalPages = searched.total_pages;
@@ -69,8 +70,7 @@ const onSearch = event => {
   loadSpinnerBtn.disable();
   const value = event.target['search-film'].value.trim();
   if (value) {
-    query = value;
-    getMovies(query, 1);
+    getMovies(value, 1);
   } else {
     searchResult.textContent =
       'Movie name must not be empty. Please, enter movie name to search.';
