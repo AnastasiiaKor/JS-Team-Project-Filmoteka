@@ -20,7 +20,10 @@
     transition: background $animationTransition;
 
     &:hover {
-        background-color: $red-color;
+        // background-color: $red-color;
+        transition: 350ms $bezier-hov;
+        transform: scale(1.4);
+        fill: $hover-btn-color;
     }
 }
 
