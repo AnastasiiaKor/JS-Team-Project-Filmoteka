@@ -1,3 +1,5 @@
+import { setMovie } from './library-manager';
+
 function setLocalStorage(data) {
   const btnAddList = document.querySelector('.js-btn-add-list');
   const btnAddToWatched = document.querySelector('[data-addto="watched"]');
@@ -24,7 +26,7 @@ function setLocalStorage(data) {
     if (!event.target.hasAttribute('data-addto')) return;
 
     const lsKey = `${userName}_${event.target.dataset.addto}`;
-
+    setMovie('queue', data);
     if (!localStorage.getItem(lsKey)) {
       localStorage.setItem(lsKey, JSON.stringify([data]));
       console.log(lsKey);
