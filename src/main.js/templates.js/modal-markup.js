@@ -94,7 +94,7 @@ function createModalMarkup(movie) {
                 <li class="btn-list__item">
                 <button
                 type="button"
-                class="button film__button upper"
+                class="button film__button--recommended film__button upper"
                 data-addto="queue"
                 >
                 Recommended
