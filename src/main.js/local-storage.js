@@ -4,7 +4,8 @@ function setLocalStorage(data) {
   const btnAddToQueue = document.querySelector('[data-addto="queue"]');
 
   checkLS();
-
+  data.genre_ids = data.genres.map(g => g.id);
+  
   btnAddList.addEventListener('click', onBtnClick);
 
   function onBtnClick(event) {
