@@ -27,6 +27,7 @@ function openModal(e) {
       document.addEventListener('keydown', onKeydownEscape);
       buttonClose.addEventListener('click', closeModal);
       backdrop.addEventListener('click', closeModal);
+      themeSwitcherModals(modal);
     })
     .catch(error => {
       console.log(error.message);

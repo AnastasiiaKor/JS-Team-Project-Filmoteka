@@ -3,7 +3,7 @@ import tooltip from 'tooltip';
 const themeSwitcherBtn = document.querySelector('.theme-switcher__btn');
 const themeSwitcherIconSun = document.querySelector('.theme-switcher__btn-icon-sun');
 const themeSwitcherIconMoon = document.querySelector('.theme-switcher__btn-icon-moon');
-// const jsModal = document.querySelector('.js-modal');
+const footerModal = document.querySelector('.footer__modal');
 
 themeSwitcherBtn.addEventListener('click', onThemeSwitcherBtnClick);
 
@@ -12,9 +12,10 @@ const currentTheme = localStorage.getItem("theme");
 if (currentTheme === "dark") {
     document.body.classList.add("dark-theme");
     themeSwitcherIconSun.classList.add("icon-ishidden")
-    // jsModal.classList.add("dark-theme");
+    // footerModal.classList.add("dark-theme-modals");
 } else {
     themeSwitcherIconMoon.classList.add("icon-ishidden");
+    // footerModal.classList.remove("dark-theme-modals");
 };
 
 function onThemeSwitcherBtnClick() { 
@@ -35,6 +36,10 @@ function onThemeSwitcherBtnClick() {
     };
   
     localStorage.setItem("theme", theme);
+
+    themeSwitcherModals(footerModal);
+    // const footerCloseIcon = document.querySelector('.footer__close-icon');
+    // footerCloseIcon.style.fill = '#fff';
 };
 
 const config = {
@@ -44,7 +49,7 @@ const config = {
     },
     className: "tooltip",
     offset: {
-        x: -45,
+        x: -75,
         y: -75
     }
 };
@@ -56,7 +61,9 @@ function themeSwitcherModals(element) {
   
   if (currentTheme === "dark") {
     element.classList.add("dark-theme-modals");
-  } 
+  } else {
+    element.classList.remove("dark-theme-modals");
+  }
 };
 
 export { themeSwitcherModals };
