@@ -3,11 +3,18 @@ function setLocalStorage(data) {
   const btnAddToWatched = document.querySelector('[data-addto="watched"]');
   const btnAddToQueue = document.querySelector('[data-addto="queue"]');
   const userName = localStorage.getItem('user');
+  console.log(userName);
 
-  if (!userName) return;
+  if (!userName) {
+    btnAddToWatched.setAttribute('disabled', true);
+    btnAddToQueue.setAttribute('disabled', true);
+  }
+  // else {
+  //   btnAddToWatched.removeAttribute('disabled');
+  //   btnAddToQueue.removeAttribute('disabled');
+  // }
 
-  checkLS('watched');
-  checkLS('queue');
+  checkLS();
 
   data.genre_ids = data.genres.map(g => g.id);
 
@@ -38,21 +45,31 @@ function setLocalStorage(data) {
       localStorage.setItem(lsKey, JSON.stringify(lsValue));
     }
 
-    checkLS('watched');
-    checkLS('queue');
+    checkLS();
   }
 
-  function checkLS(storageType = '') {
-    if (localStorage.getItem(`${userName}_${storageType}`)) {
+  function checkLS() {
+    if (localStorage.getItem(`${userName}_watched`)) {
       let lsWatchedValue = JSON.parse(
-        localStorage.getItem(`${userName}_${storageType}`)
+        localStorage.getItem(`${userName}_watched`)
       );
       const indInLS = lsWatchedValue.findIndex(fiml => fiml.id === data.id);
 
       if (!!~indInLS) {
-        btnAddToQueue.textContent = `Remove from ${storageType}`;
+        btnAddToWatched.textContent = `Remove from wached`;
       } else {
-        btnAddToQueue.textContent = `Add to ${storageType}`;
+        btnAddToWatched.textContent = `Add to wached`;
+      }
+    }
+
+    if (localStorage.getItem(`${userName}_queue`)) {
+      let lsQueueValue = JSON.parse(localStorage.getItem(`${userName}_queue`));
+      const indInLS = lsQueueValue.findIndex(fiml => fiml.id === data.id);
+
+      if (!!~indInLS) {
+        btnAddToQueue.textContent = `Remove from queue`;
+      } else {
+        btnAddToQueue.textContent = `Add to queue`;
       }
     }
   }
