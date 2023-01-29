@@ -1,9 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { collection } from "firebase/firestore";
-import { doc, setDoc, getDoc, collection, query, where } from "firebase/firestore"; 
-import { FManager } from "./library-manager";
+ 
+/* import { FManager } from "./library-manager"; */
+export let USER;
 
 const firebaseConfig = {
   apiKey: "AIzaSyA8W0hTcfR6KigXVFgqdjQIjt-RMBSyFo0",
@@ -15,7 +15,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -28,6 +28,7 @@ const onLogin = event => {
       const token = credential.accessToken;
       const user = result.user;
       localStorage.setItem('user', user.uid);
+      USER = user.uid;
     })
     .catch(error => {
       const errorCode = error.code;
@@ -48,14 +49,7 @@ const showLogin = () => {
 const user = localStorage.getItem('user');
 if(!user) {showLogin();}
 else {
+  USER = user;
   console.log(user);
-  const usersCollectionRef = collection(db, user);
 }
 
-export const setData = async (data, id) => {
-  await setDoc(doc(db, user, 'watched', String(id)), data);
-  const docRef = doc(db, 'users', user);
-  const docSnap = await getDoc(docRef);
-  console.log(docSnap);
-}
-/* const q = query(collection(db, "cities"), where("capital", "==", true)); */

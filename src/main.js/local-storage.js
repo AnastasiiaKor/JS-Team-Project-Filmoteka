@@ -1,4 +1,4 @@
-/* import { setData } from './kr580vm80a'; */
+import { setMovie } from './library-manager';
 
 function setLocalStorage(data) {
   const btnAddList = document.querySelector('.js-btn-add-list');
@@ -6,15 +6,17 @@ function setLocalStorage(data) {
   const btnAddToQueue = document.querySelector('[data-addto="queue"]');
 
   checkLS();
-  console.log(data);
+  
 /*   setData(data, data.id); */
   btnAddList.addEventListener('click', onBtnClick);
 
   function onBtnClick(event) {
+    console.log(data);
     if (!event.target.hasAttribute('data-addto')) return;
 
     const lsKey = event.target.dataset.addto;
-
+    console.log(data);
+    //setMovie('watched', data);
     if (!localStorage.getItem(lsKey)) {
       localStorage.setItem(lsKey, JSON.stringify([data]));
       console.log(lsKey);

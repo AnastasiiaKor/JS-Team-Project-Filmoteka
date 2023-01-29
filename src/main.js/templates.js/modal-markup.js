@@ -20,7 +20,7 @@ function createModalMarkup(movie) {
       Watch trailer
     </button>`
     : '';
-  console.log(movie);
+
   const genresList = genres.map(genre => genre.name).join(', ');
 
   const genre =
