@@ -94,7 +94,7 @@ function createModalMarkup(movie) {
                 <li class="btn-list__item">
                 <button
                 type="button"
-                class="button film__button upper"
+                class="button film__button--recommended film__button upper"
                 data-addto="queue"
                 >
                 Recommended
@@ -112,7 +112,6 @@ function createModalMarkup(movie) {
 function addTrailersMarkup({ videos }) {
   const trailers = videos.results
     .map(trailer => {
-      console.log(trailer);
       return `<li class="film__trailer--item">
       <iframe 
       class="film__trailer"
