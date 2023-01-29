@@ -48,52 +48,69 @@ class Paginator {
 
   render() {
     let paginatorCode = '';
-
-    if (this.#currentPage < 6) {
-      //begin of region
+    if(this.#totalPages <= 9) {
       const list = [];
-      for (let i = 1; i <= 7; i += 1) {
-        const addButton =
-          i === this.#currentPage
-            ? this.active(this.#currentPage)
-            : this.number(i);
-        list.push(addButton);
-      }
-      paginatorCode = `${this.arrow('left', this.#currentPage > 1)} ${list.join(
-        ''
-      )} ${this.dots('front')} ${this.lastnumber(this.#totalPages)} ${this.arrow(
-        'right',
-        true
-      )}`;
-    } else if (this.#currentPage > this.#totalPages - 6) {
-      // end of region
-      const list = [];
-      for (let i = this.#totalPages - 6; i <= this.#totalPages; i += 1) {
-        const addButton =
-          i === this.#currentPage
-            ? this.active(this.#currentPage)
-            : this.number(i);
-        list.push(addButton);
-      }
-      paginatorCode = `${this.arrow('left', true)} ${this.lastnumber(
-        1
-      )} ${this.dots('back')}  ${list.join('')} ${this.arrow(
-        'right',
-        this.#currentPage < this.#totalPages
-      )}`;
+        for (let i = 1; i <= this.#totalPages; i += 1) {
+          const addButton =
+            i === this.#currentPage
+              ? this.active(this.#currentPage)
+              : this.number(i);
+          list.push(addButton);
+        }
+        paginatorCode =  list.join('');
     } else {
-      //middle of region
-      const list = `${this.number(this.#currentPage - 2)} ${this.number(
-        this.#currentPage - 1
-      )} ${this.active(this.#currentPage)} ${this.number(
-        this.#currentPage + 1
-      )} ${this.number(this.#currentPage + 2)}`;
-      paginatorCode = `${this.arrow('left', true)} ${this.lastnumber(
-        1
-      )} ${this.dots('back')} ${list} ${this.dots('front')} ${this.lastnumber(
-        this.#totalPages
-      )} ${this.arrow('right', true)}`;
+
+
+      if (this.#currentPage < 6) {
+        //begin of region
+        const list = [];
+        for (let i = 1; i <= 7; i += 1) {
+          const addButton =
+            i === this.#currentPage
+              ? this.active(this.#currentPage)
+              : this.number(i);
+          list.push(addButton);
+        }
+        paginatorCode = `${this.arrow('left', this.#currentPage > 1)} ${list.join(
+          ''
+        )} ${this.dots('front')} ${this.lastnumber(this.#totalPages)} ${this.arrow(
+          'right',
+          true
+        )}`;
+      } else if (this.#currentPage > this.#totalPages - 6) {
+        // end of region
+        const list = [];
+        for (let i = this.#totalPages - 6; i <= this.#totalPages; i += 1) {
+          const addButton =
+            i === this.#currentPage
+              ? this.active(this.#currentPage)
+              : this.number(i);
+          list.push(addButton);
+        }
+        paginatorCode = `${this.arrow('left', true)} ${this.lastnumber(
+          1
+        )} ${this.dots('back')}  ${list.join('')} ${this.arrow(
+          'right',
+          this.#currentPage < this.#totalPages
+        )}`;
+      } else {
+        //middle of region
+        const list = `${this.number(this.#currentPage - 2)} ${this.number(
+          this.#currentPage - 1
+        )} ${this.active(this.#currentPage)} ${this.number(
+          this.#currentPage + 1
+        )} ${this.number(this.#currentPage + 2)}`;
+        paginatorCode = `${this.arrow('left', true)} ${this.lastnumber(
+          1
+        )} ${this.dots('back')} ${list} ${this.dots('front')} ${this.lastnumber(
+          this.#totalPages
+        )} ${this.arrow('right', true)}`;
+      }
+
+
     }
+
+    
 
     this.container.innerHTML = paginatorCode;
   }

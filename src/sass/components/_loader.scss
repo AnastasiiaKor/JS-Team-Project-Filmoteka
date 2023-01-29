@@ -1,0 +1,44 @@
+@import "./node_modules/scss-spinners/spinners";
+
+.spinner.round:after {
+  content: ' ';
+  content: ' ';
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 2px solid #0000;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: round-animate 0.7s ease-in-out infinite;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.spinner.round:before {
+  content: ' ';
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.search-form__spinner {
+  position: absolute;
+  top: 10px;
+  right: -38px;
+}
+
+.spinner.is-hidden {
+  display: none;
+}
+
+.search-form__icon.is-hidden {
+  display: none;
+}

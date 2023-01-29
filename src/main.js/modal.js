@@ -23,7 +23,7 @@ function openModal(e) {
 
       document.addEventListener('keydown', onKeydownEscape);
       buttonClose.addEventListener('click', closeModal);
-      backdrop.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', onBackdropClick);
     })
     .catch(error => {
       console.log(error.message);
@@ -34,9 +34,14 @@ function onKeydownEscape(e) {
   e.code === 'Escape' && closeModal();
 }
 function closeModal() {
-  buttonClose?.removeEventListener('click', closeModal);
-  backdrop?.removeEventListener('click', closeModal);
+  buttonClose.removeEventListener('click', closeModal);
+  backdrop.removeEventListener('click', closeModal);
   modalDetails?.removeEventListener('keydown', onKeydownEscape);
   modalDetails?.removeEventListener('click', closeModal);
   modalDetails.innerHTML = '';
+}
+function onBackdropClick(event) {
+  if (event.target === event.currentTarget) {
+    closeModal();
+  }
 }
