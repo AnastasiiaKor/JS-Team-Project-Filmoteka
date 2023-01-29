@@ -13,14 +13,14 @@ class LoadSpinner {
     return refs;
   }
 
-  enable() {
+  disable() {
     this.refs.button.disabled = false;
     // this.refs.label.textContent = 'Loading...';
     this.refs.spinner.classList.add('is-hidden');
     this.refs.icon.classList.remove('is-hidden');
   }
 
-  disable() {
+  enable() {
     this.refs.button.disabled = true;
     // this.refs.label.textContent = 'Loading...';
     this.refs.spinner.classList.remove('is-hidden');
