@@ -1,27 +1,25 @@
 import { getTrending } from './requests';
+import { addSearchByGenre } from './get-movies-by-genre';
 import { createGalleryMarkup } from './templates.js/gallery-markup';
 import { paginator } from './paginator';
 
 const gallery = document.querySelector('.gallery');
-/* const paginationBlock = document.querySelector('.pagination'); */
 
-paginator.callback = buildGallery;
-buildGallery();
+paginator.callback = showTrending;
+showTrending();
 
-/* paginationBlock &&
-  paginationBlock.addEventListener('click', () => {
-    gallery.scrollIntoView();
-  }); */
-
-async function buildGallery(page = 1) {
+async function showTrending(page = 1) {
   try {
     const data = await getTrending(page);
     const markup = createGalleryMarkup(data.results);
-    gallery.innerHTML = markup;
     gallery.scrollIntoView();
+    gallery.innerHTML = markup;
     paginator.currentPage = data.page;
     paginator.totalPages = data.total_pages;
+    addSearchByGenre();
   } catch (error) {
     console.log(error);
   }
 }
+
+export { showTrending };
