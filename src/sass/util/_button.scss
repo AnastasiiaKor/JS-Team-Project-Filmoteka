@@ -6,6 +6,9 @@
 
   &__item {
     display: flex;
+    align-items: center;
+    justify-content: center;
+
     @media screen and (max-width: #{$min-tablet}) {
       flex-grow: 1;
       flex-basis: 0;
@@ -15,15 +18,27 @@
   @media screen and (min-width: #{$tablet}) {
     gap: 32px;
   }
+
+  &--film {
+    @media screen and (min-width: #{$tablet}) {
+      gap: 15px;
+    }
+  }
 }
 
 .button {
-  padding: 6px 12px;
+  padding: 5px 12px;
 
   min-width: 110px;
   min-height: 44px;
   // flex-grow: 1;
   // flex-basis: 330px;
+
+  font-family: $primary-font-family;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
 
   text-transform: uppercase;
   color: #{$light-color};
@@ -35,11 +50,19 @@
   transition: #{$animationTransition};
 
   &:hover {
-    background-color: #{$orange-color};
-    color: #{$light-color};
-    border-color: #{$orange-color};
+    background-color: #fec69e;
+    box-shadow: 0px 8px 43px rgba(254, 198, 158, 0.6);
+    border-color: #fec69e;
   }
-  &:focus {
+
+  &:focus-visible {
+    outline: none;
+    background-color: #{$orange-color};
+    border-color: #{$orange-color};
+    box-shadow: 0px 8px 43px rgba(254, 198, 158, 0.6);
+  }
+
+  &:active {
     background-color: #{$orange-color};
     color: #{$light-color};
     border-color: #{$orange-color};
@@ -59,6 +82,16 @@
   color: #{$dark-color};
   border-color: #{$dark-color};
   background-color: inherit;
+
+  &:hover {
+    background-color: #{$orange-color};
+    box-shadow: none;
+    border-color: #{$orange-color};
+  }
+
+  &:active {
+    color: #{$dark-color};
+  }
 
   @media screen and (min-width: #{$tablet}) {
     width: 125px;
