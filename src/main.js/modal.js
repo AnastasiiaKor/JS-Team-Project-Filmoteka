@@ -21,7 +21,6 @@ function openModal(e) {
   getMovie(e)
     .then(data => {
       createModalMarkup(data);
-      console.log(data);
       setLocalStorage(data);
       buttonTrailer = document.querySelector('.js-film__button--trailer');
       buttonTrailer?.addEventListener('click', openTrailers);
