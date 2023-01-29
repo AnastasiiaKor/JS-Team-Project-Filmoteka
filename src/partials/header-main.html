@@ -1,20 +1,17 @@
 <header class="header">
   <div class="header__container container">
     <nav class="nav">
-      <a href="./index.html" class="logo">
+      <a href="./index.html" class="logo my-tooltip-toggle-btn" data-tooltip="Вack to main page">
         <svg class="logo__icon" width="24" height="24">
           <use href="./images/icon.svg#icon-logo"></use>
         </svg>
         <h1 class="logo__text">Filmoteka</h1>
       </a>
-      <ul class="nav-list">
+      <ul class="nav-list" id="list_links">
         <li class="nav-list__item">
           <a class="nav-list__link nav-list__link--current" href="./index.html"
             >Home</a
           >
-        </li>
-        <li class="nav-list__item">
-          <a class="nav-list__link" href="./library.html">my library</a>
         </li>
         <li class="nav-list__item">
           <a class="nav-list__link" href="#" id="sing_in">sign in</a>
@@ -30,10 +27,11 @@
         id="search-film"
         placeholder="Movie search"
       />
-      <button class="search-form__btn" type="submit">
-        <svg width="12" height="12">
+      <button class="search-form__btn" type="submit" data-action="loading">
+        <svg class="search-form__icon" width="12" height="12">
           <use href="./images/icon.svg#icon-search"></use>
         </svg>
+		  <span class="spinner round search-form__spinner is-hidden"></span>
       </button>
     </form>
     <p class="search-result"></p>

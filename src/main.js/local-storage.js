@@ -1,22 +1,23 @@
-import { setMovie } from './library-manager';
-
 function setLocalStorage(data) {
   const btnAddList = document.querySelector('.js-btn-add-list');
   const btnAddToWatched = document.querySelector('[data-addto="watched"]');
   const btnAddToQueue = document.querySelector('[data-addto="queue"]');
+  const userName = localStorage.getItem('user');
 
-  checkLS();
-  
-/*   setData(data, data.id); */
+  if (!userName) return;
+
+  checkLS('watched');
+  checkLS('queue');
+
+  data.genre_ids = data.genres.map(g => g.id);
+
   btnAddList.addEventListener('click', onBtnClick);
 
   function onBtnClick(event) {
-    console.log(data);
     if (!event.target.hasAttribute('data-addto')) return;
 
-    const lsKey = event.target.dataset.addto;
-    console.log(data);
-    //setMovie('watched', data);
+    const lsKey = `${userName}_${event.target.dataset.addto}`;
+
     if (!localStorage.getItem(lsKey)) {
       localStorage.setItem(lsKey, JSON.stringify([data]));
       console.log(lsKey);
@@ -37,29 +38,21 @@ function setLocalStorage(data) {
       localStorage.setItem(lsKey, JSON.stringify(lsValue));
     }
 
-    checkLS();
+    checkLS('watched');
+    checkLS('queue');
   }
 
-  function checkLS() {
-    if (localStorage.getItem('watched')) {
-      let lsWatchedValue = JSON.parse(localStorage.getItem('watched'));
+  function checkLS(storageType = '') {
+    if (localStorage.getItem(`${userName}_${storageType}`)) {
+      let lsWatchedValue = JSON.parse(
+        localStorage.getItem(`${userName}_${storageType}`)
+      );
       const indInLS = lsWatchedValue.findIndex(fiml => fiml.id === data.id);
 
       if (!!~indInLS) {
-        btnAddToWatched.textContent = 'Remove from watched';
+        btnAddToQueue.textContent = `Remove from ${storageType}`;
       } else {
-        btnAddToWatched.textContent = 'Add to watched';
-      }
-    }
-
-    if (localStorage.getItem('queue')) {
-      let lsQueueValue = JSON.parse(localStorage.getItem('queue'));
-      const indInLS = lsQueueValue.findIndex(fiml => fiml.id === data.id);
-
-      if (!!~indInLS) {
-        btnAddToQueue.textContent = 'Remove from queue';
-      } else {
-        btnAddToQueue.textContent = 'Add to queue';
+        btnAddToQueue.textContent = `Add to ${storageType}`;
       }
     }
   }

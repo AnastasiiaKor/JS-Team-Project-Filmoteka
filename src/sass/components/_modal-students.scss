@@ -23,33 +23,37 @@
 
 .footer__modal {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     margin: auto;
-    padding: 20px 60px;
+    padding: 20px 30px;
 
-    min-width: 320px;
-    width: 950px;
-    // max-height: 80vh;
+    width: 92%;
 
     border-radius: 2px;
     opacity: 1;
     background-color: $light-color;
     z-index: 3;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -5%) scale(1);
     transition: transform $animationTransition;
 
-    // @media screen and (min-width: 768px) {
-    //     // position: absolute;
-    //     // top: 50%;
-    //     // left: 50%;
-    //     // transform: translate(-50%, -50%);
-    //     // width: 550px;
-    // }
+    color: $dark-color;
 
-    // @media screen and (min-width: 1024px) {
-    //     // width: 750px;
-    // }
+    @media screen and (max-width: $tablet) {
+    width: 450px;
+    padding: 20px 40px;
+    }    
+    @media screen and (min-width: $tablet) {
+        top: 15%;
+        transform: translate(-50%, -5%) scale(1);
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 998px;
+        padding: 20px 60px;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 
@@ -57,13 +61,12 @@
     text-align: center;
     margin-top: 0;
     margin-bottom: 23px;
-    color: $orange-color;
     font-size: 40px;
     font-weight: 500;
 }
 
-.scream {
-    color: $dark-color;
+.part-java-scream {
+    color: $orange-color;
 }
 
 .student-list {
@@ -78,18 +81,19 @@
 .student-item {
     text-align: center;
     overflow: hidden;
-    width: 130px;
+    width: 450px;
     margin: 10px;
     margin-top: 0;
 
-
-    // @media screen and(min-width: 768px) {
-    //     width: calc((100% - 4 * 15px) / 4);
-    // }
-
-    // @media screen and(min-width: 1024px) {
-    //     width: calc((100% - 4 * 15px) / 4);
-    // }
+    @media screen and(min-width: $tablet) {
+        width:300px;
+    }  
+    @media screen and(max-width: $tablet) {
+        width: 300px;
+    }
+    @media screen and(min-width: $desktop) {
+        width: 130px;
+    }
 }
 
 
@@ -110,7 +114,7 @@
 
 .student-name {
     display: block;
-    color: $dark-color;
+    color: inherit;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 500;
@@ -142,20 +146,18 @@
     width: 40px;
     height: 40px;
     border: none;
+    
 
 }
 
 .footer__close-icon {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     fill: $dark-color;
-    border: 1px solid rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
     transition: fill $animationTransition;
 
-    &:hover,
-    :focus {
-        fill: $orange-color;
-    }
+    // &:hover,
+    // :focus {
+    // fill: $orange-color;
+    // }
 }
