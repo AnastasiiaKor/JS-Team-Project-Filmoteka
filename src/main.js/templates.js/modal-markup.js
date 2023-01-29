@@ -35,7 +35,7 @@ function createModalMarkup(movie) {
     <div class="modal">
       <button type="button" class="button__close">
         <svg width="30" height="30">
-          <use href="./images/icon-close.svg#close"></use>
+          <use href="icon-close.svg#close"></use>
         </svg>
       </button>
       <a class="modal__wrapper" href="${id}">
