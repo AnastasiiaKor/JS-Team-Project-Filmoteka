@@ -1,14 +1,9 @@
-class Fire {
-    constructor (user) {
-        this.user = user;
-    }
-}
-
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { collection } from "firebase/firestore";
 import { doc, setDoc, getDoc, collection, query, where } from "firebase/firestore"; 
+import { FManager } from "./library-manager";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA8W0hTcfR6KigXVFgqdjQIjt-RMBSyFo0",

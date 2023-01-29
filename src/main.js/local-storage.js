@@ -1,4 +1,4 @@
-import { setData } from './kr580vm80a';
+/* import { setData } from './kr580vm80a'; */
 
 function setLocalStorage(data) {
   const btnAddList = document.querySelector('.js-btn-add-list');
@@ -7,7 +7,7 @@ function setLocalStorage(data) {
 
   checkLS();
   console.log(data);
-  setData(data, data.id);
+/*   setData(data, data.id); */
   btnAddList.addEventListener('click', onBtnClick);
 
   function onBtnClick(event) {

@@ -1,4 +1,4 @@
-class FManager {
+export class FManager {
     constructor(user) {
         this.user = user;
     }
