@@ -12,6 +12,11 @@ body {
   }
 }
 
+.dark-theme-modals {
+  background-color: #303030 !important;
+  color: $light-color !important;
+}
+
 body::-webkit-scrollbar {
   width: 15px;
 }
