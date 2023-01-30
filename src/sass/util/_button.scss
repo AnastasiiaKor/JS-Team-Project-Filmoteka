@@ -93,6 +93,13 @@
     color: #{$dark-color};
   }
 
+  &:disabled {
+    background-color: #7a7a7a;
+  }
+  &:disabled:hover {
+    border-color: #{$dark-color};
+  }
+
   @media screen and (min-width: #{$tablet}) {
     width: 125px;
   }
