@@ -29,3 +29,12 @@ class LoadSpinner {
 }
 
 export { LoadSpinner };
+
+
+//Код для перевикористання класу
+
+// import { LoadSpinner } from './loader';
+// const loadSpinnerBtn = new LoadSpinner({ selector: '[data-action="loading"]' });
+
+// loadSpinnerBtn.enable();
+// loadSpinnerBtn.disable();

@@ -1,3 +1,4 @@
+// import './main.js/preloader';
 import './main.js/requests';
 import './main.js/saveGenres';
 import './main.js/trending';
