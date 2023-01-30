@@ -41,7 +41,7 @@ function onQueueClick(e) {
 
 function renderMovies(e) {
   let savedData = localStorage.getItem(e);
-  
+
   if (savedData && JSON.parse(savedData).length) {
     let savedData = localStorage.getItem(e);
     let parsedData = JSON.parse(savedData);
@@ -51,7 +51,6 @@ function renderMovies(e) {
   }
   galleryEl.innerHTML = '';
   divClassEl.style.display = 'block';
-  alert(`Your queue library is empty`);
   return;
 }
 
