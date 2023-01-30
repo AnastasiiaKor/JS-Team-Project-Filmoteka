@@ -1,5 +1,7 @@
 import { getGenresById } from '../get-genres';
 
+const gallery = document.querySelector('.gallery__wrapper');
+
 function createGalleryMarkup(results) {
   const markup = results
     .map(result => {
@@ -30,7 +32,8 @@ function createGalleryMarkup(results) {
           )}</span>`
         : '';
 
-      return `<li class="gallery__item">
+      return `
+      <li class="gallery__item">
                 <a class="gallery__link" href="${id}" title="${title}">
                     <div class='gallery__event-wrapper'>
                         <div class='gallery__poster-wrapper'>${poster}</div>
@@ -43,11 +46,10 @@ function createGalleryMarkup(results) {
                         </div>
                     </div>
                 </a>
-             </li>   
-            `;
+             </li>`;
     })
     .join('');
-  return markup;
+  return `<ul class="gallery">${markup}</ul>`;
 }
 
-export { createGalleryMarkup };
+export { gallery, createGalleryMarkup };
