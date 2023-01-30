@@ -3,10 +3,12 @@ import {
   addTrailersMarkup,
 } from './templates.js/modal-markup';
 import { getMovie } from './get-movie';
-import { setLocalStorage } from './local-storage';
+/* import { setLocalStorage } from './local-storage'; */
 import { themeSwitcherModals } from './theme-switcher';
+import { initBtns } from './library-manager';
+import { gallery } from './templates.js/gallery-markup';
+import { seeSimilar } from './similar';
 
-const gallery = document.querySelector('.gallery');
 const buttonClose = document.querySelector('.button__close');
 const backdrop = document.querySelector('.modal__backdrop');
 const modal = document.querySelector('.js-modal');
@@ -22,7 +24,8 @@ function openModal(e) {
   getMovie(e)
     .then(data => {
       createModalMarkup(data);
-      setLocalStorage(data);
+      /* setLocalStorage(data); */
+      initBtns(data);
       buttonTrailer = document.querySelector('.js-film__button--trailer');
       buttonTrailer?.addEventListener('click', openTrailers);
       buttonTrailer.data = data;
@@ -31,6 +34,7 @@ function openModal(e) {
       buttonClose.addEventListener('click', closeModal);
       backdrop.addEventListener('click', onBackdropClick);
       themeSwitcherModals(modal);
+      seeSimilar(modal);
     })
     .catch(error => {
       console.log(error.message);
@@ -64,3 +68,4 @@ function onBackdropClick(event) {
 function toggle() {
   backdrop.classList.toggle('is-hidden');
 }
+export { closeModal };

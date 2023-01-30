@@ -1,15 +1,12 @@
 import { getMovieBYGenre } from './requests';
-import { showTrending } from './trending';
-import { createGalleryMarkup } from './templates.js/gallery-markup';
+import { gallery, createGalleryMarkup } from './templates.js/gallery-markup';
 import { paginator } from './paginator';
 
-const gallery = document.querySelector('.gallery');
 let genreID;
 
 addSearchByGenre();
 
-
-const searchByGenre = async (page) => {
+const searchByGenre = async page => {
   try {
     const data = await getMovieBYGenre(genreID, page);
     const markup = createGalleryMarkup(data.results);
@@ -20,7 +17,7 @@ const searchByGenre = async (page) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 function addSearchByGenre(page = 1) {
   gallery.addEventListener('click', async e => {
@@ -29,8 +26,7 @@ function addSearchByGenre(page = 1) {
     e.stopImmediatePropagation();
     genreID = e.target.dataset.id;
     paginator.callback = searchByGenre;
-    searchByGenre(page)
-    
+    searchByGenre(page);
   });
 }
 

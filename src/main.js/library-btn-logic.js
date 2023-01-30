@@ -1,4 +1,7 @@
-import { createGalleryMarkup } from './templates.js/gallery-markup';
+import {
+  gallery as galleryEl,
+  createGalleryMarkup,
+} from './templates.js/gallery-markup';
 // import { getGenresById } from './get-genres';
 // import { buildGallery } from './trending';
 // import { getTrending } from './requests';
@@ -7,7 +10,6 @@ import { createGalleryMarkup } from './templates.js/gallery-markup';
 const divClassEl = document.querySelector('.empty_library_bcg_img');
 const librWatchedBtnEl = document.querySelector('#watched');
 const librQueueBtnEl = document.querySelector('#queue');
-const galleryEl = document.querySelector('.gallery');
 const userName = localStorage.getItem('user');
 const savedQueue = localStorage.getItem(`${userName}_queue`);
 
@@ -27,7 +29,7 @@ function onWatchedClick(e) {
   librWatchedBtnEl.classList.add('btn-add__active');
   librWatchedBtnEl.setAttribute('disabled', true);
 
-  onClick(e);
+  renderMovies(e.target.id);
 }
 
 function onQueueClick(e) {
@@ -36,14 +38,14 @@ function onQueueClick(e) {
   librQueueBtnEl.classList.add('btn-add__active');
   librQueueBtnEl.setAttribute('disabled', true);
 
-  onClick(e);
+  renderMovies(e.target.id);
 }
 
-function onClick(e) {
-  let savedData = localStorage.getItem(`${userName}_${e.target.id}`);
+function renderMovies(e) {
+  let savedData = localStorage.getItem(e);
 
   if (savedData && JSON.parse(savedData).length) {
-    let savedData = localStorage.getItem(`${userName}_${e.target.id}`);
+    let savedData = localStorage.getItem(e);
     let parsedData = JSON.parse(savedData);
     galleryEl.innerHTML = createGalleryMarkup(parsedData);
     divClassEl.style.display = 'none';
@@ -51,9 +53,10 @@ function onClick(e) {
   }
   galleryEl.innerHTML = '';
   divClassEl.style.display = 'block';
-  alert(`Your queue library is empty`);
   return;
 }
+
+renderMovies('queue');
 
 // подключить билдГаллери
 // подключить создатель разметки ок

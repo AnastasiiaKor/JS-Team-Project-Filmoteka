@@ -1,9 +1,9 @@
 import { instance, KEY } from './instance';
 
 //MAIN
-async function getTrending(page) {
+async function getTrending(page, period) {
   const response = await instance(
-    `trending/movie/day?api_key=${KEY}&page=${page}&language=en-US`
+    `trending/movie/${period}?api_key=${KEY}&page=${page}&language=en-US`
   );
   return response.data;
 }
@@ -22,9 +22,9 @@ async function getMovieById(id) {
   return response.data;
 }
 // RECOMMENDATIONS
-async function getRecommended(id, page) {
+async function getSimilar(id, page) {
   const response = await instance(
-    `movie/${id}/recommendations?api_key=${KEY}&page=${page}&language=en-US`
+    `movie/${id}/similar?api_key=${KEY}&page=${page}&language=en-US`
   );
   return response.data;
 }
@@ -48,6 +48,7 @@ export {
   getMovieById,
   getGenres,
   getMovieBYGenre,
+  getSimilar,
 };
 
 // 'https://www.youtube.com/watch?v=BdJKm16Co6M' -- ссылка на видео
