@@ -27,7 +27,7 @@ function onWatchedClick(e) {
   librWatchedBtnEl.classList.add('btn-add__active');
   librWatchedBtnEl.setAttribute('disabled', true);
 
-  onClick(e);
+  renderMovies(e.target.id);
 }
 
 function onQueueClick(e) {
@@ -36,14 +36,14 @@ function onQueueClick(e) {
   librQueueBtnEl.classList.add('btn-add__active');
   librQueueBtnEl.setAttribute('disabled', true);
 
-  onClick(e);
+  renderMovies(e.target.id);
 }
 
-function onClick(e) {
-  let savedData = localStorage.getItem(`${userName}_${e.target.id}`);
-
+function renderMovies(e) {
+  let savedData = localStorage.getItem(e);
+  
   if (savedData && JSON.parse(savedData).length) {
-    let savedData = localStorage.getItem(`${userName}_${e.target.id}`);
+    let savedData = localStorage.getItem(e);
     let parsedData = JSON.parse(savedData);
     galleryEl.innerHTML = createGalleryMarkup(parsedData);
     divClassEl.style.display = 'none';
@@ -54,6 +54,8 @@ function onClick(e) {
   alert(`Your queue library is empty`);
   return;
 }
+
+renderMovies('queue');
 
 // подключить билдГаллери
 // подключить создатель разметки ок

@@ -1,3 +1,5 @@
+import { setMovie, removeMovie, init } from './firebase';
+/* init(); */
 function setLocalStorage(data) {
   const btnAddList = document.querySelector('.js-btn-add-list');
   const btnAddToWatched = document.querySelector('[data-addto="watched"]');
