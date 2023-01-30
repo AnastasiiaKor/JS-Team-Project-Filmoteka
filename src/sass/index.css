@@ -370,8 +370,6 @@ img {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  position: absolute;
-  left: 25%;
 }
 
 .footer {
