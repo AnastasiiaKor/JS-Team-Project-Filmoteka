@@ -161,16 +161,14 @@
     width: 40px;
     height: 40px;
     border: none;
-    
-
+    color: inherit;
 }
 
 .footer__close-icon {
     width: 30px;
     height: 30px;
-    stroke: $dark-color;
+    stroke: currentColor;
     transition: stroke $animationTransition;
-
 
     &:hover,
     :focus {
