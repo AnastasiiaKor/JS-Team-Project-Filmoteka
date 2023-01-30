@@ -18,12 +18,14 @@ const updateLocalStorage = async (list) => {
 
 export const setMovie = async (list, data) => {
     await setDoc(doc(db, "users", USER, list, String(data.id)), data);
-    updateLocalStorage(list);
+    await updateLocalStorage(list);
+    return true;
 }
 
 export const removeMovie = async (list, id) => {
     await deleteDoc(doc(db, "users", USER, list, String(id)));
-    updateLocalStorage(list);    
+    await updateLocalStorage(list);
+    return true;
 }
 
 export const init = async() => {
