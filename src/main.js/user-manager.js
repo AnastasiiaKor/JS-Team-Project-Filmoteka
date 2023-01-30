@@ -1,9 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
- 
-/* import { FManager } from "./library-manager"; */
+import { init } from './library-manager';
+
 export let USER;
+const signIn = document.querySelector('#sign_in');
+const library = document.querySelector('#library_link');
 
 const firebaseConfig = {
   apiKey: "AIzaSyA8W0hTcfR6KigXVFgqdjQIjt-RMBSyFo0",
@@ -14,12 +15,26 @@ const firebaseConfig = {
   appId: "1:588180914435:web:0ccde1296d8f77415de936"
 };
 
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+export const app = initializeApp(firebaseConfig);
 
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
-const signIn = document.getElementById('sing_in');
+
+const onLogout = () => {
+  localStorage.removeItem('user');
+  signIn.textContent = 'SIGN IN';
+  library.parentNode.classList.add("disabled");
+  signIn.removeEventListener('click', onLogout);
+  signIn.addEventListener('click', onLogin);
+}
+
+const updHeaderOnLogin = () => {
+  signIn.textContent = 'SIGN OUT';
+  library.parentNode.classList.remove("disabled");
+  signIn.removeEventListener('click', onLogin);
+  signIn.addEventListener('click', onLogout);
+}
+
 const onLogin = event => {
   signInWithPopup(auth, provider)
     .then(result => {
@@ -29,6 +44,8 @@ const onLogin = event => {
       const user = result.user;
       localStorage.setItem('user', user.uid);
       USER = user.uid;
+      updHeaderOnLogin();
+      init();
     })
     .catch(error => {
       const errorCode = error.code;
@@ -38,18 +55,11 @@ const onLogin = event => {
     });
 };
 
-
-
-const showLogin = () => {
-  console.log('show login item in the header');
-  signIn.addEventListener('click', onLogin);
-}
-
+signIn.addEventListener('click', onLogin);
 // check user ID on local storage
 const user = localStorage.getItem('user');
-if(!user) {showLogin();}
-else {
+if(user) {
   USER = user;
-  console.log(user);
+  updHeaderOnLogin();
 }
 

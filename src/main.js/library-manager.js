@@ -1,7 +1,6 @@
-import { USER, db } from './user-manager';
-import { collection } from "firebase/firestore";
-import { doc, setDoc, getDoc, getDocs, deleteDoc, collection, query, where } from "firebase/firestore";
-
+import { USER, app } from './user-manager';
+import { getFirestore, doc, setDoc, getDoc, getDocs, deleteDoc, collection, query, where } from "firebase/firestore";
+const db = getFirestore(app);
 const getMovies = async (list) => {
     const usercollection = collection(db, "users", USER, list);
     const querySnapshot = await getDocs(usercollection);

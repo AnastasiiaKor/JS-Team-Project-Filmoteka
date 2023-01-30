@@ -40,10 +40,10 @@ function onQueueClick(e) {
 }
 
 function onClick(e) {
-  let savedData = localStorage.getItem(`${userName}_${e.target.id}`);
-
+  let savedData = localStorage.getItem(e.target.id);
+  
   if (savedData && JSON.parse(savedData).length) {
-    let savedData = localStorage.getItem(`${userName}_${e.target.id}`);
+    let savedData = localStorage.getItem(e.target.id);
     let parsedData = JSON.parse(savedData);
     galleryEl.innerHTML = createGalleryMarkup(parsedData);
     divClassEl.style.display = 'none';
