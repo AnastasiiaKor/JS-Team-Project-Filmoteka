@@ -14,7 +14,7 @@
 }
 
 .pagination-numbers {
-  height: 40px;
+  padding:10px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,6 +24,9 @@
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
+  &:hover {
+   color:$orange-color; 
+  }
 }
 .pagination-button {
   width: 40px;
