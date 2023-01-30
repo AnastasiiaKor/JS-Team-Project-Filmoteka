@@ -82,16 +82,15 @@ h3 {
   width: 30px;
   height: 30px;
   @include flexCentered(flex, center, center);
-  fill: currentColor;
+  stroke: currentColor;
   color: inherit;
   border: none;
-  background-color: inherit;
+  background-color: transparent;
   transition: transform $animationTransition;
-
+  cursor: pointer;
   &:hover,
   &:focus {
-    color: $orange-color;
-    cursor: pointer;
+    stroke: $orange-color;
   }
 }
 .modal__wrapper {
@@ -140,25 +139,26 @@ h3 {
   margin-bottom: 8px;
   font-weight: 500;
 }
+.film__details {
+  @include textStyle(12px, 1.33);
+  margin-bottom: 8px;
+}
 .film__rating {
   color: $light-color;
   background-color: $orange-color;
-  @include textStyle(12px, 1.33);
+  @include textStyle(12px, 1.16);
   border-radius: 5px;
   padding: 1px 7px;
   align-items: center;
 }
 .film__votes-number {
-  @include textStyle(12px, 1.33);
+  @include textStyle(12px, 1.16);
   background-color: $footer-bg-color;
   color: $dark-color;
   padding: 1px 7px;
   border-radius: 5px;
 }
-.film__details {
-  @include textStyle(12px, 1.33);
-  margin-bottom: 8px;
-}
+
 .film__about--title {
   @include textStyle(20px, 1.15);
   margin-bottom: 12px;
