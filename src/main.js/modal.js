@@ -42,10 +42,9 @@ function openModal(e) {
         themeSwitcherModalButtons(filmButton);
       });
       seeSimilar(modal);
-
     })
     .catch(error => {
-      console.log(error.message);
+      console.log(error);
     });
 }
 function openTrailers(e) {
