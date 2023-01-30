@@ -73,6 +73,7 @@ function createModalMarkup(movie) {
               <p class="film__about--text">${overview}</p>
             </div>
             <div class="film__button--wrapper">
+            <p class="nologin"></p>
               <ul class="btn-list js-btn-add-list">
                 <li class="btn-list__item">
                   <button

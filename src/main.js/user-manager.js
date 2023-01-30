@@ -24,7 +24,7 @@ const onLogout = () => {
   localStorage.removeItem('user');
   signIn.textContent = 'SIGN IN';
   library.parentNode.classList.add("disabled");
-  if(window.location.pathname === '/library.html') window.location.pathname = '/';
+  /* if(window.location.pathname === '/library.html') window.location.pathname = '/'; */
   signIn.removeEventListener('click', onLogout);
   signIn.addEventListener('click', onLogin);
 }
@@ -37,6 +37,7 @@ const updHeaderOnLogin = () => {
 }
 
 const onLogin = event => {
+  /* event.preventDefault(); */
   signInWithPopup(auth, provider)
     .then(result => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
