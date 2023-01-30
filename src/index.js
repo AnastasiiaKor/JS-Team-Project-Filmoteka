@@ -11,5 +11,3 @@ import './main.js/local-storage';
 import './main.js/footer-modal';
 import './main.js/back-to-top';
 /* import './main.js/library-manager'; */
-
-

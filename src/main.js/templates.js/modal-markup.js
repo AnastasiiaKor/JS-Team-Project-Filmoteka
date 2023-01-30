@@ -13,6 +13,7 @@ function createModalMarkup(movie) {
     genres,
     videos,
     overview,
+    id,
   } = movie;
 
   const trailerButton =
@@ -95,8 +96,9 @@ function createModalMarkup(movie) {
                 <button
                 type="button"
                 class="button film__button--recommended film__button upper"
+                data-id = ${id}
                 >
-                Recommended
+                Similar
                 </button>
                 </li>
                 ${trailerButton}

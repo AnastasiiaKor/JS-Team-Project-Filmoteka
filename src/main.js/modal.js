@@ -7,6 +7,7 @@ import { getMovie } from './get-movie';
 import { themeSwitcherModals } from './theme-switcher';
 import { initBtns } from './library-manager';
 import { gallery } from './templates.js/gallery-markup';
+import { seeSimilar } from './similar';
 
 const buttonClose = document.querySelector('.button__close');
 const backdrop = document.querySelector('.modal__backdrop');
@@ -33,6 +34,7 @@ function openModal(e) {
       buttonClose.addEventListener('click', closeModal);
       backdrop.addEventListener('click', onBackdropClick);
       themeSwitcherModals(modal);
+      seeSimilar(modal);
     })
     .catch(error => {
       console.log(error.message);
@@ -66,3 +68,4 @@ function onBackdropClick(event) {
 function toggle() {
   backdrop.classList.toggle('is-hidden');
 }
+export { closeModal };
