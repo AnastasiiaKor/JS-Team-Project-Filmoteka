@@ -12,10 +12,9 @@ const currentTheme = localStorage.getItem("theme");
 if (currentTheme === "dark") {
     document.body.classList.add("dark-theme");
     themeSwitcherIconSun.classList.add("icon-ishidden")
-    // footerModal.classList.add("dark-theme-modals");
+    themeSwitcherModals(footerModal);
 } else {
     themeSwitcherIconMoon.classList.add("icon-ishidden");
-    // footerModal.classList.remove("dark-theme-modals");
 };
 
 function onThemeSwitcherBtnClick() { 
@@ -42,6 +41,25 @@ function onThemeSwitcherBtnClick() {
     // footerCloseIcon.style.fill = '#fff';
 };
 
+function themeSwitcherModals(element) {
+  const currentTheme = localStorage.getItem("theme");
+  
+  if (currentTheme === "dark") {
+    element.classList.add("dark-theme-modals");
+  } else {
+    element.classList.remove("dark-theme-modals");
+  }
+};
+
+function themeSwitcherModalButtons(element) { 
+    const currentTheme = localStorage.getItem("theme");     
+    if (currentTheme === "dark") { 
+        element.classList.add("film__button-theme-dark"); 
+    } else { 
+        element.classList.remove("film__button-theme-dark"); 
+    }
+};
+
 const config = {
     showDelay: 100,
     style: {
@@ -56,14 +74,5 @@ const config = {
 
 tooltip(config);
 
-function themeSwitcherModals(element) {
-  const currentTheme = localStorage.getItem("theme");
-  
-  if (currentTheme === "dark") {
-    element.classList.add("dark-theme-modals");
-  } else {
-    element.classList.remove("dark-theme-modals");
-  }
-};
-
 export { themeSwitcherModals };
+export { themeSwitcherModalButtons };

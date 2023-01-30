@@ -32,7 +32,7 @@ h3 {
   transform: translate(-50%, -50%);
   padding: 48px 20px;
   opacity: 1;
-  background-color: inherit;
+  background-color: $light-color;
   color: inherit;
   border: 1px solid #0000001a;
   z-index: 101;
@@ -168,6 +168,15 @@ h3 {
 }
 .film__button {
   @extend %button-modal;
+}
+.film__button-theme-dark {
+  border: 1px solid $light-color !important;
+  color: $light-color !important;
+
+  &:hover {
+    border: none !important;
+    color: $dark-color !important;
+  }
 }
 .film__button--trailer {
   @extend %button-modal;
