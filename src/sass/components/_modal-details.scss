@@ -82,16 +82,15 @@ h3 {
   width: 30px;
   height: 30px;
   @include flexCentered(flex, center, center);
-  fill: currentColor;
+  stroke: currentColor;
   color: inherit;
   border: none;
   background-color: transparent;
-
+  transition: transform $animationTransition;
+  cursor: pointer;
   &:hover,
   &:focus {
-    transition: transform $animationTransition;
-    color: $orange-color;
-    cursor: pointer;
+    stroke: $orange-color;
   }
 }
 .modal__wrapper {

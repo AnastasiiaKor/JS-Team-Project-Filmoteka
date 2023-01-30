@@ -15,6 +15,7 @@ let buttonTrailer;
 gallery.addEventListener('click', openModal);
 
 function openModal(e) {
+  if (e.target === e.currentTarget) return;
   e.preventDefault();
   toggle();
   document.body.style.overflow = 'hidden';
