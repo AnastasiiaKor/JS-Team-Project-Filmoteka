@@ -15,6 +15,8 @@ export const initBtns = (data) => {
     if(!USER) {
         btnAddToWatched.disabled = true;
         btnAddToQueue.disabled = true;
+        const message = document.querySelector('.nologin');
+        message.textContent = "Login is Required";
         return;
     }
     data.genre_ids = data.genres.map(g => g.id);
