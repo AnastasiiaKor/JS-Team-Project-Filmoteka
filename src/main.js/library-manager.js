@@ -1,33 +1,23 @@
-import { USER, app } from './user-manager';
-import { getFirestore, doc, setDoc, getDoc, getDocs, deleteDoc, collection, query, where } from "firebase/firestore";
-const db = getFirestore(app);
-const getMovies = async (list) => {
-    const usercollection = collection(db, "users", USER, list);
-    const querySnapshot = await getDocs(usercollection);
-    const res = [];
-    querySnapshot.forEach((doc) => {
-        res.push(doc.data());
-    })
-    return res;
+import { removeMovie, setMovie } from './firebase';
+
+const isAlreadyWatched = (id) => {
+    return JSON.parse(localStorage.getItem('watched')).map(e => e.id).includes(id);
 }
 
-const updateLocalStorage = async (list) => {
-    const data = await getMovies(list);
-    localStorage.setItem(list, JSON.stringify(data));
-}
+export const initBtns = (data) => {
+    const btnAddToWatched = document.querySelector('[data-addto="watched"]');
+    const btnAddToQueue = document.querySelector('[data-addto="queue"]');
 
-export const setMovie = async (list, data) => {
-    await setDoc(doc(db, "users", USER, list, String(data.id)), data);
-    updateLocalStorage(list);
-}
-
-export const removeMovie = async (list, id) => {
-    await deleteDoc(doc(db, "users", USER, list, String(id)));
-    updateLocalStorage(list);    
-}
-
-export const init = async() => {
-    await updateLocalStorage('watched');
-    await updateLocalStorage('queue');
-    console.log('done');
+    if(isAlreadyWatched(data.id)) {
+        btnAddToWatched.textContent = 'remove from watched'
+        btnAddToWatched.addEventListener('click', () => {
+            removeMovie('watched', data.id);
+        })
+    } else {
+        btnAddToWatched.textContent = 'add to watched'
+        btnAddToWatched.addEventListener('click', () => {
+            setMovie('watched', data);
+        })
+    };
+    
 }

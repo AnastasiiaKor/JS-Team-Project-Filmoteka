@@ -3,8 +3,9 @@ import {
   addTrailersMarkup,
 } from './templates.js/modal-markup';
 import { getMovie } from './get-movie';
-import { setLocalStorage } from './local-storage';
+/* import { setLocalStorage } from './local-storage'; */
 import { themeSwitcherModals } from './theme-switcher';
+import { initBtns } from './library-manager';
 
 const gallery = document.querySelector('.gallery');
 const buttonClose = document.querySelector('.button__close');
@@ -21,7 +22,8 @@ function openModal(e) {
   getMovie(e)
     .then(data => {
       createModalMarkup(data);
-      setLocalStorage(data);
+      /* setLocalStorage(data); */
+      initBtns(data);
       buttonTrailer = document.querySelector('.js-film__button--trailer');
       buttonTrailer?.addEventListener('click', openTrailers);
       buttonTrailer.data = data;

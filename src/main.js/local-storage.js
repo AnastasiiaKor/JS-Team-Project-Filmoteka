@@ -1,4 +1,4 @@
-import { setMovie, removeMovie, init } from './library-manager';
+import { setMovie, removeMovie, init } from './firebase';
 /* init(); */
 function setLocalStorage(data) {
   const btnAddList = document.querySelector('.js-btn-add-list');

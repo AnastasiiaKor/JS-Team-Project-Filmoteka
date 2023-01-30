@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { init } from './library-manager';
+import { init } from './firebase';
 
 export let USER;
 const signIn = document.querySelector('#sign_in');
