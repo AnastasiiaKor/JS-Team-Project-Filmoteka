@@ -1,4 +1,5 @@
 import { removeMovie, setMovie } from './firebase';
+import { USER } from './user-manager';
 
 const isAlreadyWatched = (id) => {
     return JSON.parse(localStorage.getItem('watched')).map(e => e.id).includes(id);
@@ -11,6 +12,11 @@ const isAlreadyQueued = (id) => {
 export const initBtns = (data) => {
     const btnAddToWatched = document.querySelector('[data-addto="watched"]');
     const btnAddToQueue = document.querySelector('[data-addto="queue"]');
+    if(!USER) {
+        btnAddToWatched.disabled = true;
+        btnAddToQueue.disabled = true;
+        return;
+    }
     data.genre_ids = data.genres.map(g => g.id);
 
     if(isAlreadyWatched(data.id)) {
