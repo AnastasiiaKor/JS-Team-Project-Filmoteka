@@ -42,7 +42,6 @@ function openModal(e) {
         themeSwitcherModalButtons(filmButton);
       });
       seeSimilar(modal);
-
     })
     .catch(error => {
       console.log(error.message);
@@ -61,6 +60,7 @@ function onKeydownEscape(e) {
 function closeModal() {
   toggle();
   document.body.style.overflow = 'visible';
+  document.removeEventListener('keydown', onKeydownEscape);
   buttonClose.removeEventListener('click', closeModal);
   backdrop.removeEventListener('click', closeModal);
   buttonTrailer.removeEventListener('click', openTrailers);
