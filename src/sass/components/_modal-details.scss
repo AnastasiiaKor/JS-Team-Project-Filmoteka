@@ -85,11 +85,11 @@ h3 {
   fill: currentColor;
   color: inherit;
   border: none;
-  background-color: inherit;
-  transition: transform $animationTransition;
+  background-color: transparent;
 
   &:hover,
   &:focus {
+    transition: transform $animationTransition;
     color: $orange-color;
     cursor: pointer;
   }
