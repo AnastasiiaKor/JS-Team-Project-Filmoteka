@@ -5,16 +5,11 @@ function setLocalStorage(data) {
   const btnAddToWatched = document.querySelector('[data-addto="watched"]');
   const btnAddToQueue = document.querySelector('[data-addto="queue"]');
   const userName = localStorage.getItem('user');
-  console.log(userName);
 
   if (!userName) {
     btnAddToWatched.setAttribute('disabled', true);
     btnAddToQueue.setAttribute('disabled', true);
   }
-  // else {
-  //   btnAddToWatched.removeAttribute('disabled');
-  //   btnAddToQueue.removeAttribute('disabled');
-  // }
 
   checkLS();
 
