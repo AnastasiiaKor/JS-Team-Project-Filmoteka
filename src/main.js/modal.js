@@ -25,6 +25,7 @@ function openModal(e) {
       buttonTrailer = document.querySelector('.js-film__button--trailer');
       buttonTrailer?.addEventListener('click', openTrailers);
       buttonTrailer.data = data;
+      buttonTrailer.disabled = false;
       document.addEventListener('keydown', onKeydownEscape);
       buttonClose.addEventListener('click', closeModal);
       backdrop.addEventListener('click', onBackdropClick);
@@ -34,12 +35,12 @@ function openModal(e) {
       console.log(error.message);
     });
 }
-// function addListeners(data) {}
 function openTrailers(e) {
   modal.insertAdjacentHTML(
     'beforeend',
     addTrailersMarkup(e.currentTarget.data)
   );
+  buttonTrailer.disabled = true;
 }
 function onKeydownEscape(e) {
   e.code === 'Escape' && closeModal();

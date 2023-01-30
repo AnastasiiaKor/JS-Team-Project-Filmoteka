@@ -95,7 +95,6 @@ function createModalMarkup(movie) {
                 <button
                 type="button"
                 class="button film__button--recommended film__button upper"
-                data-addto="queue"
                 >
                 Recommended
                 </button>
