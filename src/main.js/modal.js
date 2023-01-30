@@ -6,8 +6,8 @@ import { getMovie } from './get-movie';
 /* import { setLocalStorage } from './local-storage'; */
 import { themeSwitcherModals } from './theme-switcher';
 import { initBtns } from './library-manager';
+import { gallery } from './templates.js/gallery-markup';
 
-const gallery = document.querySelector('.gallery');
 const buttonClose = document.querySelector('.button__close');
 const backdrop = document.querySelector('.modal__backdrop');
 const modal = document.querySelector('.js-modal');

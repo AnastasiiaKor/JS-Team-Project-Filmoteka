@@ -1,4 +1,4 @@
-import { gallery } from '../trending';
+import { gallery } from './gallery-markup';
 
 let period = localStorage.getItem('switcher-period') || 'week';
 
@@ -33,7 +33,7 @@ function createSwitcherMarkup(callback) {
         </div>
     </div>`;
 
-  gallery.insertAdjacentHTML('beforebegin', markup);
+  gallery.insertAdjacentHTML('afterbegin', markup);
   const switcher = document.querySelector('.switcher');
   const options = switcher.querySelectorAll('.switcher__item-radio');
 

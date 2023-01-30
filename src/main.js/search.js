@@ -1,13 +1,12 @@
 import { getMovie } from './get-movie';
 import { getMoviesByKeyword } from './requests';
-import { createGalleryMarkup } from './templates.js/gallery-markup';
+import { gallery, createGalleryMarkup } from './templates.js/gallery-markup';
 import { paginator } from './paginator';
 import { LoadSpinner } from './loader';
 
 const loadSpinnerBtn = new LoadSpinner({ selector: '[data-action="loading"]' });
 const headerForm = document.querySelector('.search-form');
 const searchResult = document.querySelector('.search-result');
-const gallery = document.querySelector('.gallery');
 const WARNING_CLEAR_DELAY = 3000;
 let lastQuery = '';
 const searchMore = n => {
@@ -34,7 +33,6 @@ const getMovies = async (query, page) => {
     clearInfo();
   }
   loadSpinnerBtn.disable();
-  
 };
 
 /* async function searchMovies(event) {
@@ -69,7 +67,7 @@ const getMovies = async (query, page) => {
 
 const onSearch = event => {
   event.preventDefault();
-  
+
   const value = event.target['search-film'].value.trim();
   if (value) {
     getMovies(value, 1);
