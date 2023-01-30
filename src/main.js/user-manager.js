@@ -43,6 +43,7 @@ const onLogin = event => {
       const token = credential.accessToken;
       const user = result.user;
       localStorage.setItem('user', user.uid);
+      localStorage.setItem('username', user.displayName);
       USER = user.uid;
       updHeaderOnLogin();
       init();
