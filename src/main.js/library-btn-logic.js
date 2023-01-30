@@ -1,59 +1,60 @@
-import { createGalleryMarkup } from './templates.js/gallery-markup'; 
+import { createGalleryMarkup } from './templates.js/gallery-markup';
 // import { getGenresById } from './get-genres';
 // import { buildGallery } from './trending';
 // import { getTrending } from './requests';
 // import { paginator } from './paginator';
 
-
-const divClassEl = document.querySelector('.empty_library_bcg_img')
+const divClassEl = document.querySelector('.empty_library_bcg_img');
 const librWatchedBtnEl = document.querySelector('#watched');
 const librQueueBtnEl = document.querySelector('#queue');
-const galleryEl = document.querySelector('.gallery')
+const galleryEl = document.querySelector('.gallery');
+const userName = localStorage.getItem('user');
+const savedQueue = localStorage.getItem(`${userName}_queue`);
+
+if (savedQueue && JSON.parse(savedQueue).length) {
+  let savedData = localStorage.getItem(`${userName}_queue`);
+  let parsedData = JSON.parse(savedData);
+  galleryEl.innerHTML = createGalleryMarkup(parsedData);
+  divClassEl.style.display = 'none';
+}
 
 librWatchedBtnEl.addEventListener('click', onWatchedClick);
 librQueueBtnEl.addEventListener('click', onQueueClick);
 
+function onWatchedClick(e) {
+  librQueueBtnEl.classList.remove('btn-add__active');
+  librQueueBtnEl.removeAttribute('disabled');
+  librWatchedBtnEl.classList.add('btn-add__active');
+  librWatchedBtnEl.setAttribute('disabled', true);
 
+  onClick(e);
+}
 
-function onWatchedClick (){
+function onQueueClick(e) {
+  librWatchedBtnEl.classList.remove('btn-add__active');
+  librWatchedBtnEl.removeAttribute('disabled');
+  librQueueBtnEl.classList.add('btn-add__active');
+  librQueueBtnEl.setAttribute('disabled', true);
 
-if(localStorage.getItem("watched")){
-    let savedData = localStorage.getItem("watched");
+  onClick(e);
+}
+
+function onClick(e) {
+  let savedData = localStorage.getItem(`${userName}_${e.target.id}`);
+
+  if (savedData && JSON.parse(savedData).length) {
+    let savedData = localStorage.getItem(`${userName}_${e.target.id}`);
     let parsedData = JSON.parse(savedData);
-    let arr = parsedData;
-    const markup = createGalleryMarkup(arr);
-    galleryEl.innerHTML = markup;
-    console.dir(divClassEl);
+    galleryEl.innerHTML = createGalleryMarkup(parsedData);
     divClassEl.style.display = 'none';
-    
-    return
-}else
-alert(`Your watched library is empty`)
-galleryEl.innerHTML = '';
-divClassEl.style.display = 'block';
-return
-  
+    return;
+  }
+  galleryEl.innerHTML = '';
+  divClassEl.style.display = 'block';
+  alert(`Your queue library is empty`);
+  return;
 }
 
-function onQueueClick (){
-
-if(localStorage.getItem("queue")){
-        let savedData = localStorage.getItem("queue");
-        let parsedData = JSON.parse(savedData);
-        let arr = parsedData;
-        console.log(arr);
-        const markup = createGalleryMarkup(arr);
-        galleryEl.innerHTML = markup;
-        divClassEl.style.display = 'none';
-        return
-}else
-    alert(`Your queue library is empty`)
-    galleryEl.innerHTML = '';
-    divClassEl.style.display = 'block';
-    return
-      
-}
-    
 // подключить билдГаллери
 // подключить создатель разметки ок
 //добавить их в ф-цию onClick
