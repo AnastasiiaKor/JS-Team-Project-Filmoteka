@@ -1,9 +1,9 @@
 import { instance, KEY } from './instance';
 
 //MAIN
-async function getTrending(page) {
+async function getTrending(page, period) {
   const response = await instance(
-    `trending/movie/day?api_key=${KEY}&page=${page}&language=en-US`
+    `trending/movie/${period}?api_key=${KEY}&page=${page}&language=en-US`
   );
   return response.data;
 }
