@@ -9,6 +9,18 @@
     background-color: rgba(29, 29, 29, 0.484);
     opacity: 1;
     transition: opacity $animationTransition;
+    &::-webkit-scrollbar {
+            width: 15px;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: $orange-color;
+            border-radius: 10px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.3);
+        }
 }
 
 .footer__backdrop.is-hidden {
@@ -53,6 +65,8 @@
         top: 50%;
         transform: translate(-50%, -50%) scale(1);
     }
+
+   
 }
 
 
