@@ -1,33 +1,27 @@
 import { getMovieBYGenre } from './requests';
-import { gallery, createGalleryMarkup } from './templates.js/gallery-markup';
+import { makeGallery } from './make-gallery';
 import { paginator } from './paginator';
 
 let genreID;
+const gallery = document.querySelector('.gallery');
+gallery.addEventListener('click', e => {
+  e.preventDefault();
+  if (!e.target.className.includes('genre-link')) return;
+  e.stopImmediatePropagation();
+  genreID = e.target.dataset.id;
+  paginator.callback = searchByGenre;
+  searchByGenre(1);
+});
 
-addSearchByGenre();
 
 const searchByGenre = async page => {
   try {
     const data = await getMovieBYGenre(genreID, page);
-    const markup = createGalleryMarkup(data.results);
-    gallery.innerHTML = markup;
-    gallery.scrollIntoView();
+    makeGallery(data.results);
+
     paginator.currentPage = data.page;
     paginator.totalPages = data.total_pages < 500 ? data.total_pages : 500;
   } catch (error) {
     console.log(error);
   }
 };
-
-function addSearchByGenre(page = 1) {
-  gallery.addEventListener('click', async e => {
-    e.preventDefault();
-    if (!e.target.className.includes('genre-link')) return;
-    e.stopImmediatePropagation();
-    genreID = e.target.dataset.id;
-    paginator.callback = searchByGenre;
-    searchByGenre(page);
-  });
-}
-
-export { addSearchByGenre };

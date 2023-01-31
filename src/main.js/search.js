@@ -1,8 +1,7 @@
-import { getMovie } from './get-movie';
 import { getMoviesByKeyword } from './requests';
-import { gallery, createGalleryMarkup } from './templates.js/gallery-markup';
 import { paginator } from './paginator';
 import { LoadSpinner } from './loader';
+import { makeGallery } from './make-gallery';
 
 const loadSpinnerBtn = new LoadSpinner({ selector: '[data-action="loading"]' });
 const headerForm = document.querySelector('.search-form');
@@ -19,10 +18,8 @@ const getMovies = async (query, page) => {
     page,
   });
   if (searched?.results?.length) {
-    const markup = createGalleryMarkup(searched.results);
+    makeGallery(searched.results);
     searchResult.textContent = '';
-    gallery.innerHTML = markup;
-    gallery.scrollIntoView();
     lastQuery = query;
     paginator.callback = searchMore;
     paginator.currentPage = searched.page;
@@ -35,35 +32,6 @@ const getMovies = async (query, page) => {
   loadSpinnerBtn.disable();
 };
 
-/* async function searchMovies(event) {
-  event.preventDefault();
-  try {
-    const value = event.target['search-film'].value;
-    let serched = {};
-    if (value) {
-      getMovies(value, 1);
-      serched = await getMoviesByKeyword({
-        keyword: value,
-        page: 1,
-      });
-    } else {
-      searchResult.textContent = 'Movie name must not be empty. Please, enter movie name to search.';
-      clearInfo();
-    }
-    if (serched?.results?.length) {
-      console.log(serched);
-      const markup = createGalleryMarkup(serched.results);
-      searchResult.innerHTML = '';
-      gallery.innerHTML = markup;
-    } else if (value) {
-      searchResult.innerHTML =
-        'Search result not successful. Enter the correct movie name and try again.';
-      clearInfo();
-    }
-  } catch (error) {
-    console.log(error);
-  }
-} */
 
 const onSearch = event => {
   event.preventDefault();
@@ -75,7 +43,6 @@ const onSearch = event => {
     searchResult.textContent =
       'Movie name must not be empty. Please, enter movie name to search.';
     clearInfo();
-    //loadSpinnerBtn.enable();
   }
 };
 

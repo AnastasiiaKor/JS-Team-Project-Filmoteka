@@ -312,9 +312,14 @@ img {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  color: white;
+  color: #ffffff;
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .library-info {
+    margin-top: 10px;
+  }
 }
 
 .btn-list {
@@ -432,9 +437,13 @@ img {
   width: 100%;
   grid-gap: 20px;
   justify-content: center;
-  padding: 20px 0 40px;
+  padding: 60px 0;
+  grid-template-columns: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+.gallery__wrapper {
+  position: relative;
 }
 .gallery__link {
   position: relative;
@@ -470,6 +479,7 @@ img {
      object-fit: cover;
   display: block;
   width: 100%;
+  height: 100%;
 }
 .gallery__description {
   display: flex;
@@ -501,16 +511,11 @@ img {
   color: #ffffff;
   background-color: #ff6b01;
 }
-@media screen and (min-width: 480px) {
-  .gallery__poster-wrapper {
-    height: 398px;
-  }
-}
 @media screen and (min-width: 768px) {
   .gallery {
-    grid-gap: 32px;
     grid-template-columns: 336px 336px;
-    padding: 40px 0;
+    padding: 60px 0;
+    grid-gap: 32px;
   }
   .gallery__poster-wrapper {
     height: 455px;
@@ -519,6 +524,7 @@ img {
 @media screen and (min-width: 1280px) {
   .gallery {
     grid-template-columns: 395px 395px 395px;
+    grid-gap: 16px;
   }
   .gallery__description {
     gap: 6px;
@@ -570,6 +576,86 @@ img {
 }
 .genre-link:hover {
   color: #fec69e;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin: 60px auto 60px auto;
+}
+
+.pagination {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pagination-numbers {
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+.pagination-numbers:hover {
+  color: #ff6b01;
+}
+
+.pagination-button {
+  width: 40px;
+  height: 40px;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pagination-button.current {
+  background-color: #ff6b01;
+  color: white;
+}
+.pagination-button:hover {
+  background-color: #fec69e;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 43px rgba(254, 198, 158, 0.6);
+}
+.pagination-button.arrow-left {
+  background-image: url("/src/images/arrow-left.svg");
+}
+.pagination-button.arrow-right {
+  background-image: url("/src/images/arrow-right.svg");
+}
+.pagination-button.unactive {
+  opacity: 0.3;
+  cursor: auto;
+}
+.pagination-button.unactive:hover {
+  background-color: #f7f7f7;
+}
+
+.dots, .last {
+  display: none;
+}
+@media screen and (min-width: 767px) {
+  .dots, .last {
+    display: flex;
+  }
 }
 
 .footer {
@@ -666,7 +752,7 @@ h3 {
   transform: translate(-50%, -50%);
   padding: 48px 20px;
   opacity: 1;
-  background-color: inherit;
+  background-color: #ffffff;
   color: inherit;
   border: 1px solid rgba(0, 0, 0, 0.1019607843);
   z-index: 101;
@@ -832,6 +918,15 @@ h3 {
   letter-spacing: 0.04em;
 }
 
+.film__button-theme-dark {
+  border: 1px solid #ffffff !important;
+  color: #ffffff !important;
+}
+.film__button-theme-dark:hover {
+  border: none !important;
+  color: #000000 !important;
+}
+
 .film__button--trailer {
   align-items: center;
 }
@@ -875,6 +970,16 @@ h3 {
   background-color: rgba(29, 29, 29, 0.484);
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer__backdrop::-webkit-scrollbar {
+  width: 15px;
+}
+.footer__backdrop::-webkit-scrollbar-thumb {
+  background-color: #ff6b01;
+  border-radius: 10px;
+}
+.footer__backdrop::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .footer__backdrop.is-hidden {
@@ -1019,12 +1124,13 @@ h3 {
   width: 40px;
   height: 40px;
   border: none;
+  color: inherit;
 }
 
 .footer__close-icon {
   width: 30px;
   height: 30px;
-  stroke: #000000;
+  stroke: currentColor;
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer__close-icon:hover,

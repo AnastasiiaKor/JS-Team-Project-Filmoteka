@@ -22,9 +22,9 @@ const auth = getAuth();
 
 const onLogout = () => {
   localStorage.removeItem('user');
+  USER = '';
   signIn.textContent = 'SIGN IN';
   library.parentNode.classList.add("disabled");
-  /* if(window.location.pathname === '/library.html') window.location.pathname = '/'; */
   signIn.removeEventListener('click', onLogout);
   signIn.addEventListener('click', onLogin);
 }
