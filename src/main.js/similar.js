@@ -2,9 +2,11 @@ import { getSimilar } from './requests';
 import { makeGallery } from './make-gallery';
 import { paginator } from './paginator';
 let id;
+const HREF =
+  'https://anastasiiakor.github.io/JS-Team-Project-Filmoteka/library.html';
 
 export const loadSimilar = reqID => {
-  if (location.pathname === '/library.html') {
+  if (location.href === HREF) {
     const librWatchedBtnEl = document.querySelector('#watched');
     const librQueueBtnEl = document.querySelector('#queue');
     librWatchedBtnEl.classList.remove('btn-add__active');
