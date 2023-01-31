@@ -11,6 +11,7 @@ import { loadSimilar } from './similar';
 const buttonClose = document.querySelector('.button__close');
 const backdrop = document.querySelector('.modal__backdrop');
 const modal = document.querySelector('.js-modal');
+const modalContainer = document.querySelector('.modal');
 let movieID = null;
 let buttonTrailer;
 let buttonSimilar;
@@ -19,10 +20,9 @@ let filmButtons;
 const gallery = document.querySelector('.gallery');
 gallery.addEventListener('click', openModal);
 
-async function openModal(e) {
+function openModal(e) {
   if (e.target.className !== 'gallery__link') return;
   e.preventDefault();
-  toggleClass();
   movieID = e.target.getAttribute('href');
   backdrop.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
@@ -44,7 +44,7 @@ async function openModal(e) {
       document.addEventListener('keydown', onKeydownEscape);
       buttonClose.addEventListener('click', closeModal);
       backdrop.addEventListener('click', onBackdropClick);
-      themeSwitcherModals(modal);
+      themeSwitcherModals(modalContainer);
 
       filmButtons = document.querySelectorAll('.film__button');
       filmButtons.forEach(function (filmButton) {
@@ -70,10 +70,8 @@ function onKeydownEscape(e) {
   e.code === 'Escape' && closeModal();
 }
 function closeModal() {
-  toggleClass();
-  modal.innerHTML = '';
+  backdrop.classList.add('is-hidden');
   document.body.style.overflow = 'visible';
-  document.removeEventListener('keydown', onKeydownEscape);
   buttonClose.removeEventListener('click', closeModal);
   backdrop.removeEventListener('click', closeModal);
   buttonTrailer?.removeEventListener('click', openTrailers);

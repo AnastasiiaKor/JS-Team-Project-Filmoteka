@@ -112,7 +112,8 @@ function createModalMarkup(movie) {
 }
 
 function addTrailersMarkup({ videos }) {
-  const trailers = videos.results.slice(0, 3)
+  const trailers = videos.results
+    .slice(0, 1)
     .map(trailer => {
       return `<li class="film__trailer--item">
       <iframe 
