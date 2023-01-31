@@ -43,6 +43,7 @@ h3 {
   transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 800ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
   &::-webkit-scrollbar {
     width: 15px;
   }
@@ -58,6 +59,8 @@ h3 {
 }
 @media screen and (max-width: $min-tablet) {
   .modal {
+    width: 90%;
+    min-width: 280px;
     max-width: 450px;
     padding: 48px 20px;
   }
