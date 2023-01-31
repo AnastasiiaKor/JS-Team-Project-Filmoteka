@@ -65,7 +65,7 @@ function closeModal() {
   buttonTrailer.removeEventListener('click', openTrailers);
   modal?.removeEventListener('keydown', onKeydownEscape);
   modal?.removeEventListener('click', closeModal);
-  modal.innerHTML = '';
+  /* modal.innerHTML = ''; */
 }
 function onBackdropClick(event) {
   if (event.target === event.currentTarget) {

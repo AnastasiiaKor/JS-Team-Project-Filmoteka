@@ -12,7 +12,6 @@ async function showTrending(page = 1, timeWindow = period) {
   try {
     const data = await getTrending(page, timeWindow);
     const markup = await createGalleryMarkup(data.results);
-
     gallery.innerHTML = markup;
     paginator.currentPage = data.page;
     paginator.totalPages = data.total_pages;
