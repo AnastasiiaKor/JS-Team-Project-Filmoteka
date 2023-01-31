@@ -1,5 +1,6 @@
 import { removeMovie, setMovie } from './firebase';
 import { USER } from './user-manager';
+/* import { renderMovies } from './library-btn-logic'; */
 
 const isAlreadyWatched = id => {
   return JSON.parse(localStorage.getItem('watched'))
@@ -13,7 +14,7 @@ const isAlreadyQueued = id => {
     .includes(id);
 };
 
-export const initBtns = data => {
+export const initWatchedQueueBtns = data => {
   const btnAddToWatched = document.querySelector('[data-addto="watched"]');
   const btnAddToQueue = document.querySelector('[data-addto="queue"]');
   if (!USER) {
@@ -40,6 +41,7 @@ export const initBtns = data => {
   btnAddToWatched.addEventListener('click', async () => {
     if (isAlreadyWatched(data.id)) {
       await removeMovie('watched', data.id);
+      /* renderMovies('watched'); */
       btnAddToWatched.textContent = 'add to watched';
     } else {
       await setMovie('watched', data);
@@ -50,6 +52,7 @@ export const initBtns = data => {
   btnAddToQueue.addEventListener('click', async () => {
     if (isAlreadyQueued(data.id)) {
       await removeMovie('queue', data.id);
+      /* renderMovies('queue'); */
       btnAddToQueue.textContent = 'add to queue';
     } else {
       await setMovie('queue', data);

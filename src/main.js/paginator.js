@@ -5,7 +5,7 @@ class Paginator {
 
   constructor(cb, container) {
     this.#callback = cb;
-    this.#currentPage = 1;
+    this.#currentPage = 0;
     this.#totalPages = 100;
     this.container = container;
     this.container.addEventListener('click', e => {
@@ -47,6 +47,8 @@ class Paginator {
   }
 
   render() {
+    this.container.innerHTML = '';
+    if(this.#currentPage === 0) return;
     let paginatorCode = '';
     if(this.#totalPages <= 9) {
       const list = [];

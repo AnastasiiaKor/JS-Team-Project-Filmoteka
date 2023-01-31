@@ -1,5 +1,4 @@
-import { gallery } from './gallery-markup';
-
+const gallery = document.querySelector('.gallery');
 let period = localStorage.getItem('switcher-period') || 'week';
 
 function createSwitcherMarkup(callback) {
