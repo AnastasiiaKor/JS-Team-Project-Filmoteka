@@ -1,13 +1,9 @@
 import { getMovieById } from './requests';
 
-async function getMovie(e) {
-  if (e.target.nodeName !== 'A') return;
-
+export const getMovieData = async (id) => {
   try {
-    return await getMovieById(e.target.getAttribute('href'));
+    return await getMovieById(id);
   } catch (error) {
     console.log(error.message);
   }
 }
-
-export { getMovie };

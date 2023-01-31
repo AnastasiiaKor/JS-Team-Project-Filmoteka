@@ -1,6 +1,6 @@
 // import { getGenresById } from '../get-genres';
 
-let modal = document.querySelector('.js-modal');
+/* let modal = document.querySelector('.js-modal'); */
 
 function createModalMarkup(movie) {
   const {
@@ -108,11 +108,11 @@ function createModalMarkup(movie) {
           </div>
         </div>
       `;
-  modal.innerHTML = markup;
+  return markup;
 }
 
 function addTrailersMarkup({ videos }) {
-  const trailers = videos.results
+  const trailers = videos.results.slice(0, 3)
     .map(trailer => {
       return `<li class="film__trailer--item">
       <iframe 

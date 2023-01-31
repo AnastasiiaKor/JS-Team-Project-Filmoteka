@@ -1,24 +1,12 @@
-import {
-  gallery as galleryEl,
-  createGalleryMarkup
-} from './templates.js/gallery-markup';
-// import { getGenresById } from './get-genres';
-// import { buildGallery } from './trending';
-// import { getTrending } from './requests';
-// import { paginator } from './paginator';
+import { makeGallery } from './make-gallery';
+import { paginator } from './paginator';
 
 const divClassEl = document.querySelector('.empty_library_bcg_img');
 const librWatchedBtnEl = document.querySelector('#watched');
 const librQueueBtnEl = document.querySelector('#queue');
 const userName = localStorage.getItem('user');
-const savedQueue = localStorage.getItem(`${userName}_queue`);
 
-if (savedQueue && JSON.parse(savedQueue).length) {
-  let savedData = localStorage.getItem(`${userName}_queue`);
-  let parsedData = JSON.parse(savedData);
-  galleryEl.innerHTML = createGalleryMarkup(parsedData);
-  divClassEl.style.display = 'none';
-}
+
 
 librWatchedBtnEl.addEventListener('click', onWatchedClick);
 librQueueBtnEl.addEventListener('click', onQueueClick);
@@ -41,13 +29,14 @@ function onQueueClick(e) {
   renderMovies(e.target.id);
 }
 
-function renderMovies(e) {
+export function renderMovies(e) {
+  paginator.currentPage = 0;
   let savedData = localStorage.getItem(e);
 
   if (savedData && JSON.parse(savedData).length) {
     let savedData = localStorage.getItem(e);
     let parsedData = JSON.parse(savedData);
-    galleryEl.innerHTML = createGalleryMarkup(parsedData);
+    makeGallery(parsedData);
     divClassEl.style.display = 'none';
     return;
   }

@@ -1,8 +1,8 @@
 import { getGenresById } from '../get-genres';
 
-const gallery = document.querySelector('.gallery__wrapper');
+/* const gallery = document.querySelector('.gallery__wrapper'); */
 
-function createGalleryMarkup(results) {
+export function createGalleryMarkup(results) {
   const markup = results
     .map(result => {
       const {
@@ -49,7 +49,8 @@ function createGalleryMarkup(results) {
              </li>`;
     })
     .join('');
-  return `<ul class="gallery">${markup}</ul>`;
+  /* return `<ul class="gallery">${markup}</ul>`; */
+  return markup;
 }
 
-export { gallery, createGalleryMarkup };
+/* export { gallery, createGalleryMarkup }; */
