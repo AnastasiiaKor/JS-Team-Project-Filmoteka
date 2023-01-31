@@ -21,7 +21,7 @@ gallery.addEventListener('click', openModal);
 function openModal(e) {
   if (e.target.className !== 'gallery__link') return;
   e.preventDefault();
-  toggle();
+  backdrop.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
   getMovie(e)
     .then(data => {
@@ -58,21 +58,21 @@ function onKeydownEscape(e) {
   e.code === 'Escape' && closeModal();
 }
 function closeModal() {
-  toggle();
+  backdrop.classList.add('is-hidden');
   document.body.style.overflow = 'visible';
   buttonClose.removeEventListener('click', closeModal);
   backdrop.removeEventListener('click', closeModal);
   buttonTrailer.removeEventListener('click', openTrailers);
   modal?.removeEventListener('keydown', onKeydownEscape);
   modal?.removeEventListener('click', closeModal);
-  /* modal.innerHTML = ''; */
+  // modal.innerHTML = '';
 }
 function onBackdropClick(event) {
   if (event.target === event.currentTarget) {
     closeModal();
   }
 }
-function toggle() {
-  backdrop.classList.toggle('is-hidden');
-}
+// function toggle() {
+//   backdrop.classList.toggle('is-hidden');
+// }
 export { closeModal };
