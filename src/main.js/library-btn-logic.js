@@ -1,6 +1,6 @@
 import {
   gallery as galleryEl,
-  createGalleryMarkup,
+  createGalleryMarkup
 } from './templates.js/gallery-markup';
 // import { getGenresById } from './get-genres';
 // import { buildGallery } from './trending';
