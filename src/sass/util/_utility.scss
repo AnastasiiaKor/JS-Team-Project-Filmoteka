@@ -1,6 +1,18 @@
 html {
   scroll-behavior: smooth;
+  overflow: overlay;
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $orange-color;
+    border-radius: 10px;
+  }
 }
+
 body {
   font-family: $primary-font-family;
   background-color: $main-bg-color;
@@ -15,19 +27,6 @@ body {
 .dark-theme-modals {
   background-color: #303030 !important;
   color: $light-color !important;
-}
-
-body::-webkit-scrollbar {
-  width: 15px;
-}
-
-body::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: $orange-color;
-  border-radius: 10px;
 }
 
 a {
@@ -71,5 +70,5 @@ img {
 }
 
 .disabled {
-  display:none;
+  display: none;
 }

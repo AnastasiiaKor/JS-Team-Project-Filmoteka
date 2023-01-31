@@ -2,12 +2,22 @@ import { getSimilar } from './requests';
 import { makeGallery } from './make-gallery';
 import { paginator } from './paginator';
 let id;
+const HREF =
+  'https://anastasiiakor.github.io/JS-Team-Project-Filmoteka/library.html';
 
-export const loadSimilar = (reqID) => {
+export const loadSimilar = reqID => {
+  if (location.href === HREF) {
+    const librWatchedBtnEl = document.querySelector('#watched');
+    const librQueueBtnEl = document.querySelector('#queue');
+    librWatchedBtnEl.classList.remove('btn-add__active');
+    librWatchedBtnEl.removeAttribute('disabled');
+    librQueueBtnEl.classList.remove('btn-add__active');
+    librQueueBtnEl.removeAttribute('disabled');
+  }
   id = reqID;
   paginator.callback = fetchSimilar;
   fetchSimilar(1);
-}
+};
 
 const fetchSimilar = async page => {
   try {

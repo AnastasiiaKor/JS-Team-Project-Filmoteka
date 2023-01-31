@@ -6,7 +6,6 @@ const librWatchedBtnEl = document.querySelector('#watched');
 const librQueueBtnEl = document.querySelector('#queue');
 const userName = localStorage.getItem('user');
 
-
 librWatchedBtnEl.addEventListener('click', onWatchedClick);
 librQueueBtnEl.addEventListener('click', onQueueClick);
 
@@ -37,13 +36,11 @@ function renderMovies(e) {
     let parsedData = JSON.parse(savedData);
     makeGallery(parsedData);
     divClassEl.style.display = 'none';
-    
   } else {
     clearGallery();
     divClassEl.style.display = 'block';
   }
-/*   galleryEl.innerHTML = ''; */
-  
+  /*   galleryEl.innerHTML = ''; */
 }
 
 renderMovies('queue');
