@@ -10,6 +10,7 @@ import { initBtns } from './library-manager';
 import { gallery } from './templates.js/gallery-markup';
 import { seeSimilar } from './similar';
 
+
 const buttonClose = document.querySelector('.button__close');
 const backdrop = document.querySelector('.modal__backdrop');
 const modal = document.querySelector('.modal');
