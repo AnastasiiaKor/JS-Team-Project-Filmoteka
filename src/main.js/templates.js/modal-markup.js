@@ -123,6 +123,7 @@ function addTrailersMarkup({ videos }) {
        frameborder="0"
        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
        allowfullscreen
+       allow-popups-to-escape-sandbox
      ></iframe>
      </li>`;
     })
