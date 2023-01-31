@@ -5,7 +5,7 @@ const watchedUpd = new CustomEvent('libraryChange',{
   detail: {section:'watched'}
 });
 const queueUpd = new CustomEvent('libraryChange',{
-  detail: {section:'watched'}
+  detail: {section:'queue'}
 });
 
 
