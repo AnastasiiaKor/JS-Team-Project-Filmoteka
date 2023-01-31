@@ -6,3 +6,8 @@ export const makeGallery = movies => {
     gallery.innerHTML = markup;
     gallery.scrollIntoView();
 }
+
+export const clearGallery = () => {
+    const gallery = document.querySelector('.gallery');
+    gallery.innerHTML = "";
+}
