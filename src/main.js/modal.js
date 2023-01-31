@@ -10,43 +10,44 @@ import { initBtns } from './library-manager';
 import { gallery } from './templates.js/gallery-markup';
 import { seeSimilar } from './similar';
 
-
 const buttonClose = document.querySelector('.button__close');
 const backdrop = document.querySelector('.modal__backdrop');
-const modal = document.querySelector('.modal');
+const modal = document.querySelector('.js-modal');
+const modalContainer = document.querySelector('.modal');
 let buttonTrailer;
 let filmButtons;
 
 gallery.addEventListener('click', openModal);
 
-function openModal(e) {
+async function openModal(e) {
   if (e.target.className !== 'gallery__link') return;
   e.preventDefault();
-  backdrop.classList.remove('is-hidden');
+  toggleClass();
   document.body.style.overflow = 'hidden';
-  getMovie(e)
-    .then(data => {
-      createModalMarkup(data);
-      /* setLocalStorage(data); */
-      initBtns(data);
-      buttonTrailer = document.querySelector('.js-film__button--trailer');
-      filmButtons = document.querySelectorAll('.film__button');
-      buttonTrailer?.addEventListener('click', openTrailers);
-      buttonTrailer.data = data;
-      buttonTrailer.disabled = false;
-      document.addEventListener('keydown', onKeydownEscape);
-      buttonClose.addEventListener('click', closeModal);
-      backdrop.addEventListener('click', onBackdropClick);
-      themeSwitcherModals(modal);
+  try {
+    const data = await getMovie(e);
+    createModalMarkup(data);
+    /* setLocalStorage(data); */
+    initBtns(data);
 
-      filmButtons.forEach(function (filmButton) {
-        themeSwitcherModalButtons(filmButton);
-      });
-      seeSimilar(modal);
-    })
-    .catch(error => {
-      console.log(error);
+    buttonTrailer = document.querySelector('.js-film__button--trailer');
+    filmButtons = document.querySelectorAll('.film__button');
+
+    buttonTrailer?.addEventListener('click', openTrailers);
+    buttonTrailer.data = data;
+    buttonTrailer.disabled = false;
+    document.addEventListener('keydown', onKeydownEscape);
+    buttonClose.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', onBackdropClick);
+    themeSwitcherModals(modalContainer);
+
+    filmButtons.forEach(function (filmButton) {
+      themeSwitcherModalButtons(filmButton);
     });
+    seeSimilar(modal);
+  } catch (error) {
+    console.log(error);
+  }
 }
 function openTrailers(e) {
   modal.insertAdjacentHTML(
@@ -59,7 +60,8 @@ function onKeydownEscape(e) {
   e.code === 'Escape' && closeModal();
 }
 function closeModal() {
-  backdrop.classList.add('is-hidden');
+  toggleClass();
+  modal.innerHTML = '';
   document.body.style.overflow = 'visible';
   document.removeEventListener('keydown', onKeydownEscape);
   buttonClose.removeEventListener('click', closeModal);
@@ -67,14 +69,13 @@ function closeModal() {
   buttonTrailer.removeEventListener('click', openTrailers);
   modal?.removeEventListener('keydown', onKeydownEscape);
   modal?.removeEventListener('click', closeModal);
-  // modal.innerHTML = '';
 }
 function onBackdropClick(event) {
   if (event.target === event.currentTarget) {
     closeModal();
   }
 }
-// function toggle() {
-//   backdrop.classList.toggle('is-hidden');
-// }
+function toggleClass() {
+  backdrop.classList.toggle('is-hidden');
+}
 export { closeModal };
