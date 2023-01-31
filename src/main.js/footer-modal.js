@@ -5,8 +5,6 @@ const footerModal = document.querySelector('#footerBackdrop');
 const footerModalClose = document.querySelector('[data-action="footerModalClose"]');
 const backToTop = document.querySelector('#back-to-top')
 
-console.log(document.querySelector('#back-to-top'))
-
 footerModalOpen.addEventListener('click', onFooterModal);
 footerModal.addEventListener('keydown', onEscape);
 footerModalClose.addEventListener('click', offFooterModal)

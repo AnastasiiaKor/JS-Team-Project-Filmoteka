@@ -35,7 +35,7 @@
 
 .footer__modal {
     position: absolute;
-    top: 30%;
+    top: 5%;
     left: 50%;
     margin: auto;
     padding: 20px 30px;
@@ -46,14 +46,15 @@
     opacity: 1;
     background-color: $light-color;
     z-index: 3;
-    transform: translate(-50%, -5%) scale(1);
+    transform: translate(-50%, -2%) scale(1);
     transition: transform $animationTransition;
 
     color: $dark-color;
 
     @media screen and (min-width: $tablet) {
         padding: 20px 40px;
-        transform: translate(-50%, -15%) scale(1);
+        top: 15%;
+        transform: translate(-50%, -4%) scale(1);
     }    
     @media screen and (max-width: $tablet) {
         top: 15%;
