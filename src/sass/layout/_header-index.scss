@@ -198,8 +198,6 @@
 }
 
 .search-result {
-  position: absolute;
-  left: 25%;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.14;
@@ -212,4 +210,8 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+
+  @media screen and (max-width: 768px) {
+    width: 240px;
+  }
 }
