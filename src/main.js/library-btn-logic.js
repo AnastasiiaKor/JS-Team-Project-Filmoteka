@@ -1,4 +1,4 @@
-import { makeGallery } from './make-gallery';
+import { makeGallery, clearGallery } from './make-gallery';
 import { paginator } from './paginator';
 
 const divClassEl = document.querySelector('.empty_library_bcg_img');
@@ -38,11 +38,13 @@ export function renderMovies(e) {
     let parsedData = JSON.parse(savedData);
     makeGallery(parsedData);
     divClassEl.style.display = 'none';
-    return;
+    
+  } else {
+    clearGallery();
+    divClassEl.style.display = 'block';
   }
-  galleryEl.innerHTML = '';
-  divClassEl.style.display = 'block';
-  return;
+/*   galleryEl.innerHTML = ''; */
+  
 }
 
 renderMovies('queue');
