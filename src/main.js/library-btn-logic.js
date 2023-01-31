@@ -27,7 +27,7 @@ function onQueueClick(e) {
   renderMovies(e.target.id);
 }
 
-export function renderMovies(e) {
+function renderMovies(e) {
   paginator.currentPage = 0;
   let savedData = localStorage.getItem(e);
 
@@ -44,6 +44,9 @@ export function renderMovies(e) {
 }
 
 renderMovies('queue');
+document.addEventListener('libraryChange', e => {
+  renderMovies(e.detail.section);
+})
 
 // подключить билдГаллери
 // подключить создатель разметки ок
