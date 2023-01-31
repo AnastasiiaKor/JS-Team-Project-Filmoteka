@@ -3,11 +3,11 @@ import { makeGallery } from './make-gallery';
 import { paginator } from './paginator';
 let id;
 
-export const loadSimilar = (reqID) => {
+export const loadSimilar = reqID => {
   id = reqID;
   paginator.callback = fetchSimilar;
   fetchSimilar(1);
-}
+};
 
 const fetchSimilar = async page => {
   try {
