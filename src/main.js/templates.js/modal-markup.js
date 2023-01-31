@@ -112,12 +112,13 @@ function createModalMarkup(movie) {
 }
 
 function addTrailersMarkup({ videos }) {
-  const trailers = videos.results.slice(0, 3)
+  const trailers = videos.results
+    .slice(0, 1)
     .map(trailer => {
       return `<li class="film__trailer--item">
       <iframe 
       class="film__trailer"
-      src="https://www.youtube.com/embed/${trailer.key}"
+      src="https://www.youtube.com/embed/${trailer.key}?rel=0&showinfo=0&autoplay=1"
       title="YouTube video player"
        frameborder="0"
        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

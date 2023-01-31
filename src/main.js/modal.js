@@ -8,10 +8,10 @@ import { themeSwitcherModalButtons } from './theme-switcher';
 import { initWatchedQueueBtns } from './library-manager';
 import { loadSimilar } from './similar';
 
-
 const buttonClose = document.querySelector('.button__close');
 const backdrop = document.querySelector('.modal__backdrop');
 const modal = document.querySelector('.js-modal');
+const modalContainer = document.querySelector('.modal');
 let movieID = null;
 let buttonTrailer;
 let buttonSimilar;
@@ -28,12 +28,12 @@ function openModal(e) {
   document.body.style.overflow = 'hidden';
   getMovieData(movieID)
     .then(data => {
-      modal.innerHTML = createModalMarkup(data); 
+      modal.innerHTML = createModalMarkup(data);
 
       initWatchedQueueBtns(data);
 
       buttonTrailer = document.querySelector('.js-film__button--trailer');
-      if(buttonTrailer) {
+      if (buttonTrailer) {
         buttonTrailer.addEventListener('click', openTrailers);
         buttonTrailer.data = data;
         buttonTrailer.disabled = false;
@@ -44,13 +44,12 @@ function openModal(e) {
       document.addEventListener('keydown', onKeydownEscape);
       buttonClose.addEventListener('click', closeModal);
       backdrop.addEventListener('click', onBackdropClick);
-      themeSwitcherModals(modal);
+      themeSwitcherModals(modalContainer);
 
       filmButtons = document.querySelectorAll('.film__button');
       filmButtons.forEach(function (filmButton) {
         themeSwitcherModalButtons(filmButton);
       });
-
     })
     .catch(error => {
       console.log(error);
