@@ -4,7 +4,8 @@ export const makeGallery = movies => {
     const gallery = document.querySelector('.gallery');
     const markup = createGalleryMarkup(movies);
     gallery.innerHTML = markup;
-    gallery.scrollIntoView();
+    /* gallery.scrollIntoView(); */
+    window.scrollTo(0, 0)
 }
 
 export const clearGallery = () => {
