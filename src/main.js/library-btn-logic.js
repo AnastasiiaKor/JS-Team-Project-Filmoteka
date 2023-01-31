@@ -7,7 +7,6 @@ const librQueueBtnEl = document.querySelector('#queue');
 const userName = localStorage.getItem('user');
 
 
-
 librWatchedBtnEl.addEventListener('click', onWatchedClick);
 librQueueBtnEl.addEventListener('click', onQueueClick);
 
@@ -16,6 +15,8 @@ function onWatchedClick(e) {
   librQueueBtnEl.removeAttribute('disabled');
   librWatchedBtnEl.classList.add('btn-add__active');
   librWatchedBtnEl.setAttribute('disabled', true);
+  localStorage.removeItem("saved_page");
+  localStorage.setItem("saved_page", "watched");
 
   renderMovies(e.target.id);
 }
@@ -25,6 +26,8 @@ function onQueueClick(e) {
   librWatchedBtnEl.removeAttribute('disabled');
   librQueueBtnEl.classList.add('btn-add__active');
   librQueueBtnEl.setAttribute('disabled', true);
+  localStorage.removeItem("saved_page");
+  localStorage.setItem("saved_page", "queue");
 
   renderMovies(e.target.id);
 }
@@ -39,6 +42,7 @@ export function renderMovies(e) {
     makeGallery(parsedData);
     divClassEl.style.display = 'none';
     
+    
   } else {
     clearGallery();
     divClassEl.style.display = 'block';
@@ -46,9 +50,21 @@ export function renderMovies(e) {
 /*   galleryEl.innerHTML = ''; */
   
 }
-
-renderMovies('queue');
+checkSaveBtn();
+// renderMovies('queue');
 
 // подключить билдГаллери
 // подключить создатель разметки ок
 //добавить их в ф-цию onClick
+
+ function checkSaveBtn(){
+  if(localStorage.getItem("saved_page") === "watched"){
+    renderMovies('watched');
+    onWatchedClick();
+  } if(localStorage.getItem("saved_page") === "queue"){
+    renderMovies('queue');
+    onQueueClick();
+  }
+  else 
+  console.log('не робить');
+ }
