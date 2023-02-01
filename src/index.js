@@ -1,6 +1,6 @@
 import './main.js/preloader';
 import './main.js/requests';
-import './main.js/saveGenres';
+import './main.js/save-genres';
 import './main.js/trending';
 import './main.js/search';
 import './main.js/modal';
