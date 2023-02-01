@@ -1,1 +1,0 @@
-{"mappings":"AAACA,OAAOC,OAAS,WACCC,SAASC,cAAc,cAC7BC,UAAUC,IAAI,Y","sources":["src/main.js/preloader.js"],"sourcesContent":[" window.onload = function () {\n  let preloader = document.querySelector('#preloader');\n  preloader.classList.add('is-hidden');\n};\n"],"names":["window","onload","document","querySelector","classList","add"],"version":3,"file":"index.85602624.js.map"}
