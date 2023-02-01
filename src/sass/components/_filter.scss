@@ -1,0 +1,57 @@
+.filter {
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    &.is-hidden {
+      display: none;
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+
+  &__button,
+  &__option {
+    background: transparent;
+    color: inherit;
+    border-radius: 40px;
+    border: 1px solid $orange-color;
+    transition: box-shadow 250ms $bezier-hov, border 250ms $bezier-hov,
+      background-color 250ms $bezier-hov;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $btn-hover-bg;
+      box-shadow: $filter-button-shadow;
+    }
+  }
+
+  &__button {
+    height: 100%;
+    position: relative;
+    padding-left: 6px;
+    padding-right: 6px;
+
+    &.active {
+      color: $light-color;
+      border-color: transparent;
+      box-shadow: inset 5px -1px 4px rgba(0, 0, 0, 0.5);
+      background: $orange-color;
+    }
+  }
+
+  &__option {
+    padding: 6px 12px;
+
+    &.active {
+      color: $light-color;
+      border: 1px solid transparent;
+      box-shadow: inset 5px -1px 4px rgba(0, 0, 0, 0.5);
+      background: $orange-color;
+    }
+  }
+}

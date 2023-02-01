@@ -9,9 +9,11 @@
     align-items: center;
     justify-content: center;
 
-    @media screen and (max-width: #{$min-tablet}) {
-      flex-grow: 1;
-      flex-basis: 0;
+    &.btn-list__item--film {
+      @media screen and (max-width: #{$min-tablet}) {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
     }
   }
 
@@ -29,10 +31,9 @@
 .button {
   padding: 5px 12px;
 
-  min-width: 110px;
   min-height: 44px;
   height: 100%;
-  flex-basis: 400px;
+  width: 130px;
 
   font-family: $primary-font-family;
   font-style: normal;
@@ -79,6 +80,11 @@
 }
 
 .film__button {
+  min-width: 110px;
+  min-height: 44px;
+  width: auto;
+  flex-basis: 400px;
+
   color: #{$dark-color};
   border-color: #{$dark-color};
   background-color: inherit;

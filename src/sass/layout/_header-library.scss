@@ -7,28 +7,27 @@
   color: $light-color;
 
   background-image: linear-gradient($opacity-header, $opacity-header),
-      url('/src/images/home_warning_@x1_320min.jpg');
-  // background-size: cover;    
+    url('/src/images/home_warning_@x1_320min.jpg');
+  // background-size: cover;
   background-size: 100% 100%;
   box-shadow: $shadow-header;
- @media screen and (min-device-pixel-ratio: 2),
+  @media screen and (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     background-image: linear-gradient($opacity-header, $opacity-header),
       url('/src/images/home_warning_@x2_320min.jpg');
-      box-shadow: $shadow-header;
-      background-size: 100% 100%;
+    box-shadow: $shadow-header;
+    background-size: 100% 100%;
   }
 
-// -----------Tablet--------------------------------
+  // -----------Tablet--------------------------------
 
- @media screen and (min-width: $tablet) {
-  background-size: 100% 100%;
-  height: 216px;
+  @media screen and (min-width: $tablet) {
+    background-size: 100% 100%;
+    height: 216px;
   }
 
   @media screen and (min-width: $tablet) {
-    
     background-image: linear-gradient($opacity-header, $opacity-header),
       url('/src/images/home_warning_@x1_768min.jpg');
     background-size: 100% 100%;
@@ -44,9 +43,9 @@
     }
   }
 
-// -----------Desktop--------------------------------
+  // -----------Desktop--------------------------------
 
- @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1280px) {
     min-height: 216px;
     background-image: linear-gradient($opacity-header, $opacity-header),
       url('/src/images/home_warning_@x1_1280min.jpg');
@@ -69,13 +68,21 @@
   max-width: 1280px;
   height: 216px;
   padding: 40px 33px;
-  margin:0 auto;
+  margin: 0 auto;
+  @media screen and (max-width: #{$min-tablet}) {
+    padding: 40px 20px;
+  }
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  margin-bottom: 40px;
+  @media screen and (max-width: #{$min-tablet}) {
+    margin-bottom: 20px;
+  }
 }
 
 .logo {
@@ -137,6 +144,7 @@
   }
 }
 
+
 .btn {
   display: flex;
   justify-content: center;
@@ -189,6 +197,7 @@
   color: $light-color;
   border-color: $orange-color;
 }
+
 
 .nav-list {
   display: flex;
