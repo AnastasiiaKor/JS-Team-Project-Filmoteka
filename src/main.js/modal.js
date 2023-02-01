@@ -8,7 +8,12 @@ import { themeSwitcherModalButtons } from './theme-switcher';
 import { initWatchedQueueBtns } from './library-manager';
 import { loadSimilar } from './similar';
 import { gallery } from './templates.js/gallery-markup';
+import { LoadSpinner } from './loader';
 
+
+const loadModal = new LoadSpinner({
+  selector: '[data-action="modal-loading"]',
+});
 const buttonClose = document.querySelector('.button__close');
 const backdrop = document.querySelector('.modal__backdrop');
 const modal = document.querySelector('.js-modal');
@@ -23,13 +28,13 @@ gallery.addEventListener('click', openModal);
 function openModal(e) {
   if (e.target.className !== 'gallery__link') return;
   e.preventDefault();
+
   movieID = e.target.getAttribute('href');
   backdrop.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';
   getMovieData(movieID)
     .then(data => {
       modal.innerHTML = createModalMarkup(data);
-
       initWatchedQueueBtns(data);
 
       buttonTrailer = document.querySelector('.js-film__button--trailer');
@@ -53,7 +58,8 @@ function openModal(e) {
     })
     .catch(error => {
       console.log(error);
-    });
+    })
+    .finally(() => loadModal.loadOff());
 }
 function openRelated() {
   loadSimilar(movieID);
@@ -71,6 +77,7 @@ function onKeydownEscape(e) {
 }
 function closeModal() {
   backdrop.classList.add('is-hidden');
+  loadModal.loadOn();
   document.body.style.overflow = 'visible';
   buttonClose.removeEventListener('click', closeModal);
   backdrop.removeEventListener('click', closeModal);
@@ -85,6 +92,7 @@ function onBackdropClick(event) {
     closeModal();
   }
 }
+
 // function toggle() {
 //   backdrop.classList.toggle('is-hidden');
 // }
