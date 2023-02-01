@@ -3,42 +3,16 @@ let filterCategories = document.querySelector('.filter__categories');
 let options = document.querySelector('.filter__list');
 let filterBtn;
 let lastSearch;
+
 function addFilter() {
-  filterCategories = document.querySelector('.filter__categories');
   options = document.querySelector('.filter__list');
-  filterBtn = document.querySelector('.filter__icon');
-  filterBtn.addEventListener('click', openFilter);
-}
-
-function openFilter(e) {
-  if (!e.target.classList.contains('filter__icon')) return;
-
-  e.target.classList.toggle('active');
-
-  e.target.classList.contains('active')
-    ? filterCategories.classList.remove('is-hidden')
-    : filterCategories.classList.add('is-hidden');
-
-  filterCategories.classList.contains('is-hidden') &&
-    options.classList.add('is-hidden');
-
-  !filterCategories.classList.contains('is-hidden') &&
-    filterCategories.querySelector('.active') &&
-    options.classList.remove('is-hidden');
-
-  filterCategories.addEventListener('click', genreFilter);
+  filterBtn = document.querySelector('.filter__button');
+  filterBtn.addEventListener('click', genreFilter);
 }
 
 function genreFilter(e) {
-  if (!e.target.classList.contains('filter__category')) return;
-
   e.target.classList.toggle('active');
 
-  e.target.classList.contains('active')
-    ? options.classList.remove('is-hidden')
-    : options.classList.add('is-hidden');
-
-  if (!e.target.classList.contains('active')) return;
   options.classList.remove('is-hidden');
 
   const genresList = JSON.parse(localStorage.getItem('genres'));

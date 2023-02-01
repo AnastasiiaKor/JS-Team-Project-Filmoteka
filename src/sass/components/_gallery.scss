@@ -13,18 +13,12 @@
     position: relative;
   }
 
-  &__settings {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   &__settings-container {
     position: absolute;
     top: 0;
-    transform: translateY(50%);
+    transform: translateY(25%);
     width: 100%;
+    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,13 +36,13 @@
 
   &__link:hover {
     cursor: pointer;
-    transform: scale(1.03);
+    transform: scale(1.01);
   }
 
   &__link:focus {
     outline: 4px solid $orange-color;
     outline-offset: 4px;
-    transform: scale(1.03);
+    transform: scale(1.01);
   }
 
   &__event-wrapper {
@@ -66,10 +60,15 @@
 
   &__poster {
     object-fit: cover;
-
     display: block;
     width: 100%;
     height: 100%;
+    transition: transform $animationTransition;
+
+    .gallery__link:hover &,
+    .gallery__link:focus & {
+      transform: scale(1.02);
+    }
   }
 
   &__description {

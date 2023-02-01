@@ -15,7 +15,7 @@ gallery.addEventListener('click', e => {
   searchByGenre(1);
 });
 
-const searchByGenre = async (id, page) => {
+async function searchByGenre(id, page) {
   try {
     const data = await getMovieBYGenre(id, page);
     makeGallery(data.results);
@@ -25,6 +25,6 @@ const searchByGenre = async (id, page) => {
   } catch (error) {
     console.log(error);
   }
-};
+}
 
 export { searchByGenre };

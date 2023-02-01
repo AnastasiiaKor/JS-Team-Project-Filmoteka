@@ -7,12 +7,7 @@ function addGallerySettings() {
   const settingsMarkup = `
       <div class="gallery__settings">
         <div class="gallery__settings-container">
-          <div class="filter__wrapper">
-            <button class="filter__icon"></button>
-            <div class="filter__categories is-hidden">
-              <button class="filter__category" type="button">By genre</button>
-            </div>
-          </div>
+          <button class="filter__button" type="button">Select genre</button>
         </div>
         <ul class="filter__list is-hidden"></ul>
       </div>`;
