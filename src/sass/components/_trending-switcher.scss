@@ -2,7 +2,7 @@
   position: relative;
   background-color: $orange-color;
   color: $light-color;
-  height: 30px;
+  height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,17 +12,11 @@
   text-transform: lowercase;
   border-radius: 50px;
   overflow: hidden;
-  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: $filter-button-shadow;
   cursor: pointer;
 
   &__container {
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
   }
 
@@ -59,11 +53,5 @@
     background-color: $main-bg-color;
     color: $dark-color;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  @media (max-width: $min-tablet) {
-    &__container {
-      transform: translateX(-50%);
-    }
   }
 }
