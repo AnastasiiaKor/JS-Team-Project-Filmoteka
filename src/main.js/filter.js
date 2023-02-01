@@ -25,10 +25,9 @@ function showHideFilter(e) {
 
 function showFilteredMovies(e) {
   if (e.target.nodeName !== 'BUTTON') return;
-  lastSearch = e.target.dataset.id;
   try {
     switchOptions(e);
-    searchByGenre(lastSearch, 1);
+    searchByGenre(e.target.dataset.id, 1);
   } catch (error) {}
 }
 

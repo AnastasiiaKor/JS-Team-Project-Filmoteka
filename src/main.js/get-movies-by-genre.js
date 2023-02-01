@@ -12,7 +12,6 @@ gallery.addEventListener('click', e => {
   e.stopImmediatePropagation();
   searchByGenre(e.target.dataset.id);
   paginator.callback = searchByGenre;
-  searchByGenre(1);
 });
 
 async function searchByGenre(id, page) {

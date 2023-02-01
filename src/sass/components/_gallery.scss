@@ -53,9 +53,7 @@
     display: flex;
     overflow: hidden;
     border-radius: 5px;
-    background-image: url(../images/placeholder.webp);
-    background-size: cover;
-    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: $movie-card-shadow;
   }
 
   &__poster {
