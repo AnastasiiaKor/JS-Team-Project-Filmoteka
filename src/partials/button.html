@@ -4,24 +4,24 @@
 
 <ul class="btn-list">
   <li class="btn-list__item">
-    <button type="button" class="button film__button upper">
+    <button aria-label="add to watched" type="button" class="button film__button upper">
       Add to watched
     </button>
   </li>
   <li class="btn-list__item">
-    <button type="button" class="button film__button upper">
+    <button aria-label="add to queue" type="button" class="button film__button upper">
       Add to queue
     </button>
   </li>
   <li>
-    <button type="button" class="button film__button upper">
+    <button aria-label="watch trailer" type="button" class="button film__button upper">
       try to watch trailer
     </button>
   </li>
 </ul>
 <div class="modal__backdrop">
   <div class="modal">
-    <button type="button" class="button__close">
+    <button aria-label="close" type="button" class="button__close">
       <svg width="30" height="30">
         <use href="./images/icon-close.svg#close"></use>
       </svg>
@@ -68,6 +68,7 @@
           <ul class="btn-list js-btn-add-list">
             <li class="btn-list__item">
               <button
+              aria-label="add to watched"
                 type="button"
                 class="button film__button upper"
                 data-addto="watched"
@@ -77,6 +78,7 @@
             </li>
             <li class="btn-list__item">
               <button
+              aria-label="add to queue"
                 type="button"
                 class="button film__button upper"
                 data-addto="queue"
@@ -85,7 +87,7 @@
               </button>
             </li>
             <li>
-              <button type="button" class="button film__button upper">
+              <button aria-label="watch trailer" type="button" class="button film__button upper">
                 try to watch trailer
               </button>
             </li>
