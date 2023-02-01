@@ -7,6 +7,7 @@ import { themeSwitcherModals } from './theme-switcher';
 import { themeSwitcherModalButtons } from './theme-switcher';
 import { initWatchedQueueBtns } from './library-manager';
 import { loadSimilar } from './similar';
+import { gallery } from './templates.js/gallery-markup';
 
 const buttonClose = document.querySelector('.button__close');
 const backdrop = document.querySelector('.modal__backdrop');
@@ -17,7 +18,6 @@ let buttonTrailer;
 let buttonSimilar;
 let filmButtons;
 
-const gallery = document.querySelector('.gallery');
 gallery.addEventListener('click', openModal);
 
 function openModal(e) {

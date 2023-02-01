@@ -1,8 +1,7 @@
 import { getGenresById } from '../get-genres';
+const gallery = document.querySelector('.gallery__wrapper');
 
-/* const gallery = document.querySelector('.gallery__wrapper'); */
-
-export function createGalleryMarkup(results) {
+function createGalleryMarkup(results) {
   const markup = results
     .map(result => {
       const {
@@ -17,7 +16,7 @@ export function createGalleryMarkup(results) {
       const date = new Date(release_date).getFullYear() || '';
       const genres = genre_ids.length !== 0 ? getGenresById(genre_ids) : '';
       const poster = poster_path
-        ? `<img class="gallery__poster" src="https://image.tmdb.org/t/p/w500${poster_path}" loading="lazy" />`
+        ? `<img class="gallery__poster" src="https://image.tmdb.org/t/p/w500${poster_path}" loading="lazy" alt="${title}"/>`
         : '';
       const delimiter = genre_ids.length && date ? ' | ' : '';
 
@@ -49,8 +48,8 @@ export function createGalleryMarkup(results) {
              </li>`;
     })
     .join('');
-  /* return `<ul class="gallery">${markup}</ul>`; */
+  return `<ul class="gallery">${markup}</ul>`;
   return markup;
 }
 
-/* export { gallery, createGalleryMarkup }; */
+export { gallery, createGalleryMarkup };

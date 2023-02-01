@@ -13,6 +13,23 @@
     position: relative;
   }
 
+  &__settings {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__settings-container {
+    position: absolute;
+    top: 0;
+    transform: translateY(50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__link {
     position: relative;
     display: block;
