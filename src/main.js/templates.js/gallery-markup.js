@@ -17,7 +17,7 @@ export function createGalleryMarkup(results) {
       const date = new Date(release_date).getFullYear() || '';
       const genres = genre_ids.length !== 0 ? getGenresById(genre_ids) : '';
       const poster = poster_path
-        ? `<img class="gallery__poster" src="https://image.tmdb.org/t/p/w500${poster_path}" loading="lazy" />`
+        ? `<img class="gallery__poster" alt="${title}" src="https://image.tmdb.org/t/p/w500${poster_path}" loading="lazy" />`
         : '';
       const delimiter = genre_ids.length && date ? ' | ' : '';
 
