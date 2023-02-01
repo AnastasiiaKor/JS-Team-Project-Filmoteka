@@ -10,6 +10,7 @@ import { loadSimilar } from './similar';
 import { gallery } from './templates.js/gallery-markup';
 import { LoadSpinner } from './loader';
 
+
 const loadModal = new LoadSpinner({
   selector: '[data-action="modal-loading"]',
 });
