@@ -141,6 +141,10 @@
   display: flex;
   justify-content: center;
   margin-top: 40px;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
 }
 
 .button {
@@ -212,13 +216,13 @@
   }
 }
 
-.logo-return {
-  transition: 350ms $bezier-hov;
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-  }
-}
+// .logo-return {
+//   transition: 350ms $bezier-hov;
+//   &:hover,
+//   &:focus {
+//     transform: scale(1.1);
+//   }
+// }
 
 .library-info {
   font-weight: 400;

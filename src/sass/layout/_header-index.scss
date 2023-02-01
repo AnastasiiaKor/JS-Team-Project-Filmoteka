@@ -10,7 +10,7 @@
   margin-right: auto;
 
   color: $light-color;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: $shadow-header;
   background-size: cover;
   background-image: linear-gradient(
     to right,
@@ -67,11 +67,11 @@
   display: flex;
   align-items: center;
 
-  transition: 350ms $bezier-hov;
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-  }
+  // transition: 350ms $bezier-hov;
+  // &:hover,
+  // &:focus {
+  //   transform: scale(1.1);
+  // }
 
   &__text {
     font-weight: lighter;
