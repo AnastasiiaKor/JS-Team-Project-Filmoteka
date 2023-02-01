@@ -1,7 +1,6 @@
-const gallery = document.querySelector('.gallery');
 let period = localStorage.getItem('switcher-period') || 'week';
 
-function createSwitcherMarkup(callback) {
+function createSwitcherMarkup(callback, container) {
   const markup = `<div class="switcher__container">
     <span class="switcher__text">Trending of the</span>
         <div class="switcher">
@@ -32,7 +31,7 @@ function createSwitcherMarkup(callback) {
         </div>
     </div>`;
 
-  gallery.insertAdjacentHTML('afterbegin', markup);
+  container.insertAdjacentHTML('beforeend', markup);
   const switcher = document.querySelector('.switcher');
   const options = switcher.querySelectorAll('.switcher__item-radio');
 

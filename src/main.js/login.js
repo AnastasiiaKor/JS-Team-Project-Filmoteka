@@ -51,5 +51,3 @@ const onLogin = event => {
 };
 
 signIn.addEventListener('click', onLogin);
-
-//============ TODO for logout remove from localStorage 'user' and 'wasUserGreeted' ============
