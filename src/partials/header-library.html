@@ -22,26 +22,31 @@
           <a class="nav-list__link" href="./index.html">Home</a>
         </li>
         <li class="nav-list__item">
-          <a id="library_link"
+          <a
+            id="library_link"
             class="nav-list__link nav-list__link--current"
             href="./library.html"
             >my library</a
           >
         </li>
         <li class="nav-list__item">
-          <a class="nav-list__link" href="./index.html" id="sign_in">sign out</a>
+          <a class="nav-list__link" href="./index.html" id="sign_in"
+            >sign out</a
+          >
         </li>
       </ul>
     </nav>
     <p id="greatings" class="library-info"></p>
 
-    <ul class="btn">
-      <li class="btn-list">
-        <button aria-label="watched" id="watched" class="button" type="submit">Watched</button>
+    <ul class="btn-list">
+      <li class="btn-list__item">
+        <button aria-label="watched" id="watched" class="button" type="submit">
+          Watched
+        </button>
       </li>
-      <li class="btn-list">
+      <li class="btn-list__item">
         <button
-        aria-label="queue"
+          aria-label="queue"
           id="queue"
           class="button btn-add__active"
           disabled
@@ -52,7 +57,7 @@
       </li>
     </ul>
     <button
-    aria-label="theme switcher"
+      aria-label="theme switcher"
       class="theme-switcher__btn my-tooltip-toggle-btn"
       type="button"
       data-tooltip="Switch between dark and light mode"
