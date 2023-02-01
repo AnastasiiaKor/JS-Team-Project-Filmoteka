@@ -22,7 +22,6 @@ function offFooterModal() {
   document.body.style.overflow = 'visible';
   backToTop.classList.remove('hidden');
   window.removeEventListener('keydown', onEscape);
-
 }
 
 function onEscape(e) {
