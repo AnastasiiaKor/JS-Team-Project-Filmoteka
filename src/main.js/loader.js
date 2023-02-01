@@ -9,6 +9,7 @@ class LoadSpinner {
     refs.icon = refs.button.querySelector('.search-form__icon');
     // refs.label = refs.button.querySelector('.label');
     refs.spinner = refs.button.querySelector('.spinner');
+    refs.loader = document.querySelector('.modal__loader');
 
     return refs;
   }
@@ -26,15 +27,14 @@ class LoadSpinner {
     this.refs.spinner.classList.remove('is-hidden');
     this.refs.icon.classList.add('is-hidden');
   }
+
+  loadOff() {
+    this.refs.loader.classList.add('is-hidden');
+  }
+
+  loadOn() {
+    this.refs.loader.classList.remove('is-hidden');
+  }
 }
 
 export { LoadSpinner };
-
-
-//Код для перевикористання класу
-
-// import { LoadSpinner } from './loader';
-// const loadSpinnerBtn = new LoadSpinner({ selector: '[data-action="loading"]' });
-
-// loadSpinnerBtn.enable();
-// loadSpinnerBtn.disable();

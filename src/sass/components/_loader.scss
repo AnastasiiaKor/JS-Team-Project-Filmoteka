@@ -1,5 +1,6 @@
 @import './node_modules/scss-spinners/spinners';
 
+//SEARCH-SPINNER
 .spinner.round:after {
   content: ' ';
   content: ' ';
@@ -43,8 +44,7 @@
   display: none;
 }
 
-
-// Прелоадер
+// PRELOADER
 #preloader {
   width: 100%;
   height: 100%;
@@ -70,5 +70,22 @@
 }
 
 #preloader.is-hidden {
+  display: none;
+}
+
+// MODAL-LOADER
+.modal__loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 10000;
+  overflow: hidden;
+  transition: opacity $animationTransition, visibility $animationTransition;
+}
+
+.modal__loader.is-hidden {
   display: none;
 }
