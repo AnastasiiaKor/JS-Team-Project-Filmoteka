@@ -18,7 +18,7 @@ function createModalMarkup(movie) {
 
   const trailerButton =
     videos.results.length !== 0
-      ? `<li class="btn-list__item"><button type="button" class="button js-film__button--trailer film__button upper">
+      ? `<li class="btn-list__item btn-list__item--film"><button type="button" class="button js-film__button--trailer film__button upper">
       Watch trailer
     </button></li>`
       : '';
@@ -75,7 +75,7 @@ function createModalMarkup(movie) {
             <div class="film__button--wrapper">
             <p class="nologin"></p>
               <ul class="btn-list js-btn-add-list">
-                <li class="btn-list__item">
+                <li class="btn-list__item btn-list__item--film">
                   <button
                     type="button"
                     class="button film__button upper"
@@ -84,7 +84,7 @@ function createModalMarkup(movie) {
                     Add to watched
                   </button>
                 </li>
-                <li class="btn-list__item">
+                <li class="btn-list__item btn-list__item--film">
                   <button
                     type="button"
                     class="button film__button upper"
@@ -93,7 +93,7 @@ function createModalMarkup(movie) {
                     Add to queue
                   </button>
                 </li>
-                <li class="btn-list__item">
+                <li class="btn-list__item btn-list__item--film">
                 <button
                 type="button"
                 class="button film__button--recommended film__button upper"
