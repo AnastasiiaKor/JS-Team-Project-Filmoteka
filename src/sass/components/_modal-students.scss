@@ -30,7 +30,6 @@
     .footer__modal {
         opacity: 0;
     }
-
 }
 
 .footer__modal {
@@ -46,45 +45,38 @@
     opacity: 1;
     background-color: $light-color;
     z-index: 3;
-    transform: translate(-50%, -2%) scale(1);
+    transform: translate(-50%, -1%) scale(1);
     transition: transform $animationTransition;
-
     color: $dark-color;
 
     @media screen and (min-width: $tablet) {
         padding: 20px 40px;
         top: 15%;
-        transform: translate(-50%, -4%) scale(1);
+        transform: translate(-50%, -3%) scale(1);
     }    
     @media screen and (max-width: $tablet) {
         top: 15%;
     }
-
     @media screen and (min-width: $desktop) {
         width: 998px;
         padding: 20px 60px;
         top: 50%;
         transform: translate(-50%, -50%) scale(1);
     }
-
-   
 }
-
 
 .footer__modal-title {
     text-align: center;
     margin-top: 0;
     margin-bottom: 23px;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 500;
 
-
     @media screen and (min-width: $tablet) {
-    font-size: 38px;
-    }
-
-    @media screen and (min-width: $desktop) {
     font-size: 40px;
+    }
+    @media screen and (min-width: $desktop) {
+    font-size: 42px;
     }
 }
 
@@ -98,15 +90,19 @@
     flex-wrap: wrap;
     margin: -10px;
     margin-top: 0;
+    @media screen and(min-width: $tablet) {
+        margin: -15px;
+        }
+    @media screen and(min-width: $desktop) {
+        margin: -10px;
+    }
 }
-
 
 .student-item {
     text-align: center;
     overflow: hidden;
-    width: 450px;
-    margin: 10px;
-    margin-top: 0;
+    width: 400px;
+    margin: 25px;
     transition: scale $animationTransition;
     border-radius: 8px;
     
@@ -115,21 +111,19 @@
         scale: (1.1);
     }
 
-    @media screen and(min-width: $tablet) {
+    @media screen and(min-width: 786px) {
         width:300px;
+        margin: 15px;
     }  
-    // @media screen and(max-width: $tablet) {
-    //     width: 300px;
-    // }
     @media screen and(min-width: $desktop) {
         width: 130px;
+        margin: 10px;
+
     }
 }
 
-
 .student-image {
     border-radius: 4px;
-
     display: block;
     width: 100%;
     object-fit: cover;
@@ -137,15 +131,12 @@
     box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     margin-bottom: 8px;
-    // @media screen and(min-width: 768px) {
-    //     height: 150px;
-    // }
 }
 
 .student-name {
     display: block;
     color: inherit;
-    font-size: 14px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 7px;
@@ -155,13 +146,26 @@
     &:focus {
         color: $orange-color;
     }
+    @media screen and (min-width: $tablet) {
+        font-size: 16px;
+    }
+    @media screen and (min-width: $desktop) {
+        font-size: 14px;
+    }
 }
 
 .student-role {
-    font-size: 12px;
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: 500;
     color: $orange-color;
+
+    @media screen and (min-width: $tablet) {
+        font-size: 14px;
+    }
+    @media screen and (min-width: $desktop) {
+        font-size: 12px;
+    }
 }
 
 .footer__closeBtn {

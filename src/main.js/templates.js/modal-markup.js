@@ -18,7 +18,7 @@ function createModalMarkup(movie) {
 
   const trailerButton =
     videos.results.length !== 0
-      ? `<li><button type="button" class="button js-film__button--trailer film__button upper">
+      ? `<li class="btn-list__item"><button type="button" class="button js-film__button--trailer film__button upper">
       Watch trailer
     </button></li>`
       : '';
