@@ -1,3 +1,4 @@
+import placeholder from '../../images/placeholder.webp';
 import { getGenresById } from '../get-genres';
 const gallery = document.querySelector('.gallery__wrapper');
 
@@ -16,8 +17,8 @@ function createGalleryMarkup(results) {
       const date = new Date(release_date).getFullYear() || '';
       const genres = genre_ids.length !== 0 ? getGenresById(genre_ids) : '';
       const poster = poster_path
-        ? `<img class="gallery__poster" src="https://image.tmdb.org/t/p/w500${poster_path}" loading="lazy" alt="${title}"/>`
-        : '';
+        ? `https://image.tmdb.org/t/p/w500${poster_path}`
+        : placeholder;
       const delimiter = genre_ids.length && date ? ' | ' : '';
 
       const info =
@@ -35,7 +36,9 @@ function createGalleryMarkup(results) {
       <li class="gallery__item">
                 <a class="gallery__link" href="${id}" title="${title}">
                     <div class='gallery__event-wrapper'>
-                        <div class='gallery__poster-wrapper'>${poster}</div>
+                        <div class='gallery__poster-wrapper'>
+                          <img class="gallery__poster" src="${poster}" loading="lazy" alt="${title}"/>
+                        </div>
                         <div class="gallery__description">
                           <p class="gallery__movie-title">${title}</p>
                             <p class="gallery__movie-meta">

@@ -12,7 +12,6 @@ gallery.addEventListener('click', e => {
   e.stopImmediatePropagation();
   searchByGenre(e.target.dataset.id);
   paginator.callback = searchByGenre;
-  searchByGenre(1);
 });
 
 async function searchByGenre(id, page) {
@@ -20,6 +19,7 @@ async function searchByGenre(id, page) {
     const data = await getMovieBYGenre(id, page);
     makeGallery(data.results);
     addGallerySettings();
+    gallery.scrollIntoView();
     paginator.currentPage = data.page;
     paginator.totalPages = data.total_pages < 500 ? data.total_pages : 500;
   } catch (error) {
