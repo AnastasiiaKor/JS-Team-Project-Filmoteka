@@ -11,16 +11,14 @@ librWatchedBtnEl.addEventListener('click', onWatchedClick);
 librQueueBtnEl.addEventListener('click', onQueueClick);
 
 function onWatchedClick(e) {
-
   librQueueBtnEl.classList.remove('btn-add__active');
   librQueueBtnEl.removeAttribute('disabled');
   librWatchedBtnEl.classList.add('btn-add__active');
   librWatchedBtnEl.setAttribute('disabled', true);
-  localStorage.removeItem("saved_page");
-  localStorage.setItem("saved_page", "watched");
+  localStorage.removeItem('saved_page');
+  localStorage.setItem('saved_page', 'watched');
 
-
-  changeBtnState(e.target.id)
+  changeBtnState(e.target.id);
   renderMovies(e.target.id);
 }
 
@@ -29,9 +27,9 @@ function onQueueClick(e) {
   librWatchedBtnEl.removeAttribute('disabled');
   librQueueBtnEl.classList.add('btn-add__active');
   librQueueBtnEl.setAttribute('disabled', true);
-  localStorage.removeItem("saved_page");
-  localStorage.setItem("saved_page", "queue");
-  changeBtnState(e.target.id)
+  localStorage.removeItem('saved_page');
+  localStorage.setItem('saved_page', 'queue');
+  changeBtnState(e.target.id);
   renderMovies(e.target.id);
 }
 
@@ -56,7 +54,7 @@ document.addEventListener('libraryChange', e => {
   const section = e.detail.section;
   changeBtnState(section);
   renderMovies(section);
-})
+});
 
 function changeBtnState(section) {
   switch (section) {
@@ -85,16 +83,12 @@ function changeBtnState(section) {
 //добавить их в ф-цию onClick
 
 checkSaveBtn();
-function checkSaveBtn(){
-  
-  if(localStorage.getItem("saved_page") === "watched"){
-  
+function checkSaveBtn() {
+  if (localStorage.getItem('saved_page') === 'watched') {
     librWatchedBtnEl.dispatchEvent(defaultEvent);
-    return
-  } if(localStorage.getItem("saved_page") === "queue"){
+    return;
+  } else if (localStorage.getItem('saved_page') === 'queue') {
     librQueueBtnEl.dispatchEvent(defaultEvent);
-    return
+    return;
   }
-  else 
-  console.log('не робить');
- }
+}
