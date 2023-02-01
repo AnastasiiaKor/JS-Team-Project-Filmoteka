@@ -4,6 +4,7 @@ import './main.js/save-genres';
 import './main.js/trending';
 import './main.js/search';
 import './main.js/modal';
+import './main.js/filter';
 import './main.js/get-movies-by-genre';
 import './main.js/user-manager';
 import './main.js/theme-switcher';

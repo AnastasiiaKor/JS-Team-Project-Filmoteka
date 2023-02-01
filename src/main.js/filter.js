@@ -1,19 +1,16 @@
 import { searchByGenre } from './get-movies-by-genre';
-let filterCategories = document.querySelector('.filter__categories');
 let options = document.querySelector('.filter__list');
 let filterBtn;
-let lastSearch;
 
 function addFilter() {
   options = document.querySelector('.filter__list');
   filterBtn = document.querySelector('.filter__button');
-  filterBtn.addEventListener('click', genreFilter);
+  filterBtn.addEventListener('click', showHideFilter);
 }
 
-function genreFilter(e) {
+function showHideFilter(e) {
   e.target.classList.toggle('active');
-
-  options.classList.remove('is-hidden');
+  options.classList.toggle('is-hidden');
 
   const genresList = JSON.parse(localStorage.getItem('genres'));
   const optionsMarkup = genresList

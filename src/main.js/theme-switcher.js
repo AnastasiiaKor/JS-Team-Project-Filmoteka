@@ -37,8 +37,6 @@ function onThemeSwitcherBtnClick() {
     localStorage.setItem("theme", theme);
 
     themeSwitcherModals(footerModal);
-    // const footerCloseIcon = document.querySelector('.footer__close-icon');
-    // footerCloseIcon.style.fill = '#fff';
 };
 
 function themeSwitcherModals(element) {
@@ -62,13 +60,14 @@ function themeSwitcherModalButtons(element) {
 
 const config = {
     showDelay: 100,
-    style: {
-        padding: 3,
-    },
+    // style: {
+    //     padding: 3,
+    //     fontSize: 12,
+    // },
     className: "tooltip",
     offset: {
         x: -75,
-        y: -75
+        y: -70
     }
 };
 
