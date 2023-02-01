@@ -107,7 +107,7 @@ h3 {
   row-gap: 20px;
   flex-direction: column;
   @media screen and (min-width: $tablet) {
-    @include flexCentered(flex, center, center);
+    @include flexCentered(flex, center, flex-start);
     flex-direction: row;
     gap: 12px;
   }
