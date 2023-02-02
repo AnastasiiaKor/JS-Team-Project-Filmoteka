@@ -46,6 +46,7 @@ async function searchByGenre(page) {
     const data = await getMovieBYGenre(genreID, page);
     makeGallery(data.results);
     addGallerySettings();
+    gallery.scrollIntoView();
     paginator.currentPage = data.page;
     paginator.totalPages = data.total_pages < 500 ? data.total_pages : 500;
   } catch (error) {
