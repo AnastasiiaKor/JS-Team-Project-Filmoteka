@@ -11,22 +11,13 @@ librWatchedBtnEl.addEventListener('click', onWatchedClick);
 librQueueBtnEl.addEventListener('click', onQueueClick);
 
 function onWatchedClick(e) {
-  librQueueBtnEl.classList.remove('btn-add__active');
-  librQueueBtnEl.removeAttribute('disabled');
-  librWatchedBtnEl.classList.add('btn-add__active');
-  librWatchedBtnEl.setAttribute('disabled', true);
   localStorage.removeItem('saved_page');
   localStorage.setItem('saved_page', 'watched');
-
   changeBtnState(e.target.id);
   renderMovies(e.target.id);
 }
 
 function onQueueClick(e) {
-  librWatchedBtnEl.classList.remove('btn-add__active');
-  librWatchedBtnEl.removeAttribute('disabled');
-  librQueueBtnEl.classList.add('btn-add__active');
-  librQueueBtnEl.setAttribute('disabled', true);
   localStorage.removeItem('saved_page');
   localStorage.setItem('saved_page', 'queue');
   changeBtnState(e.target.id);
@@ -56,7 +47,7 @@ document.addEventListener('libraryChange', e => {
   renderMovies(section);
 });
 
-function changeBtnState(section) {
+export function changeBtnState(section) {
   switch (section) {
     case 'watched':
       librQueueBtnEl.classList.remove('btn-add__active');

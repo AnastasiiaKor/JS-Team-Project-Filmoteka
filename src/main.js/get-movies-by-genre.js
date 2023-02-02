@@ -6,6 +6,8 @@ import { paginator } from './paginator';
 const gallery = document.querySelector('.gallery');
 
 let genreID = null;
+const HREF =
+  'https://anastasiiakor.github.io/JS-Team-Project-Filmoteka/library.html';
 
 gallery.addEventListener('click', e => {
   e.preventDefault();
@@ -21,7 +23,14 @@ export async function searchByGenre(page = 1) {
   try {
     const data = await getMovieBYGenre(genreID, page);
     makeGallery(data.results);
-/*     gallery.scrollIntoView(); */
+    if (location.href === HREF) {
+      const librWatchedBtnEl = document.querySelector('#watched');
+      const librQueueBtnEl = document.querySelector('#queue');
+      librWatchedBtnEl.classList.remove('btn-add__active');
+      librWatchedBtnEl.removeAttribute('disabled');
+      librQueueBtnEl.classList.remove('btn-add__active');
+      librQueueBtnEl.removeAttribute('disabled');
+    }
     paginator.currentPage = data.page;
     paginator.totalPages = data.total_pages < 500 ? data.total_pages : 500;
   } catch (error) {
