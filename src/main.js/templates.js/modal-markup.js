@@ -1,7 +1,6 @@
 // import { getGenresById } from '../get-genres';
-
+import placeholder from '../../images/placeholder.webp';
 /* let modal = document.querySelector('.js-modal'); */
-
 function createModalMarkup(movie) {
   const {
     poster_path,
@@ -15,7 +14,7 @@ function createModalMarkup(movie) {
     overview,
     id,
   } = movie;
-
+  
   const trailerButton =
     videos.results.length !== 0
       ? `<li class="btn-list__item btn-list__item--film"><button type="button" class="button js-film__button--trailer film__button upper">
@@ -31,15 +30,19 @@ function createModalMarkup(movie) {
         <td class="film__details">${genresList}</td>
       </tr>`
       : '';
+  const poster = poster_path
+  ? `https://image.tmdb.org/t/p/w500${poster_path}`
+  : placeholder;
+
   const markup = `
         <div class="modal__wrapping">
           <div class="film__image">
-            <img
-              class="image"
-              src="https://image.tmdb.org/t/p/w500${poster_path}"
-              loading="lazy"
-              alt="${title} poster"
-            />
+          <img
+          class="image"
+          src="${poster}"
+          loading="lazy"
+          alt="${title} poster"
+          />
           </div>
           <div class="film__info">
             <h2 class="film__title upper">${title}</h2>

@@ -1,4 +1,4 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { init } from './firebase';
 
@@ -7,12 +7,12 @@ const signIn = document.querySelector('#sign_in');
 const library = document.querySelector('#library_link');
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA8W0hTcfR6KigXVFgqdjQIjt-RMBSyFo0",
-  authDomain: "filmoteka-5d02e.firebaseapp.com",
-  projectId: "filmoteka-5d02e",
-  storageBucket: "filmoteka-5d02e.appspot.com",
-  messagingSenderId: "588180914435",
-  appId: "1:588180914435:web:0ccde1296d8f77415de936"
+  apiKey: 'AIzaSyASYZ8NOzf1HV_qXySt_PAWGOCo9aSEqfI',
+  authDomain: 'filmoteka-tp.firebaseapp.com',
+  projectId: 'filmoteka-tp',
+  storageBucket: 'filmoteka-tp.appspot.com',
+  messagingSenderId: '973907143233',
+  appId: '1:973907143233:web:fc416ff81e72bf4792b4c0',
 };
 
 export const app = initializeApp(firebaseConfig);
@@ -24,17 +24,17 @@ const onLogout = () => {
   localStorage.removeItem('user');
   USER = '';
   signIn.textContent = 'SIGN IN';
-  library.parentNode.classList.add("disabled");
+  library.parentNode.classList.add('disabled');
   signIn.removeEventListener('click', onLogout);
   signIn.addEventListener('click', onLogin);
-}
+};
 
 const updHeaderOnLogin = () => {
   signIn.textContent = 'SIGN OUT';
-  library.parentNode.classList.remove("disabled");
+  library.parentNode.classList.remove('disabled');
   signIn.removeEventListener('click', onLogin);
   signIn.addEventListener('click', onLogout);
-}
+};
 
 const onLogin = event => {
   /* event.preventDefault(); */
@@ -61,8 +61,7 @@ const onLogin = event => {
 signIn.addEventListener('click', onLogin);
 // check user ID on local storage
 const user = localStorage.getItem('user');
-if(user) {
+if (user) {
   USER = user;
   updHeaderOnLogin();
 }
-
