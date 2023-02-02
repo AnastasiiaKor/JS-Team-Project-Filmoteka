@@ -16,7 +16,7 @@ gallery.addEventListener('click', e => {
   searchByGenre(1);
 });
 
-async function searchByGenre(page = 1) {
+export async function searchByGenre(page = 1) {
   try {
     const data = await getMovieBYGenre(genreID, page);
     makeGallery(data.results);
@@ -28,4 +28,9 @@ async function searchByGenre(page = 1) {
   }
 }
 
-export { searchByGenre };
+export const updateGenreId = (id) => {
+  genreID = id;
+  paginator.callback = searchByGenre;
+}
+
+/* export { searchByGenre }; */

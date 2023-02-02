@@ -2,13 +2,13 @@ import { getTrending } from './requests';
 import { period, createSwitcherMarkup } from './templates.js/trending-switcher';
 import { paginator } from './paginator';
 import { makeGallery } from './make-gallery';
-/* import { addGallerySettings } from './templates.js/gallery-settigs'; */
+import { addGallerySettings } from './templates.js/gallery-settigs';
 
 showTrending(1);
 
 paginator.callback = showTrending;
 
-async function showTrending(page = 1) {
+export async function showTrending(page = 1) {
   try {
     const data = await getTrending(page, period);
     makeGallery(data.results);
@@ -19,5 +19,3 @@ async function showTrending(page = 1) {
     console.log(error);
   }
 }
-
-export { showTrending };
