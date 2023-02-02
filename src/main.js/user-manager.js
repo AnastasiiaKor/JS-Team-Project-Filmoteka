@@ -37,7 +37,6 @@ const updHeaderOnLogin = () => {
 };
 
 const onLogin = event => {
-  /* event.preventDefault(); */
   signInWithPopup(auth, provider)
     .then(result => {
       const credential = GoogleAuthProvider.credentialFromResult(result);

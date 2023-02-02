@@ -1,6 +1,5 @@
-// import { getGenresById } from '../get-genres';
 import placeholder from '../../images/placeholder.webp';
-/* let modal = document.querySelector('.js-modal'); */
+
 function createModalMarkup(movie) {
   const {
     poster_path,
