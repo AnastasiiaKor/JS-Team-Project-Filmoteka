@@ -37,7 +37,6 @@ function renderMovies(e) {
     clearGallery();
     divClassEl.style.display = 'block';
   }
-  /*   galleryEl.innerHTML = ''; */
 }
 
 renderMovies('queue');

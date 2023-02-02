@@ -94,7 +94,3 @@ function onBackdropClick(event) {
   }
 }
 
-// function toggle() {
-//   backdrop.classList.toggle('is-hidden');
-// }
-/* export { closeModal }; */

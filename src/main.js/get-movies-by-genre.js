@@ -1,8 +1,7 @@
 import { getMovieBYGenre } from './requests';
 import { makeGallery } from './make-gallery';
-/* import { gallery } from './templates.js/gallery-markup'; */
 import { paginator } from './paginator';
-/* import { addGallerySettings } from './templates.js/gallery-settigs'; */
+
 const gallery = document.querySelector('.gallery');
 
 let genreID = null;
@@ -14,7 +13,6 @@ gallery.addEventListener('click', e => {
   if (!e.target.className.includes('genre-link')) return;
   e.stopImmediatePropagation();
   genreID = e.target.dataset.id;
-  console.log(genreID);
   paginator.callback = searchByGenre;
   searchByGenre(1);
 });
@@ -43,4 +41,3 @@ export const updateGenreId = (id) => {
   paginator.callback = searchByGenre;
 }
 
-/* export { searchByGenre }; */

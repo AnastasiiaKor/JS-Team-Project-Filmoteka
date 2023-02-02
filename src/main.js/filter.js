@@ -1,5 +1,5 @@
 import { searchByGenre, updateGenreId } from './get-movies-by-genre';
-/* import { gallery } from './templates.js/gallery-markup'; */
+
 let options = document.querySelector('.filter__list');
 let filterBtn;
 let genreID;
@@ -25,7 +25,6 @@ function showHideFilter(e) {
 }
 
 function showFilteredMovies(e) {
-  console.log(e.target.dataset.id);
   if (e.target.nodeName !== 'BUTTON') return;
   try {
     switchOptions(e);
