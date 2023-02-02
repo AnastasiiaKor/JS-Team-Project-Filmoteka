@@ -12,6 +12,7 @@ gallery.addEventListener('click', e => {
   if (!e.target.className.includes('genre-link')) return;
   e.stopImmediatePropagation();
   genreID = e.target.dataset.id;
+  console.log(genreID);
   paginator.callback = searchByGenre;
   searchByGenre(1);
 });
