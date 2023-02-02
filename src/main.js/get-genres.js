@@ -3,7 +3,7 @@ function getGenresById(ids) {
   genresList.find(genre => genre.name === 'Science Fiction').name = 'Sci-Fi';
   let genres = ids.map(idToFind => {
     const { id, name } = genresList.find(genre => genre.id === idToFind);
-    return `<span class="genre-link" data-id="${id}">${name}</span>`;
+    return `<span href="id" class="genre-link" data-id="${id}">${name}</span>`;
   });
   if (genres.length > 3) {
     genres = genres.slice(0, 2);

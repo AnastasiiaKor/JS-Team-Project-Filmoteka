@@ -1,6 +1,12 @@
-import { searchByGenre } from './get-movies-by-genre';
+/* import { searchByGenre } from './get-movies-by-genre'; */
+import { getMovieBYGenre } from './requests';
+import { makeGallery } from './make-gallery';
+import { addGallerySettings } from './templates.js/gallery-settigs';
+import { paginator } from './paginator';
+import { gallery } from './templates.js/gallery-markup';
 let options = document.querySelector('.filter__list');
 let filterBtn;
+let genreID;
 
 function addFilter() {
   options = document.querySelector('.filter__list');
@@ -11,7 +17,7 @@ function addFilter() {
 function showHideFilter(e) {
   e.target.classList.toggle('active');
   options.classList.toggle('is-hidden');
-
+  gallery.scrollIntoView();
   const genresList = JSON.parse(localStorage.getItem('genres'));
   const optionsMarkup = genresList
     .map(
@@ -27,8 +33,24 @@ function showFilteredMovies(e) {
   if (e.target.nodeName !== 'BUTTON') return;
   try {
     switchOptions(e);
-    searchByGenre(e.target.dataset.id, 1);
+    genreID = e.target.dataset.id;
+    searchByGenre(1);
+    console.log('object');
+    gallery.scrollIntoView();
+    paginator.callback = searchByGenre;
   } catch (error) {}
+}
+
+async function searchByGenre(page) {
+  try {
+    const data = await getMovieBYGenre(genreID, page);
+    makeGallery(data.results);
+    addGallerySettings();
+    paginator.currentPage = data.page;
+    paginator.totalPages = data.total_pages < 500 ? data.total_pages : 500;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function switchOptions(e) {

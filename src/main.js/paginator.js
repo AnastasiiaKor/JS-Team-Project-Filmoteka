@@ -1,3 +1,5 @@
+import { gallery } from './templates.js/gallery-markup';
+
 class Paginator {
   #totalPages;
   #currentPage;
@@ -11,6 +13,7 @@ class Paginator {
     this.container.addEventListener('click', e => {
       const response = e.target.dataset.button;
       const isActive = !e.target.classList.contains('unactive');
+      gallery.scrollIntoView();
       if (response && isActive) {
         switch (response) {
           case 'left':
@@ -48,21 +51,19 @@ class Paginator {
 
   render() {
     this.container.innerHTML = '';
-    if(this.#currentPage === 0) return;
+    if (this.#currentPage === 0) return;
     let paginatorCode = '';
-    if(this.#totalPages <= 9) {
+    if (this.#totalPages <= 9) {
       const list = [];
-        for (let i = 1; i <= this.#totalPages; i += 1) {
-          const addButton =
-            i === this.#currentPage
-              ? this.active(this.#currentPage)
-              : this.number(i);
-          list.push(addButton);
-        }
-        paginatorCode =  list.join('');
+      for (let i = 1; i <= this.#totalPages; i += 1) {
+        const addButton =
+          i === this.#currentPage
+            ? this.active(this.#currentPage)
+            : this.number(i);
+        list.push(addButton);
+      }
+      paginatorCode = list.join('');
     } else {
-
-
       if (this.#currentPage < 6) {
         //begin of region
         const list = [];
@@ -73,12 +74,12 @@ class Paginator {
               : this.number(i);
           list.push(addButton);
         }
-        paginatorCode = `${this.arrow('left', this.#currentPage > 1)} ${list.join(
-          ''
-        )} ${this.dots('front')} ${this.lastnumber(this.#totalPages)} ${this.arrow(
-          'right',
-          true
-        )}`;
+        paginatorCode = `${this.arrow(
+          'left',
+          this.#currentPage > 1
+        )} ${list.join('')} ${this.dots('front')} ${this.lastnumber(
+          this.#totalPages
+        )} ${this.arrow('right', true)}`;
       } else if (this.#currentPage > this.#totalPages - 6) {
         // end of region
         const list = [];
@@ -108,11 +109,7 @@ class Paginator {
           this.#totalPages
         )} ${this.arrow('right', true)}`;
       }
-
-
     }
-
-    
 
     this.container.innerHTML = paginatorCode;
   }
@@ -139,7 +136,4 @@ class Paginator {
 }
 
 const paginatorContainer = document.querySelector('.pagination');
-export const paginator = new Paginator((page) => {
-
-
-}, paginatorContainer);
+export const paginator = new Paginator(page => {}, paginatorContainer);
