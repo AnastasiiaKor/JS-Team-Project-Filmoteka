@@ -2,7 +2,7 @@ import { getMovieBYGenre } from './requests';
 import { makeGallery } from './make-gallery';
 /* import { gallery } from './templates.js/gallery-markup'; */
 import { paginator } from './paginator';
-import { addGallerySettings } from './templates.js/gallery-settigs';
+/* import { addGallerySettings } from './templates.js/gallery-settigs'; */
 const gallery = document.querySelector('.gallery');
 
 let genreID = null;

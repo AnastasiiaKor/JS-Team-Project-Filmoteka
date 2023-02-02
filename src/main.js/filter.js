@@ -1,5 +1,5 @@
 import { searchByGenre } from './get-movies-by-genre';
-import { gallery } from './templates.js/gallery-markup';
+/* import { gallery } from './templates.js/gallery-markup'; */
 let options = document.querySelector('.filter__list');
 let filterBtn;
 let genreID;
@@ -32,7 +32,7 @@ function showFilteredMovies(e) {
     genreID = e.target.dataset.id;
     searchByGenre(genreID);
     searchByGenre(genreID);
-    gallery.scrollIntoView();
+/*     gallery.scrollIntoView(); */
   } catch (error) {}
 }
 

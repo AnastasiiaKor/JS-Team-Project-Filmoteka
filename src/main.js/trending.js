@@ -2,9 +2,9 @@ import { getTrending } from './requests';
 import { period, createSwitcherMarkup } from './templates.js/trending-switcher';
 import { paginator } from './paginator';
 import { makeGallery } from './make-gallery';
-import { addGallerySettings } from './templates.js/gallery-settigs';
+/* import { addGallerySettings } from './templates.js/gallery-settigs'; */
 
-showTrending(1, period);
+showTrending(1);
 
 paginator.callback = showTrending;
 

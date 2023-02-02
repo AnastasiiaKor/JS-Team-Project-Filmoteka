@@ -13,7 +13,6 @@ class Paginator {
     this.container.addEventListener('click', e => {
       const response = e.target.dataset.button;
       const isActive = !e.target.classList.contains('unactive');
-/*       gallery.scrollIntoView(); */
       if (response && isActive) {
         switch (response) {
           case 'left':
