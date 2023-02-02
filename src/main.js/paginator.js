@@ -1,5 +1,3 @@
-/* import { gallery } from './templates.js/gallery-markup'; */
-
 class Paginator {
   #totalPages;
   #currentPage;
