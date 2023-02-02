@@ -12,7 +12,7 @@ async function showTrending(page = 1, timeWindow = period) {
   try {
     const data = await getTrending(page, timeWindow);
     makeGallery(data.results);
-    addGallerySettings();
+/*     addGallerySettings(); */
     paginator.currentPage = data.page;
     paginator.totalPages = data.total_pages;
   } catch (error) {
