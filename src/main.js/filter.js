@@ -1,8 +1,4 @@
-/* import { searchByGenre } from './get-movies-by-genre'; */
-import { getMovieBYGenre } from './requests';
-import { makeGallery } from './make-gallery';
-import { addGallerySettings } from './templates.js/gallery-settigs';
-import { paginator } from './paginator';
+import { searchByGenre } from './get-movies-by-genre';
 import { gallery } from './templates.js/gallery-markup';
 let options = document.querySelector('.filter__list');
 let filterBtn;
@@ -34,24 +30,9 @@ function showFilteredMovies(e) {
   try {
     switchOptions(e);
     genreID = e.target.dataset.id;
-    searchByGenre(1);
-    console.log('object');
+    searchByGenre(genreID);
     gallery.scrollIntoView();
-    paginator.callback = searchByGenre;
   } catch (error) {}
-}
-
-async function searchByGenre(page) {
-  try {
-    const data = await getMovieBYGenre(genreID, page);
-    makeGallery(data.results);
-    addGallerySettings();
-    gallery.scrollIntoView();
-    paginator.currentPage = data.page;
-    paginator.totalPages = data.total_pages < 500 ? data.total_pages : 500;
-  } catch (error) {
-    console.log(error);
-  }
 }
 
 function switchOptions(e) {

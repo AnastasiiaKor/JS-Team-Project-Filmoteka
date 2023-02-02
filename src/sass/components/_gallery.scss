@@ -167,3 +167,9 @@
     width: 400px;
   }
 }
+.genre-link {
+  pointer-events: all;
+  &:hover {
+    color: $hover-btn-color;
+  }
+}
