@@ -1,8 +1,4 @@
 import { searchByGenre } from './get-movies-by-genre';
-import { getMovieBYGenre } from './requests';
-import { makeGallery } from './make-gallery';
-import { addGallerySettings } from './templates.js/gallery-settigs';
-import { paginator } from './paginator';
 import { gallery } from './templates.js/gallery-markup';
 let options = document.querySelector('.filter__list');
 let filterBtn;
@@ -35,8 +31,8 @@ function showFilteredMovies(e) {
     switchOptions(e);
     genreID = e.target.dataset.id;
     searchByGenre(genreID);
+    searchByGenre(genreID);
     gallery.scrollIntoView();
-    // paginator.callback = searchByGenre;
   } catch (error) {}
 }
 
