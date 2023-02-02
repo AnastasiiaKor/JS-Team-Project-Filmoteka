@@ -16,9 +16,9 @@ gallery.addEventListener('click', e => {
   searchByGenre(1);
 });
 
-async function searchByGenre(id, page = 1) {
+async function searchByGenre(page = 1) {
   try {
-    const data = await getMovieBYGenre(id, page);
+    const data = await getMovieBYGenre(genreID, page);
     makeGallery(data.results);
 /*     gallery.scrollIntoView(); */
     paginator.currentPage = data.page;

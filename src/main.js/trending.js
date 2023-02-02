@@ -8,9 +8,9 @@ showTrending(1, period);
 
 paginator.callback = showTrending;
 
-async function showTrending(page = 1, timeWindow = period) {
+async function showTrending(page = 1) {
   try {
-    const data = await getTrending(page, timeWindow);
+    const data = await getTrending(page, period);
     makeGallery(data.results);
 /*     addGallerySettings(); */
     paginator.currentPage = data.page;
