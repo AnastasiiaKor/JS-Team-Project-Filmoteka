@@ -1,4 +1,4 @@
-import { gallery } from './templates.js/gallery-markup';
+/* import { gallery } from './templates.js/gallery-markup'; */
 
 class Paginator {
   #totalPages;
