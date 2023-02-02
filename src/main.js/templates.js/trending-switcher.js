@@ -1,5 +1,5 @@
 let period = localStorage.getItem('switcher-period') || 'week';
-import { showTrending } from '../trending';
+import { showTrending, setTrendingCallback } from '../trending';
 
 function createSwitcherMarkup(container) {
   const markup = `<div class="switcher__container">
@@ -46,7 +46,7 @@ function createSwitcherMarkup(container) {
     period = optionToSelect.value;
 
     localStorage.setItem('switcher-period', period);
-
+    setTrendingCallback();
     showTrending(1);
   }
 }

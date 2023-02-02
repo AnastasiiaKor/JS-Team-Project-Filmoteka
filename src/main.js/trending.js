@@ -6,7 +6,9 @@ import { makeGallery } from './make-gallery';
 
 showTrending(1);
 
-paginator.callback = showTrending;
+export const setTrendingCallback = () => {
+  paginator.callback = showTrending;
+}
 
 export async function showTrending(page = 1) {
   try {
@@ -19,3 +21,5 @@ export async function showTrending(page = 1) {
     console.log(error);
   }
 }
+
+setTrendingCallback();
