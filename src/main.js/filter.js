@@ -31,6 +31,7 @@ function showFilteredMovies(e) {
     switchOptions(e);
     genreID = e.target.dataset.id;
     searchByGenre(genreID);
+    searchByGenre(genreID);
     gallery.scrollIntoView();
   } catch (error) {}
 }
