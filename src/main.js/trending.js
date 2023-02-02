@@ -2,17 +2,19 @@ import { getTrending } from './requests';
 import { period, createSwitcherMarkup } from './templates.js/trending-switcher';
 import { paginator } from './paginator';
 import { makeGallery } from './make-gallery';
-import { addGallerySettings } from './templates.js/gallery-settigs';
+/* import { addGallerySettings } from './templates.js/gallery-settigs'; */
 
-showTrending(1, period);
+showTrending(1);
 
-paginator.callback = showTrending;
+export const setTrendingCallback = () => {
+  paginator.callback = showTrending;
+}
 
-async function showTrending(page = 1, timeWindow = period) {
+export async function showTrending(page = 1) {
   try {
-    const data = await getTrending(page, timeWindow);
+    const data = await getTrending(page, period);
     makeGallery(data.results);
-    addGallerySettings();
+/*     addGallerySettings(); */
     paginator.currentPage = data.page;
     paginator.totalPages = data.total_pages;
   } catch (error) {
@@ -20,4 +22,4 @@ async function showTrending(page = 1, timeWindow = period) {
   }
 }
 
-export { showTrending };
+setTrendingCallback();

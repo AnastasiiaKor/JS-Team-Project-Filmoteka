@@ -7,7 +7,7 @@ import { themeSwitcherModals } from './theme-switcher';
 import { themeSwitcherModalButtons } from './theme-switcher';
 import { initWatchedQueueBtns } from './library-manager';
 import { loadSimilar } from './similar';
-import { gallery } from './templates.js/gallery-markup';
+/* import { gallery } from './templates.js/gallery-markup'; */
 import { LoadSpinner } from './loader';
 
 
@@ -23,6 +23,7 @@ let buttonTrailer;
 let buttonSimilar;
 let filmButtons;
 
+const gallery = document.querySelector('.gallery');
 gallery.addEventListener('click', openModal);
 
 function openModal(e) {

@@ -1,4 +1,5 @@
-import { createGalleryMarkup, gallery } from './templates.js/gallery-markup';
+import { createGalleryMarkup } from './templates.js/gallery-markup';
+const gallery = document.querySelector('.gallery');
 
 export const makeGallery = movies => {
   const markup = createGalleryMarkup(movies);
